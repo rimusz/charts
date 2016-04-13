@@ -4,6 +4,7 @@ metadata:
   name: redis-master
   labels:
     name: redis-master
+    heritage: helm
 spec:
   replicas: 1
   selector:
