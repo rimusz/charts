@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: {{ template "fullname" . }}-probe
+  labels:
+    app: {{ template "fullname" . }}-probe
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}-probe
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: "{{ .Release.Name }}"
+        heritage: "{{ .Release.Service }}"
+    spec:
+      hostPID: true
+      hostNetwork: true
+      containers:
+      - name: {{ template "fullname" . }}-probe
+        image: "weaveworks/scope:{{ .Values.imageTag }}"
+        imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        args:
+        - --no-app
+{{- if (.Values.dockerBridge) }}
+        - --probe.docker.bridge=cbr0
+{{- end}}
+        - --probe.docker=true
+        - --probe.kubernetes=true
+        - --probe.weave.addr=
+{{- if (.Values.serviceToken) }}
+        - --probe.token={{.Values.serviceToken}}{{ else }}
+        - "$(WEAVE_SCOPE_APP_SERVICE_HOST):$(WEAVE_SCOPE_APP_SERVICE_PORT)"
+{{- end}}
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: docker-sock
+          mountPath: /var/run/docker.sock
+      volumes:
+      - name: docker-sock
+        hostPath:
+          path: /var/run/docker.sock

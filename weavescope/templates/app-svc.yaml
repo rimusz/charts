@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "fullname" . }}-app
+  labels:
+    app: {{ template "fullname" . }}-app
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  ports:
+  - name: scope-app
+    port: 4040
+    targetPort: scope-app
+  selector:
+    app: {{ template "fullname" . }}-app

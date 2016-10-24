@@ -1,0 +1,12 @@
+name: weavescope
+version: 0.1.2
+description: Weave Scope chart
+keywords:
+- network
+home: http://weave.works/product/scope/
+sources:
+- https://github.com/weaveworks/scope
+maintainers:
+- name: Rimas Mocevicius
+  email: rmocius@gmail.com
+engine: gotpl
