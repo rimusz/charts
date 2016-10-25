@@ -2,6 +2,8 @@
 
 [Weave Scope](https://www.weave.works/products/weave-scope/) Zero configuration, zero integration — just launch Weave Scope and go! Automatically detects processes, containers, hosts. No kernel modules, no agents, no special libraries, no coding. Seamless integration with Kubernetes and AWS ECS.
 
+[Getting started](https://www.weave.works/guides/monitor-docker-containers/)
+
 ## TL;DR;
 
 ```bash

@@ -1,0 +1,18 @@
+weavescope-0.1.2:
+  name: weavescope
+  url: https://rimusz.github.io/charts/weavescope-0.1.2.tgz
+  created: 2016-10-25 13:40:59.512337332 +0000 UTC
+  checksum: 4882bb09320f6608864b62b50361ec37756a43cf
+  chartfile:
+    name: weavescope
+    home: http://weave.works/product/scope/
+    sources:
+    - https://github.com/weaveworks/scope
+    version: 0.1.2
+    description: Weave Scope chart
+    keywords:
+    - network
+    maintainers:
+    - name: Rimas Mocevicius
+      email: rmocius@gmail.com
+    engine: gotpl
