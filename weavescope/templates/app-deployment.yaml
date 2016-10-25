@@ -1,9 +1,11 @@
+{{- if not (empty .Values.serviceToken) }}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ template "fullname" . }}-app
   labels:
-    app: {{ template "fullname" . }}-app
+    app: {{ template "fullname" . }}
+    weavescope-component: {{ template "fullname" . }}-app
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -12,7 +14,8 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "fullname" . }}-app
+        app: {{ template "fullname" . }}
+        weavescope-component: {{ template "fullname" . }}-app
         chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
@@ -28,3 +31,4 @@ spec:
         - name: scope-app
           containerPort: 4040
           hostPort: 4040
+{{- end }}
