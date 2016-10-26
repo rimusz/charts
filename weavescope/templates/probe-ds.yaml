@@ -25,19 +25,19 @@ spec:
         image: "weaveworks/scope:{{ .Values.imageTag }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         args:
-        - --no-app
-{{- if (.Values.dockerBridge) }}
-        - --probe.docker.bridge=cbr0
-{{- end}}
-        - --probe.docker=true
-        - --probe.kubernetes=true
-        - --probe.weave.addr=
-{{- if (.Values.serviceToken) }}
-        - --probe.token={{.Values.serviceToken}}{{ else }}
-        - "$(WEAVE_SCOPE_APP_SERVICE_HOST):$(WEAVE_SCOPE_APP_SERVICE_PORT)"
+        - '--no-app'
+        - '--probe.docker.bridge=cbr0'
+        - '--probe.docker=true'
+        - '--probe.kubernetes=true'
+{{- if eq .Values.serviceToken "none" }}
+        - '$(WEAVE_SCOPE_APP_SERVICE_HOST):$(WEAVE_SCOPE_APP_SERVICE_PORT)'{{ else }}
+        - --probe.token={{.Values.serviceToken}}
 {{- end}}
         securityContext:
           privileged: true
+        resources:
+          limits:
+            cpu: 50m
         volumeMounts:
           - name: docker-sock
             mountPath: /var/run/docker.sock

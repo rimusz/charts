@@ -1,4 +1,4 @@
-{{- if not (empty .Values.serviceToken) }}
+{{- if eq .Values.serviceToken "none" }}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -25,10 +25,7 @@ spec:
         image: "weaveworks/scope:{{ .Values.imageTag }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         args:
-        - --no-probe
-        - --app.weave.addr=
+        - '--no-probe'
         ports:
-        - name: scope-app
-          containerPort: 4040
-          hostPort: 4040
+        - containerPort: 4040
 {{- end }}

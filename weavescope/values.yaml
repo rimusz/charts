@@ -9,11 +9,8 @@ imageTag: 0.17.1
 ##
 # imagePullPolicy:
 
-# Comment the argument below if you don't use a kubernetes-specific Docker bridge (cbr0)
-dockerBridge: true
-
 # If you have a scope.weave.works account and want to run
-# Scope in Cloud Service Mode, uncomment the argument below,
-# replacing "foo" with the Service token which you will obtain
+# Scope in Cloud Service Mode, uncomment, replacing the argument "none"
+# below with the Service token which you will obtain
 # when logging in to your scope.weave.works account:
-# serviceToken: "foo"
+serviceToken: "none"
