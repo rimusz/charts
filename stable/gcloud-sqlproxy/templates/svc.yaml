@@ -10,7 +10,7 @@ metadata:
 spec:
   ports:
   - name: sqlproxy
-    port: {{ Values.cloudsql.port }}
+    port: {{ .Values.cloudsql.port }}
     targetPort: sqlproxy
   selector:
     app: {{ .Release.Name }}
