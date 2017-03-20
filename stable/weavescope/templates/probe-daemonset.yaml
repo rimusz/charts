@@ -1,0 +1,55 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: weave-scope-agent
+  labels:
+    app: weave-scope
+    name: weave-scope-agent
+    weave-cloud-component: scope
+    weave-scope-component: agent
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  template:
+    metadata:
+      labels:
+        app: weave-scope
+        name: weave-scope-agent
+        weave-cloud-component: scope
+        weave-scope-component: agent
+    spec:
+      hostPID: true
+      hostNetwork: true
+      containers:
+        - name:  agent
+          image: "weaveworks/scope:{{ .Values.imageTag }}"
+          imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+          args:
+            - '--no-app'
+            - '--probe.docker.bridge=docker0'
+            - '--probe.docker=true'
+            - '--probe.kubernetes=true'
+            - >-
+              $(WEAVE_SCOPE_APP_SERVICE_HOST):$(WEAVE_SCOPE_APP_SERVICE_PORT)
+          securityContext:
+            privileged: true
+          resources:
+            limits:
+              cpu: "{{ .Values.cpuProbe }}"
+              memory: "{{ .Values.memoryProbe }}"
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          volumeMounts:
+            - name: docker-socket
+              mountPath: /var/run/docker.sock
+            - name: scope-plugins
+              mountPath: /var/run/scope/plugins
+      volumes:
+        - name: docker-socket
+          hostPath:
+            path: /var/run/docker.sock
+        - name: scope-plugins
+          hostPath:
+            path: /var/run/scope/plugins

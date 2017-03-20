@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: weave-scope-app
+  labels:
+    app: weave-scope
+    name: weave-scope-app
+    weave-cloud-component: scope
+    weave-scope-component: app
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  type: {{ .Values.serviceType }}
+  ports:
+    - name: app
+      port: 80
+      targetPort: 4040
+      protocol: TCP
+  selector:
+    app: weave-scope
+    name: weave-scope-app
+    weave-cloud-component: scope
+    weave-scope-component: app
