@@ -1,9 +1,10 @@
 name: weavescope
-version: 0.1.3
+version: 0.1.0
 description: Weave Scope chart
 keywords:
-- network
-home: http://weave.works/product/scope/
+- scope
+- weavescope
+home: https://www.weave.works/products/weave-scope/
 sources:
 - https://github.com/weaveworks/scope
 maintainers:
