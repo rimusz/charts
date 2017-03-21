@@ -32,17 +32,11 @@ spec:
         - name: sqlproxy
           containerPort: {{ .Values.cloudsql.port }}
         volumeMounts:
-        - name: cloudsql-oauth-credentials
-          mountPath: /secrets/cloudsql
-          readOnly: true
         - name: ssl-certs
           mountPath: /etc/ssl/certs
         - name: cloudsql
           mountPath: /cloudsql
       volumes:
-      - name: cloudsql-oauth-credentials
-        secret:
-          secretName: cloudsql-oauth-credentials
       - name: ssl-certs
         hostPath:
           path: /etc/ssl/certs
