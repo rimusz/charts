@@ -26,17 +26,22 @@ spec:
             cpu: 100m
             memory: 100Mi
         command: ["/cloud_sql_proxy", "--dir=/cloudsql",
-                  "-instances={{ .Values.cloudsql.instance }}=tcp:{{ .Values.cloudsql.port }}",
+                  "-instances={{ .Values.cloudsql.instance }}=tcp:0.0.0.0:{{ .Values.cloudsql.port }}",
                   "-credential_file=/secrets/cloudsql/credentials.json"]
         ports:
         - name: sqlproxy
           containerPort: {{ .Values.cloudsql.port }}
         volumeMounts:
+        - name: cloudsql-oauth-credentials
+          mountPath: /secrets/cloudsql
         - name: ssl-certs
           mountPath: /etc/ssl/certs
         - name: cloudsql
           mountPath: /cloudsql
       volumes:
+      - name: cloudsql-oauth-credentials
+        secret:
+          secretName: {{ .Release.Name }}
       - name: ssl-certs
         hostPath:
           path: /etc/ssl/certs
