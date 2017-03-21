@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: cloudsql-proxy
-        image: "{{ .Values.image }}:{{ .Values.imageTag }}"
+        image: "{{ .Values.image }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         resources:
           limits:

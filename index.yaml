@@ -1,7 +1,26 @@
 apiVersion: v1
 entries:
   gcloud-sqlproxy:
-  - created: 2017-03-21T09:48:12.491184205Z
+  - created: 2017-03-21T09:51:42.371813419Z
+    description: Google Cloud SQL Proxy
+    digest: 6311e82beee8e7a494d4bc07c4c164cf9b50931d571e88b5b904c15c77947cc7
+    engine: gotpl
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: Rimas Mocevicius
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://rimusz.github.io/charts/gcloud-sqlproxy-0.1.3.tgz
+    version: 0.1.3
+  - created: 2017-03-21T09:51:42.3715753Z
     description: Google Cloud SQL Proxy
     digest: e71d3f5195294db9b76931ecf48e9c9c2424cd8e146c20b83644d955bb042052
     engine: gotpl
@@ -20,7 +39,7 @@ entries:
     urls:
     - https://rimusz.github.io/charts/gcloud-sqlproxy-0.1.2.tgz
     version: 0.1.2
-  - created: 2017-03-21T09:48:12.490793092Z
+  - created: 2017-03-21T09:51:42.37131473Z
     description: Google Cloud SQL Proxy
     digest: e0e633d6ed01e44e76c6e18a6be47b1192e66c11460ed8e16ae7979f6519bb61
     engine: gotpl
@@ -39,7 +58,7 @@ entries:
     urls:
     - https://rimusz.github.io/charts/gcloud-sqlproxy-0.1.1.tgz
     version: 0.1.1
-  - created: 2017-03-21T09:48:12.490384147Z
+  - created: 2017-03-21T09:51:42.37104574Z
     description: Google Cloud SQL Proxy
     digest: ad8b2ac4ad6c0ebd9ebd892994519648e2c9747d6bc3f94755d7e07adb7ae85c
     engine: gotpl
@@ -59,7 +78,7 @@ entries:
     - https://rimusz.github.io/charts/gcloud-sqlproxy-0.1.0.tgz
     version: 0.1.0
   weavescope:
-  - created: 2017-03-21T09:48:12.491565681Z
+  - created: 2017-03-21T09:51:42.372052938Z
     description: Weave Scope chart
     digest: f1255267b56239a7236930c2e5bf0a7981684e8aacdebaa6ec844a40cbe0c112
     engine: gotpl
@@ -76,4 +95,4 @@ entries:
     urls:
     - https://rimusz.github.io/charts/weavescope-0.1.0.tgz
     version: 0.1.0
-generated: 2017-03-21T09:48:12.489875198Z
+generated: 2017-03-21T09:51:42.370519473Z
