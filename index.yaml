@@ -1,7 +1,26 @@
 apiVersion: v1
 entries:
   gcloud-sqlproxy:
-  - created: 2017-03-20T11:24:09.639732254Z
+  - created: 2017-03-21T09:15:46.177226433Z
+    description: Google Cloud SQL Proxy
+    digest: e0e633d6ed01e44e76c6e18a6be47b1192e66c11460ed8e16ae7979f6519bb61
+    engine: gotpl
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: Rimas Mocevicius
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://rimusz.github.io/charts/gcloud-sqlproxy-0.1.1.tgz
+    version: 0.1.1
+  - created: 2017-03-21T09:15:46.175777666Z
     description: Google Cloud SQL Proxy
     digest: ad8b2ac4ad6c0ebd9ebd892994519648e2c9747d6bc3f94755d7e07adb7ae85c
     engine: gotpl
@@ -21,7 +40,7 @@ entries:
     - https://rimusz.github.io/charts/gcloud-sqlproxy-0.1.0.tgz
     version: 0.1.0
   weavescope:
-  - created: 2017-03-20T11:24:09.640081764Z
+  - created: 2017-03-21T09:15:46.177565972Z
     description: Weave Scope chart
     digest: f1255267b56239a7236930c2e5bf0a7981684e8aacdebaa6ec844a40cbe0c112
     engine: gotpl
@@ -38,4 +57,4 @@ entries:
     urls:
     - https://rimusz.github.io/charts/weavescope-0.1.0.tgz
     version: 0.1.0
-generated: 2017-03-20T11:24:09.637861192Z
+generated: 2017-03-21T09:15:46.175231321Z
