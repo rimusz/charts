@@ -1,6 +1,6 @@
 ## cloudsql docker image version
 ##
-image: b.gcr.io/cloudsql-docker/gce-proxy:1.05
+image: b.gcr.io/cloudsql-docker/gce-proxy:1.08
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
