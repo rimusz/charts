@@ -15,16 +15,11 @@ spec:
         app: {{ .Release.Name }}
     spec:
       containers:
-      - name: cloudsql-proxy
+      - name: sqlproxy
         image: "{{ .Values.image }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         resources:
-          limits:
-            cpu: {{ .Values.cpu }}
-            memory: {{ .Values.memory }}
-          requests:
-            cpu: 100m
-            memory: 100Mi
+{{ toYaml .Values.resources | indent 10 }}
         command: ["/cloud_sql_proxy", "--dir=/cloudsql",
                   "-instances={{ .Values.cloudsql.instance }}=tcp:0.0.0.0:{{ .Values.cloudsql.port }}",
                   "-credential_file=/secrets/cloudsql/credentials.json"]
@@ -47,3 +42,5 @@ spec:
           path: /etc/ssl/certs
       - name: cloudsql
         emptyDir: {}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
