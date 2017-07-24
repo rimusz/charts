@@ -6,7 +6,7 @@ steps:
   id: 'gen_packages'
 
 # Fetch charts and index.yaml from GCS bucket
-- name: gcr.io/cloud-builders/gsutil
+- name: 'gcr.io/cloud-builders/gsutil'
   args: ['rsync', 'gs://helm-charts.rimusz.net, 'temp/']
   id: 'fetch_charts_index'
 
