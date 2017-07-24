@@ -1,0 +1,22 @@
+steps:
+
+# Generate Helm packages
+- name: 'ubuntu'
+  args: ['bash', './.scripts/gen_packages.sh']
+  id: 'gen_packages'
+
+# Fetch charts and index.yaml from GCS bucket
+- name: gcr.io/cloud-builders/gsutil
+  args: ['rsync', 'gs://helm-charts.rimusz.net, 'temp/']
+  id: 'fetch_charts_index'
+
+# Index repository
+- name: 'ubuntu'
+  env:
+  - 'REPO_URL=https://helm-charts.rimusz.net'
+  args: ['bash', './.scripts/index_repo.sh']
+
+# Upload charts to GCS bucket
+- name: gcr.io/cloud-builders/gsutil
+  args: ['rsync', 'temp/', 'gs://helm-charts.rimusz.net']
+  id: 'upload_charts'

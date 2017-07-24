@@ -4,7 +4,7 @@
 
 You need to add this Chart repo to Helm:
 ```console
-$ helm repo add rimusz https://rimusz.github.io/charts/
+$ helm repo add rimusz https://helm-charts.rimusz.net
 $ helm repo up
 ```
 
