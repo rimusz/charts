@@ -1,5 +1,5 @@
 name: weavescope
-version: 0.1.0
+version: 0.1.1
 description: Weave Scope chart
 keywords:
 - scope
@@ -8,6 +8,6 @@ home: https://www.weave.works/products/weave-scope/
 sources:
 - https://github.com/weaveworks/scope
 maintainers:
-- name: Rimas Mocevicius
+- name: rimusz
   email: rmocius@gmail.com
 engine: gotpl
