@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: karolisr/keel
-  tag: 0.4.0-rc.3
+  tag: 0.4.7
   pullPolicy: IfNotPresent
 
 # Service gets set only if webhook is enabled
@@ -24,7 +24,7 @@ polling:
 
 # Helm provider support
 helmProvider:
-  enabled: false
+  enabled: true
 
 # Google Container Registry
 # GCP Project ID
