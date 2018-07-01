@@ -1,9 +1,10 @@
+{{- if and .Values.serviceAccountKey (ne (index .Values.cloudsql.instances 0).instance "instance") }}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ template "gcloud-sqlproxy.fullname" . }}
   labels:
-    app: {{ .Release.Name }}
+    app: {{ template "gcloud-sqlproxy.fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -12,35 +13,46 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: {{ template "gcloud-sqlproxy.fullname" . }}
     spec:
+      {{- if .Values.rbac.create }}
+      serviceAccountName: {{ template "gcloud-sqlproxy.fullname" . }}
+      {{- end }}
       containers:
       - name: sqlproxy
-        image: "{{ .Values.image }}"
+        image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         command: ["/cloud_sql_proxy", "--dir=/cloudsql",
-                  "-instances={{ .Values.cloudsql.instance }}=tcp:0.0.0.0:{{ .Values.cloudsql.port }}",
+                  "-instances={{- range .Values.cloudsql.instances -}}
+                                {{ .project }}:{{ .region }}:{{ .instance }}=tcp:0.0.0.0:{{ .port }},
+                              {{- end }}",
                   "-credential_file=/secrets/cloudsql/credentials.json"]
         ports:
-        - name: sqlproxy
-          containerPort: {{ .Values.cloudsql.port }}
+        {{- range .Values.cloudsql.instances }}
+        - name: {{ .instanceShortName | default (.instance | trunc 15) }}
+          containerPort: {{ .port }}
+        {{- end }}
         volumeMounts:
         - name: cloudsql-oauth-credentials
           mountPath: /secrets/cloudsql
-        - name: ssl-certs
-          mountPath: /etc/ssl/certs
         - name: cloudsql
           mountPath: /cloudsql
       volumes:
       - name: cloudsql-oauth-credentials
         secret:
-          secretName: {{ .Release.Name }}
-      - name: ssl-certs
-        hostPath:
-          path: /etc/ssl/certs
+          secretName: {{ template "gcloud-sqlproxy.fullname" . }}
       - name: cloudsql
         emptyDir: {}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+{{- end }}

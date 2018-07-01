@@ -2,20 +2,13 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
-
 image:
-  repository: karolisr/keel
-  tag: 0.4.7
+  repository: keelhq/keel
+  tag: 0.9.5
   pullPolicy: IfNotPresent
 
-# Service gets set only if webhook is enabled
-service:
-  name: ui
-  type: LoadBalancer
-  externalPort: 9300
-  internalPort: 9300
-
+# Enable insecure registries
+insecure_registry: false
 
 # Polling is enabled by default,
 # you can disable it setting value below to false
@@ -25,6 +18,7 @@ polling:
 # Helm provider support
 helmProvider:
   enabled: true
+  tillerAddress: "tiller-deploy.kube-system.svc.cluster.local:44134"
 
 # Google Container Registry
 # GCP Project ID
@@ -34,26 +28,95 @@ gcr:
   pubSub:
     enabled: false
 
-# Webhook Endpoint
+# Webhook Notification
+# Remote webhook endpoint for notification delivery
 webhook:
   enabled: false
   endpoint: ""
 
-# Slack notification
+# Slack Notification
+# bot name (default keel) must exist!
 slack:
+  enabled: false
+  bot_name: ""
+  token: ""
+  channel: ""
+  approvals_channel: ""
+
+# Hipchat notification and approvals
+hipchat:
   enabled: false
   token: ""
   channel: ""
+  approvals_channel: ""
+  bot_name: ""
+  user_name: ""
+  password: ""
+
+mattermost:
+  enabled: false
+  endpoint: ""
+
+# Keel service
+# Enable to receive webhooks from Docker registries
+service:
+  enabled: false
+  type: LoadBalancer
+  externalPort: 9300
+  clusterIP: ""
+
+# Webhook Relay service
+# If you don’t want to expose your Keel service, you can use https://webhookrelay.com/
+# which can deliver webhooks to your internal Keel service through Keel sidecar container.
+webhookRelay:
+  enabled: false
+  bucket: ""
+  # webhookrelay.com credentials
+  # Set the key and secret values here to create the keel-webhookrelay secret with this
+  # chart -or- leave key and secret blank and create the keel-webhookrelay secret separately.
+  key: ""
+  secret: ""
+  # webhookrelay docker image
+  image:
+    repository: webhookrelay/webhookrelayd
+    tag: 0.6.3
+    pullPolicy: IfNotPresent
+
+# Keel self-update
+# uncomment lines below if you want Keel to automaticly
+# self-update to the latest release version
+keel:
+  # keel policy (all/major/minor/patch/force)
+  policy: all
+  # trigger type, defaults to events such as pubsub, webhooks
+  trigger: poll
+  # polling schedule
+  pollSchedule: "@every 3m"
+  # images to track and update
+  images:
+   - repository: image.repository
+     tag: image.tag
+
+# RBAC manifests management
+rbac:
+  enabled: false
 
 # Resources
-resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #  cpu: 100m
-  #  memory: 128Mi
-  #requests:
-  #  cpu: 100m
-  #  memory: 128Mi
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+# NodeSelector
+nodeSelector: {}
+
+# base64 encoded json of GCP service account
+# more info available here: https://cloud.google.com/kubernetes-engine/docs/tutorials/authenticating-to-cloud-platform
+# e.g. --set googleApplicationCredentials=$(cat <JSON_KEY_FIEL> | base64)
+# googleApplicationCredentials: ""
+
+# Enable DEBUG logging
+debug: false

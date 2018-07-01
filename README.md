@@ -3,6 +3,7 @@
 ###
 
 You need to add this Chart repo to Helm:
+
 ```console
 $ helm repo add rimusz https://helm-charts.rimusz.net
 $ helm repo up
@@ -12,7 +13,8 @@ $ helm repo up
 
 Then you can install charts as simple as:
 
-Let's install weavescope chart:
-```
-$ helm install rimusz/weavescope
+Let's install `keel` chart:
+
+``` console
+$ helm install rimusz/keel
 ```

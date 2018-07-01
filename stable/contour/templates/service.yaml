@@ -1,0 +1,33 @@
+{{- if contains "LoadBalancer" .Values.service.type }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "contour.fullname" . }}
+  namespace: heptio-contour
+  labels:
+    app: {{ template "contour.name" . }}
+    chart: {{ template "contour.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    {{- with .Values.service.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+    {{- end }}
+spec:
+  type: LoadBalancer
+{{- if .Values.service.loadBalancerIP }}
+  loadBalancerIP: "{{ .Values.service.loadBalancerIP }}"
+{{- end }}
+  ports:
+   - port: 80
+     name: http
+     protocol: TCP
+     targetPort: 80
+   - port: 443
+     name: https
+     protocol: TCP
+     targetPort: 443
+  selector:
+    app: {{ template "contour.name" . }}
+    release: {{ .Release.Name }}
+{{- end }}
