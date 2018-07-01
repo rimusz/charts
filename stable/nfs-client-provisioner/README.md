@@ -30,6 +30,47 @@ The command deploys nfs-client-provisioner on the Kubernetes cluster in the defa
 configuration. The [configuration](#configuration) section lists the parameters
 that can be configured during installation.
 
+## Testing the Chart
+
+Now we'll test your NFS provisioner.
+
+Deploy:
+
+```console
+$ kubectl create -f test/test-claim.yaml -f test/test-pod.yaml
+```
+
+Now check in PVC folder on your NFS Server for the file `SUCCESS`.
+
+Delete:
+
+```console
+kubectl delete -f test/test-pod.yaml -f test/test-claim.yaml
+```
+
+Now check that PVC folder got renamed to `archived-???`.
+
+## Deploying your own PersistentVolumeClaim
+
+To deploy your own PVC, make sure that you have the correct `storage-class` as indicated by your `values.yaml` file.
+
+For example:
+
+```yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: test-claim
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Mi
+```
+
 ## Uninstalling the Chart
 
 To uninstall/delete the `nfs` deployment:
