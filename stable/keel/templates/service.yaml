@@ -1,22 +1,27 @@
-{{- if .Values.webhook.enabled }}
+{{- if .Values.service.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "name" . }}
-  namespace: kube-system
+  name: {{ template "keel.name" . }}
+  namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ template "name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    app: {{ template "keel.name" . }}
+    chart: {{ template "keel.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
   type: {{ .Values.service.type }}
+  {{- if .Values.service.clusterIP }}
+  clusterIP: {{ .Values.service.clusterIP | quote  }}
+  {{- end }}
   ports:
     - port: {{ .Values.service.externalPort }}
-      targetPort: {{ .Values.service.internalPort }}
+  {{- if or (ne .Values.service.type "ClusterIP") (ne .Values.service.clusterIP "None") }}
+      targetPort: 9300
+  {{- end }}
       protocol: TCP
-      name: {{ .Values.service.name }}
+      name: keel
   selector:
-    app: {{ template "name" . }}
+    app: {{ template "keel.name" . }}
   sessionAffinity: None
 {{- end }}

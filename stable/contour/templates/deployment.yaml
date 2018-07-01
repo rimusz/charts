@@ -1,0 +1,84 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "contour.fullname" . }}
+  namespace: heptio-contour
+  labels:
+    app: {{ template "contour.name" . }}
+    chart: {{ template "contour.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "contour.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "contour.name" . }}
+        release: {{ .Release.Name }}
+    {{- with .Values.annotations }}
+      annotations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    spec:
+      containers:
+      - image: "{{ .Values.envoy.image.repository }}:{{ .Values.envoy.image.tag }}"
+        imagePullPolicy: {{ .Values.envoy.image.pullPolicy }}
+        name: envoy
+        ports:
+        - containerPort: 8080
+{{- if contains "HostPort" .Values.service.type }}
+          hostPort: 80
+{{- end }}
+          name: http
+        - containerPort: 8443
+{{- if contains "HostPort" .Values.service.type }}
+          hostPort: 443
+{{- end }}
+          name: https
+        command: ["envoy"]
+        args: ["-c", "/config/contour.yaml", "--service-cluster", "cluster0", "--service-node", "node0", "-l", "info", "--v2-config-only"]
+        volumeMounts:
+        - name: contour-config
+          mountPath: /config
+      - image: "{{ .Values.contour.image.repository }}:{{ .Values.contour.image.tag }}"
+        imagePullPolicy: {{ .Values.contour.image.pullPolicy }}
+        name: contour
+        command: ["contour"]
+        args: ["serve", "--incluster"]
+      initContainers:
+      - image: "{{ .Values.contour.image.repository }}:{{ .Values.contour.image.tag }}"
+        imagePullPolicy: {{ .Values.contour.image.pullPolicy }}
+        name: envoy-initconfig
+        command: ["contour"]
+        args: ["bootstrap", "/config/contour.yaml"]
+        volumeMounts:
+        - name: contour-config
+          mountPath: /config
+      volumes:
+      - name: contour-config
+        emptyDir: {}
+      dnsPolicy: ClusterFirst
+      serviceAccountName: {{ template "contour.fullname" . }}
+      terminationGracePeriodSeconds: 30
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - {{ template "contour.name" . }}
+            topologyKey: "kubernetes.io/hostname"
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}

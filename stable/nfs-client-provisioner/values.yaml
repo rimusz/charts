@@ -1,0 +1,49 @@
+# Default values for nfs-client-provisioner.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+## Deployment replica count
+replicaCount: 1
+
+## docker image
+image:
+  repository: quay.io/external_storage/nfs-client-provisioner
+  tag: v2.1.1-k8s1.10
+  pullPolicy: IfNotPresent
+
+## Cloud Filestore instance
+nfs:
+  ## Set IP address
+  server: ""
+  ## Set file share name
+  path: "/vol1"
+
+## For creating the StorageClass automatically:
+storageClass:
+  create: true
+
+  ## Set a StorageClass name
+  name: nfs
+
+## For RBAC support:
+rbac:
+  create: false
+
+  ## Ignored if rbac.create is true
+  ##
+  serviceAccountName: default
+
+##
+resources: {}
+  #limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  #requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

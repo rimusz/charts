@@ -1,0 +1,36 @@
+The NFS Client Provisioner deployment has now been installed.
+
+{{- if not .Values.nfs.server }}
+##############################################################################
+####   ERROR: You did not provide NFS server IP.                          ####
+##############################################################################
+
+All pods do not go to the running state if the NFS server IP was not provided.
+
+{{- end }}
+
+{{ if .Values.storageClass.create -}}
+A storage class named '{{ .Values.storageClass.name }}' has now been created
+and is available to provision dynamic volumes.
+
+You can use this storageclass by creating a `PersistentVolumeClaim` with the
+correct storageClassName attribute. For example:
+
+    ---
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: test-claim
+      annotations:
+        volume.beta.kubernetes.io/storage-class: "{{ .Values.storageClass.name }}"
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 5Mi
+
+{{ else -}}
+A storage class has NOT been created. You may create a custom `StorageClass`
+resource with a `provisioner` annotation of `{{ template "nfs-client-provisioner.provisionerName" . }}`.
+{{ end -}}
