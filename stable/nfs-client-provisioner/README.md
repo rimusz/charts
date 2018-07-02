@@ -1,10 +1,7 @@
 # NFS Client Provisioner
 
 [NFS Client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client)
-is an automatic provisioner that uses your already configured NFS server, to automatically create Persistent Volumes.
-
-This chart will deploy the Kubernetes [external-storage projects](https://github.com/kubernetes-incubator/external-storage)
-`nfs-client` provisioner. This provisioner is intended for connecting to a pre-existing NFS server to able to create/delete PVCs.
+is an automatic provisioner that uses your already configured NFS server to automatically create Persistent Volumes.
 
 ## TL;DR;
 
