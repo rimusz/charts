@@ -2,13 +2,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: {{ template "keel.fullname" . }}
+  name: {{ template "contour.fullname" . }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ template "keel.name" . }}
+  name: {{ template "contour.name" . }}
 subjects:
   - kind: ServiceAccount
-    name: {{ template "keel.name" . }}
-    namespace: {{ .Release.Namespace }}
+    name: {{ template "contour.name" . }}
+    namespace: {{ .Values.namespace }}
 {{ end }}

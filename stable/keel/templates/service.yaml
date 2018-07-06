@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "keel.name" . }}
+  name: {{ template "keel.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
     app: {{ template "keel.name" . }}

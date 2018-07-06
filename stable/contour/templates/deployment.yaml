@@ -2,7 +2,7 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: {{ template "contour.fullname" . }}
-  namespace: heptio-contour
+  namespace: {{ .Values.namespace }}
   labels:
     app: {{ template "contour.name" . }}
     chart: {{ template "contour.chart" . }}
@@ -44,7 +44,8 @@ spec:
         volumeMounts:
         - name: contour-config
           mountPath: /config
-      - image: "{{ .Values.contour.image.repository }}:{{ .Values.contour.image.tag }}"
+      # Note that by default we use appVersion to get images tag.
+      - image: "{{ .Values.contour.image.repository }}:{{ default .Chart.AppVersion .Values.contour.image.tag }}"
         imagePullPolicy: {{ .Values.contour.image.pullPolicy }}
         name: contour
         command: ["contour"]
@@ -68,6 +69,8 @@ spec:
       nodeSelector:
 {{ toYaml . | indent 8 }}
     {{- end }}
+      # The affinity stanza below tells Kubernetes to try hard not to place 2 of
+      # these pods on the same node.
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:

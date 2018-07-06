@@ -1,6 +1,6 @@
-1. The {{ template "keel.name" . }} is getting provisioned in your cluster. After a few minutes, you can run the following to verify.
+1. The {{ template "keel.fullname" . }} is getting provisioned in your cluster. After a few minutes, you can run the following to verify.
 
-To verify that {{ template "keel.name" . }} has started, run:
+To verify that {{ template "keel.fullname" . }} has started, run:
 
   kubectl --namespace={{ .Release.Namespace }} get pods -l "app={{ template "keel.name" . }}"
 
