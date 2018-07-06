@@ -1,0 +1,33 @@
+1. The {{ template "contour.fullname" . }} is getting provisioned in your cluster. After a few minutes, you can run the following to verify.
+
+To verify that {{ template "contour.fullname" . }} has started, run:
+
+  kubectl --namespace={{ .Values.namespace }} get pods -l "app={{ template "contour.name" . }}"
+
+{{- if .Values.service.enabled }}
+
+2. Get your contour service URL:
+
+{{- if contains "LoadBalancer" .Values.service.type }}
+
+  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+        Watch the status with: 'kubectl get svc --namespace {{ .Values.namespace }} -w {{ template "contour.name" . }}'
+
+  export SERVICE_IP=$(kubectl get svc --namespace {{ .Values.namespace }}  {{ template "contour.name" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+  echo http://$SERVICE_IP:{{ .Values.service.externalPort }}
+
+{{- else if contains "ClusterIP"  .Values.service.type }}
+
+  export POD_NAME=$(kubectl get pods --namespace {{ .Values.namespace }}  -l "app={{ template "contour.name" . }}" -o jsonpath="{.items[0].metadata.name}")
+  echo http://127.0.0.1:{{ .Values.service.externalPort }}
+  kubectl port-forward --namespace {{ .Values.namespace }} $POD_NAME {{ .Values.service.externalPort }}:{{ .Values.service.externalPort }}
+
+{{- else if contains "NodePort" .Values.service.type }}
+
+  export NODE_PORT=$(kubectl get --namespace {{ .Values.namespace }}  -o jsonpath="{.spec.ports[0].nodePort}" services {{ template "contour.name" . }})
+  export NODE_IP=$(kubectl get nodes --namespace {{ .Values.namespace }}  -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT/
+
+{{- end }}
+
+{{- end }}

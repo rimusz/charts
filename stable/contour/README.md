@@ -15,7 +15,7 @@ To install the chart with the release name `contour`:
 $ helm install --name contour rimusz/contour
 ```
 
-By default `contour` uses `HostPort` to expose ports 80/443. You can change to use `LoadBalancer` via `-set` or in `values.yaml`
+By default `contour` uses `HostPort` to expose ports 80/443. You can change to use `LoadBalancer` via `--set` or in `values.yaml`
 
 > **Tip**: List all releases using `helm list`
 
@@ -25,7 +25,8 @@ You can check `contour` configurable parameters in [values.yaml](values.yaml) fi
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 
-Alternatively, a YAML file that specifies the values for the configurable parameters can be provided while installing the chart. For example,
+Alternatively, a YAML file that specifies the values for the configurable parameters can be provided while installing the chart.
+For example:
 
 ```console
 $ helm install --name contour -f values.yaml .
