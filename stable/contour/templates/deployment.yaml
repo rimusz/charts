@@ -51,7 +51,7 @@ spec:
         command: ["contour"]
         args: ["serve", "--incluster"]
       initContainers:
-      - image: "{{ .Values.contour.image.repository }}:{{ .Values.contour.image.tag }}"
+      - image: "{{ .Values.contour.image.repository }}:{{ default .Chart.AppVersion .Values.contour.image.tag }}"
         imagePullPolicy: {{ .Values.contour.image.pullPolicy }}
         name: envoy-initconfig
         command: ["contour"]
