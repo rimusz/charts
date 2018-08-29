@@ -25,6 +25,9 @@ storageClass:
   ## Set a StorageClass name
   name: nfs
 
+  ## Set reclaim policy for PV
+  reclaimPolicy: Delete
+
 ## For RBAC support:
 rbac:
   create: false
