@@ -9,4 +9,5 @@ metadata:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
 provisioner: {{ template "nfs-client-provisioner.provisionerName" . }}
+reclaimPolicy: {{.Values.storageClass.reclaimPolicy}}
 {{ end -}}

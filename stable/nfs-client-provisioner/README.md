@@ -93,6 +93,7 @@ their default values.
 | `nfs.path`                     | NFS server share path                                                             | `/vol1`                                               |
 | `storageClass.create`          | Enable creation of a StorageClass to consume this nfs-client-provisioner instance | `true`                                                |
 | `storageClass.name`            | The name to assign the created StorageClass                                       | `nfs`                                                 |
+| `storageClass.reclaimPolicy`   | Set the reclaimPolicy for PV within StorageClass                                  | `Delete`                                              |
 | `rbac.create`                  | Enable RABC                                                                       | `false`                                               |
 | `rbac.serviceAccountName`      | Service account name                                                              | `default`                                             |
 | `resources`                    | Resource limits for nfs-client-provisioner pod                                    | `{}`                                                  |
