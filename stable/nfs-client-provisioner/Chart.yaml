@@ -13,4 +13,4 @@ maintainers:
 name: nfs-client-provisioner
 sources:
 - https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client
-version: 0.1.2
+version: 0.1.3
