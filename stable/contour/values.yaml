@@ -8,7 +8,7 @@ contour:
   image:
     repository: gcr.io/heptio-images/contour
     # Note that by default we use appVersion to get images tag
-    # tag: v0.5.0
+    # tag: v0.6.1
     pullPolicy: Always
 
 envoy:
@@ -28,6 +28,16 @@ service:
   loadBalancerIP: ""
   # Contour specific Service annotations
   annotations: {}
+  # This annotation puts the AWS ELB into "TCP" mode so that it does not
+  # do HTTP negotiation for HTTPS connections at the ELB edge.
+  # The downside of this is the remote IP address of all connections will
+  # appear to be the internal address of the ELB. See docs/proxy-proto.md
+  # for information about enabling the PROXY protocol on the ELB to recover
+  # the original remote IP address.
+  # service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+
+ingressRoutes:
+  enabled: false
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -46,7 +56,7 @@ namespace: heptio-contour
 
 # RBAC manifests management
 rbac:
-  enabled: false
+  enabled: true
 
 nodeSelector: {}
 

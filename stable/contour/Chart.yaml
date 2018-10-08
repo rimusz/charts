@@ -1,9 +1,8 @@
 apiVersion: v1
 description: A Helm chart for Contour
 name: contour
-version: 0.1.8
-
-appVersion: v0.5.0
+version: 0.2.0
+appVersion: v0.6.1
 sources:
 - https://github.com/heptio/contour/tree/master/deployment
 home: https://github.com/heptio/contour

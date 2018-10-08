@@ -22,11 +22,11 @@ spec:
    - port: 80
      name: http
      protocol: TCP
-     targetPort: 80
+     targetPort: 8080
    - port: 443
      name: https
      protocol: TCP
-     targetPort: 443
+     targetPort: 8443
   selector:
     app: {{ template "contour.name" . }}
     release: {{ .Release.Name }}
