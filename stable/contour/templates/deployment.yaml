@@ -25,31 +25,30 @@ spec:
     {{- end }}
     spec:
       containers:
-      - image: "{{ .Values.envoy.image.repository }}:{{ .Values.envoy.image.tag }}"
-        imagePullPolicy: {{ .Values.envoy.image.pullPolicy }}
-        name: envoy
-        ports:
-        - containerPort: 8080
-{{- if contains "HostPort" .Values.service.type }}
-          hostPort: 80
-{{- end }}
-          name: http
-        - containerPort: 8443
-{{- if contains "HostPort" .Values.service.type }}
-          hostPort: 443
-{{- end }}
-          name: https
-        command: ["envoy"]
-        args: ["-c", "/config/contour.yaml", "--service-cluster", "cluster0", "--service-node", "node0", "-l", "info", "--v2-config-only"]
-        volumeMounts:
-        - name: contour-config
-          mountPath: /config
       # Note that by default we use appVersion to get images tag.
       - image: "{{ .Values.contour.image.repository }}:{{ default .Chart.AppVersion .Values.contour.image.tag }}"
         imagePullPolicy: {{ .Values.contour.image.pullPolicy }}
         name: contour
         command: ["contour"]
         args: ["serve", "--incluster"]
+      - image: "{{ .Values.envoy.image.repository }}:{{ .Values.envoy.image.tag }}"
+        imagePullPolicy: {{ .Values.envoy.image.pullPolicy }}
+        name: envoy
+        ports:
+        - containerPort: 8080
+          name: http
+        - containerPort: 8443
+          name: https
+        command: ["envoy"]
+        args:
+        - --config-path /config/contour.yaml
+        - --service-cluster cluster0
+        - --service-node node0
+        - --log-level info
+        - --v2-config-only
+        volumeMounts:
+        - name: contour-config
+          mountPath: /config
       initContainers:
       - image: "{{ .Values.contour.image.repository }}:{{ default .Chart.AppVersion .Values.contour.image.tag }}"
         imagePullPolicy: {{ .Values.contour.image.pullPolicy }}
