@@ -1,4 +1,4 @@
 
 .PHONY: publish
 publish:
-	./.scripts/repo_sync.sh
+	./.scripts/repo-sync.sh
