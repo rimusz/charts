@@ -11,7 +11,7 @@ helm init -c
 
 echo "Indexing repository"
 if [ -f index.yaml ]; then
-  helm repo index --url ${REPO_URL} --merge index.yaml ./temp
+  helm repo index --url "${REPO_URL}" --merge index.yaml ./temp
 else
-  helm repo index --url ${REPO_URL} ./temp
+  helm repo index --url "${REPO_URL}" ./temp
 fi
