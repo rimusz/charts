@@ -2,7 +2,7 @@
 set -e
 
 # the repo path to this repository
-REPO_URL="https://charts.rimusz.net"
+REPO_URL="https://helm-charts.rimusz.net"
 
 function gen_packages() {
   echo "Packaging charts from source code"

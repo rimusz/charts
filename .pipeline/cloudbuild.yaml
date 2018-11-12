@@ -7,16 +7,16 @@ steps:
 
 # Fetch charts and index.yaml from GCS bucket
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['rsync', 'gs://charts.rimusz.net', 'temp/']
+  args: ['rsync', 'gs://helm-charts.rimusz.net', 'temp/']
   id: 'fetch_charts_index'
 
 # Index repository
 - name: 'ubuntu'
   env:
-  - 'REPO_URL=https://charts.rimusz.net'
+  - 'REPO_URL=https://helm-charts.rimusz.net'
   args: ['bash', './.scripts/index_repo.sh']
 
 # Upload charts to GCS bucket
 - name: gcr.io/cloud-builders/gsutil
-  args: ['rsync', 'temp/', 'gs://charts.rimusz.net']
+  args: ['rsync', 'temp/', 'gs://helm-charts.rimusz.net']
   id: 'upload_charts'

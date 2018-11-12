@@ -17,7 +17,7 @@ jobs:
       name: "Lint charts"
       env:
         - CHART_TESTING_TAG="v2.0.0"
-        - CHARTS_REPO="https://charts.rimusz.net"
+        - CHARTS_REPO="https://helm-charts.rimusz.net"
       script:
         - ./test/lint-charts.sh
 
