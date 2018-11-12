@@ -2,7 +2,7 @@
 set -e
 
 # the repo path to this repository
-REPO_URL="https://helm-charts.rimusz.net"
+REPO_URL="https://charts.rimusz.net"
 
 function gen_packages() {
   echo "Packaging charts from source code"
@@ -12,8 +12,9 @@ function gen_packages() {
    if [[ -d $d ]]
    then
       # Will generate a helm package per chart in a folder
-      echo $d
-      helm package $d
+      echo "$d"
+      helm package "$d"
+      # shellcheck disable=SC2035
       mv *.tgz temp/
     fi
   done
@@ -21,7 +22,7 @@ function gen_packages() {
 
 function index() {
   echo "Fetch charts and index.yaml"
-  gsutil rsync gs://helm-charts.rimusz.net ./temp/
+  gsutil rsync gs://charts.rimusz.net ./temp/
 
   echo "Indexing repository"
   if [ -f index.yaml ]; then
@@ -33,7 +34,7 @@ function index() {
 
 function upload() {
   echo "Upload charts to GCS bucket"
-  gsutil rsync ./temp/ gs://helm-charts.rimusz.net
+  gsutil rsync ./temp/ gs://charts.rimusz.net
 }
 
 # generate helm chart packages

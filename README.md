@@ -1,20 +1,36 @@
-# Helm charts repository
+# Rimusz Helm Charts Repository
 
-###
+The official Rimusz [Helm](https://helm.sh) Charts repository.
 
-You need to add this Chart repo to Helm:
+## Getting Started
+
+### Install Helm
+
+Get the latest [Helm release](https://github.com/kubernetes/helm#install).
+
+### Add Helm chart repository to Helm:
+
+ ```console
+ $ helm repo add rimusz https://charts.rimusz.net
+ $ helm repo update
+ ```
+
+**Note:** Repo name was changed from `https://helm-charts.rimusz.net` to `https://charts.rimusz.net`
+
+### Install some chart
+
+To install the Keel chart with the release name `keel`:
 
 ```console
-$ helm repo add rimusz https://helm-charts.rimusz.net
-$ helm repo up
+$ helm upgrade --install keel rimusz/keel
 ```
 
-###
+Check Keel chart [readme](stable/keel/README.md) for more customisation options.
 
-Then you can install charts as simple as:
+## Contributing to Rimusz Charts
 
-Let's install `keel` chart:
+Fork the `repo`, make changes and test it by installing the chart to see it is working. :)
 
-``` console
-$ helm install rimusz/keel
-```
+On success make a [pull request](https://help.github.com/articles/using-pull-requests) (PR).
+
+Upon successful review, someone will give the PR a __LGTM__ in the review thread.
