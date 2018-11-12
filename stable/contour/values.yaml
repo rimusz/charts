@@ -8,13 +8,13 @@ contour:
   image:
     repository: gcr.io/heptio-images/contour
     # Note that by default we use appVersion to get images tag
-    # tag: v0.6.1
+    # tag: 
     pullPolicy: Always
 
 envoy:
   image:
     repository: docker.io/envoyproxy/envoy-alpine
-    tag: v1.6.0
+    tag: v1.7.0
     pullPolicy: IfNotPresent
 # Contour specific Deployment annotations
 annotations:

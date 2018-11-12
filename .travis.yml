@@ -1,0 +1,26 @@
+sudo: required
+dist: trusty
+
+services:
+  - docker
+branches:
+    only:
+      - master
+
+jobs:
+  include:
+    - stage: lint-scripts
+      name: "Lint shell scripts"
+      script:
+        - ./test/lint-scripts.sh
+    - stage: charts-linting
+      name: "Lint charts"
+      env:
+        - CHART_TESTING_TAG="v2.0.0"
+        - CHARTS_REPO="https://charts.rimusz.net"
+      script:
+        - ./test/lint-charts.sh
+
+stages:
+  - lint-scripts
+  - charts-linting

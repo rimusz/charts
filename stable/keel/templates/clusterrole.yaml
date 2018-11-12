@@ -2,7 +2,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: {{ template "keel.fullname" . }}
+  name: {{ template "keel.name" . }}
 rules:
   - apiGroups:
       - ""
@@ -23,6 +23,7 @@ rules:
       - ""
       - extensions
       - apps
+      - batch
     resources:
       - pods
       - replicasets
@@ -31,6 +32,7 @@ rules:
       - deployments
       - daemonsets
       - jobs
+      - cronjobs
     verbs:
       - get
       - delete # required to delete pods during force upgrade of the same tag

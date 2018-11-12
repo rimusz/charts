@@ -27,7 +27,7 @@ Keel provides several key features:
 Docker image _polling_, _Kubernetes provider_ and _Helm provider_ support are set by default, then Kubernetes _deployments_ can be upgraded when new Docker image is available:
 
 ```console
-helm upgrade --install keel rimusz/keel
+$ helm upgrade --install keel --namespace keel rimusz/keel
 ```
 
 ### Setting up Helm release to be automatically updated by Keel
@@ -50,8 +50,8 @@ keel:
 
 The same can be applied with `--set` flag without using `values.yaml` file:
 
-```
-helm upgrade --install whd webhookdemo --reuse-values \
+```console
+$ helm upgrade --install whd webhookdemo --namespace keel --reuse-values \
   --set keel.policy="all",keel.trigger="poll",keel.pollSchedule="@every 3m" \
   --set keel.images[0].repository="image.repository" \
   --set keel.images[0].tag="image.tag"
@@ -80,15 +80,20 @@ The following table lists has the main configurable parameters (polling, trigger
 | Parameter                         | Description                            | Default                                                   |
 | --------------------------------- | -------------------------------------- | --------------------------------------------------------- |
 | `polling.enabled`                 | Docker registries polling              | `true`                                                    |
-| `helmProvider.enabled`            | Enable/disable Helm provider           | `true`                                                   |
+| `helmProvider.enabled`            | Enable/disable Helm provider           | `true`                                                    |
 | `gcr.enabled`                     | Enable/disable GCR Registry            | `false`                                                   |
 | `gcr.projectID`                   | GCP Project ID GCR belongs to          |                                                           |
 | `gcr.pubsub.enabled`              | Enable/disable GCP Pub/Sub trigger     | `false`                                                   |
+| `ecr.enabled`                     | Enable/disable AWS ECR Registry        | `false`                                                   |
+| `ecr.accessKeyId`                 | AWS_ACCESS_KEY_ID for ECR Registry     |                                                           |
+| `ecr.secretAccessKey`             | AWS_SECRET_ACCESS_KEY for ECR Registry |                                                           |
+| `ecr.region`                      | AWS_REGION for ECR Registry            |                                                           |
 | `webhook.enabled`                 | Enable/disable Webhook Notification    | `false`                                                   |
 | `webhook.endpoint`                | Remote webhook endpoint                |                                                           |
 | `slack.enabled`                   | Enable/disable Slack Notification      | `false`                                                   |
 | `slack.token`                     | Slack token                            |                                                           |
 | `slack.channel`                   | Slack channel                          |                                                           |
+| `slack.approvalsChannel`          | Slack channel for approvals            |                                                           |
 | `service.enable`                  | Enable/disable Keel service            | `false`                                                   |
 | `service.type`                    | Keel service type                      | `LoadBalancer`                                            |
 | `service.externalPort`            | Keel service port                      | `9300`                                                    |
@@ -100,17 +105,18 @@ The following table lists has the main configurable parameters (polling, trigger
 | `hipchat.enabled`                 | Enable/disable hipchat integration     | `false`                                                   |
 | `hipchat.token`                   | Hipchat token                          |                                                           |
 | `hipchat.channel`                 | Hipchat channel                        |                                                           |
-| `hipchat.approvals_channel`       | Hipchat channel for approvals          |                                                           |
-| `hipchat.bot_name`                | Name of the Hipchat bot                |                                                           |
-| `hipchat.user_name`               | Hipchat username in Jabber format      |                                                           |
+| `hipchat.approvalsChannel`        | Hipchat channel for approvals          |                                                           |
+| `hipchat.botName`                 | Name of the Hipchat bot                |                                                           |
+| `hipchat.userName`                | Hipchat username in Jabber format      |                                                           |
 | `hipchat.password`                | Hipchat password for approvals user    |                                                           |
 | `googleApplicationCredentials`    | GCP Service account key configurable   |                                                           |
+| `notificationLevel`               | Keel notification level                | `info`                                                    |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install --name keel -f values.yaml rimusz/keel
+$ helm install --name keel --namespace keel -f values.yaml rimusz/keel
 ```
 > **Tip**: You can use the default [values.yaml](values.yaml)
