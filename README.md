@@ -1,4 +1,4 @@
-# Rimusz Helm Charts Repository
+# Helm Charts Repository
 
 The official Rimusz [Helm](https://helm.sh) Charts repository.
 
