@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  lint-scripts:
+    docker:
+      - image: koalaman/shellcheck-alpine
+    steps:
+      - checkout
+      - run:
+          name: lint
+          command: |
+            shellcheck -x .scripts/repo-sync.sh
+            shellcheck -x .scripts/gen_packages.sh
+            shellcheck -x .scripts/index_repo.sh
+  lint-charts:
+    docker:
+      - image: gcr.io/kubernetes-charts-ci/test-image:v3.0.1
+    steps:
+      - checkout
+      - run:
+          name: lint
+          command: |
+            git remote add k8s https://github.com/rimusz/charts
+            git fetch k8s master
+            ct lint --config test/ct.yaml
+
+workflows:
+  version: 2
+  lint:
+    jobs:
+      - lint-scripts
+      - lint-charts

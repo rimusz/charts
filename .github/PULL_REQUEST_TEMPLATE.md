@@ -1,5 +1,5 @@
 <!--
-Thank you for contributing to buildkite/charts. Before you submit this PR we'd like to
+Thank you for contributing to rimusz/charts. Before you submit this PR we'd like to
 make sure you are aware of our technical requirements and best practices:
 
 * https://github.com/helm/charts/blob/master/CONTRIBUTING.md#technical-requirements
