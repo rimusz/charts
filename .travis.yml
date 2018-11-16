@@ -16,7 +16,7 @@ jobs:
     - stage: charts-linting
       name: "Lint charts"
       env:
-        - CHART_TESTING_TAG="v2.0.0"
+        - CHART_TESTING_TAG="v2.0.1"
         - CHARTS_REPO="https://github.com/rimusz/charts"
       script:
         - ./test/lint-charts.sh
