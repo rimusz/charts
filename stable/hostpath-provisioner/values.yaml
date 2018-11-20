@@ -1,0 +1,38 @@
+# Default values for hostpath-provisioner.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+strategyType: Recreate
+
+image:
+  repository: quay.io/rimusz/hostpath-provisioner
+  # Note that by default we use appVersion to get image tag
+  # tag:
+  pullPolicy: IfNotPresent
+
+## For creating the StorageClass automatically:
+storageClass:
+  create: true
+
+  ## Set StorageClass as the default StorageClass
+  ## Ignored if storageClass.create is false
+  defaultClass: true
+
+  ## Set a StorageClass name
+  name: hostpath
+
+  ## Set reclaim policy for PV
+  reclaimPolicy: Delete
+
+rbac:
+  create: true
+  ## Ignored if rbac.create is true
+  serviceAccountName: default
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
