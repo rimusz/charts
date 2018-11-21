@@ -21,9 +21,6 @@ storageClass:
   ## Set a StorageClass name
   name: hostpath
 
-  ## Set reclaim policy for PV
-  reclaimPolicy: Delete
-
 rbac:
   create: true
   ## Ignored if rbac.create is true
