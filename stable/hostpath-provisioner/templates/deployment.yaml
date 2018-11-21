@@ -31,10 +31,6 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: spec.nodeName
-            - name: PV_DIR
-              value: /mnt/hostpath
-            - name: PV_RECLAIM_POLICY
-              value: {{ .Values.storageClass.reclaimPolicy }}
           volumeMounts:
             - name: pv-volume
               mountPath: /mnt/hostpath

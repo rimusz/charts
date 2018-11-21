@@ -1,7 +1,7 @@
 # Hostpath Provisioner
 
-This chart bootstraps a [hostpath-provisioner](https://github.com/MaZderMind/hostpath-provisioner) deployment on a [Kubernetes](http://kubernetes.io),
-which dynamically provisions Kubernetes HostPath Volumes, which is particularly  handy to use on [kind](https://github.com/kubernetes-sigs/kind).
+This chart bootstraps a [hostpath-provisioner](https://github.com/rimusz/hostpath-provisioner) deployment on a [Kubernetes](http://kubernetes.io),
+which dynamically provisions Kubernetes HostPath Volumes, it is particularly handy to use on single-node Kubernetes cluster as [kind](https://github.com/kubernetes-sigs/kind).
 
 ## Installing the Chart
 
@@ -54,18 +54,17 @@ deletes the release.
 
 ## Configuration
 
-The following table lists the configurable parameters of the kibana chart and
-their default values.
+The following table lists the configurable parameters of the `hostpath-provisioner` chart and their default values.
 
 | Parameter                      | Description                                                                       | Default                               |
 |:-------------------------------|:----------------------------------------------------------------------------------|:--------------------------------------|
 | `strategyType`                 | Pod recreation type                                                               | `Recreate`                            |
 | `image.repository`             | The image repository to pull from                                                 | `quay.io/rimusz/hostpath-provisioner` |
-| `image.tag`                    | The image tag to pull from                                                        | ``                                    |
+| `image.tag`                    | The image tag to use                                                              | ``                                    |
 | `image.pullPolicy`             | Image pull policy                                                                 | `IfNotPresent`                        |
 | `storageClass.create`          | Enable creation of a StorageClass to consume this hostpath-provisioner instance   | `true`                                |
+| `storageClass.defaultClass`    | Enable as default storage class                                                   | `true`                                |
 | `storageClass.name`            | The name to assign the created StorageClass                                       | `hostpath`                            |
-| `storageClass.reclaimPolicy`   | Set the reclaimPolicy for PV within StorageClass                                  | `Delete`                              |
 | `rbac.create`                  | Enable RABC                                                                       | `true`                                |
 | `rbac.serviceAccountName`      | Service account name                                                              | `default`                             |
 | `resources`                    | Resource limits for hostpath-provisioner pod                                      | `{}`                                  |
