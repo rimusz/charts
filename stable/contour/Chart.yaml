@@ -1,9 +1,10 @@
 apiVersion: v1
-description: A Helm chart for Heptio Contour
 name: contour
+description: A Helm chart for Heptio Contour
 version: 0.2.2
+# Note that we use appVersion to get images tag, so make sure this is correct.
 appVersion: v0.8.0
-sources: https://github.com/heptio/contour/tree/master/deployment
+source: https://github.com/heptio/contour/tree/master/deployment
 home: https://github.com/heptio/contour
 keywords:
 - ingress
