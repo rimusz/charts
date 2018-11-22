@@ -14,7 +14,7 @@ jobs:
             shellcheck -x test/e2e-kind.sh
   lint-charts:
     docker:
-      - image: gquay.io/helmpack/chart-testing:v2.0.1
+      - image: quay.io/helmpack/chart-testing:v2.0.1
     steps:
       - checkout
       - run:
