@@ -8,7 +8,7 @@ contour:
   image:
     repository: gcr.io/heptio-images/contour
     # Note that by default we use appVersion to get images tag
-    # tag: 
+    # tag:
     pullPolicy: Always
 
 envoy:

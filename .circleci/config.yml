@@ -46,4 +46,8 @@ workflows:
     jobs:
       - lint-scripts
       - lint-charts
+          requires:
+            - lint-scripts
       - install-charts
+          requires:
+            - lint-charts
