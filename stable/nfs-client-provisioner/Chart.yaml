@@ -4,6 +4,7 @@ version: 0.1.4
 name: nfs-client-provisioner
 description: nfs-client-provisioner is an automatic provisioner creating Persistent Volumes from the NFS
 home: https://github.com/rimusz/charts/tree/master/stable/nfs-client-provisioner
+source: https://github.com/rimusz/hostpath-provisioner
 keywords:
 - nfs
 - storage
@@ -11,6 +12,3 @@ keywords:
 maintainers:
 - email: rmocius@gmail.com
   name: rimusz
-sources:
-- https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client
-
