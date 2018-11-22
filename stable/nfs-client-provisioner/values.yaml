@@ -8,7 +8,7 @@ replicaCount: 1
 ## docker image
 image:
   repository: quay.io/external_storage/nfs-client-provisioner
-  tag: v2.1.1-k8s1.10
+  tag: v3.1.0-k8s1.11
   pullPolicy: IfNotPresent
 
 ## Cloud Filestore instance
@@ -30,7 +30,7 @@ storageClass:
 
 ## For RBAC support:
 rbac:
-  create: false
+  create: true
 
   ## Ignored if rbac.create is true
   ##
