@@ -9,7 +9,7 @@ readonly REPO_ROOT="${REPO_ROOT:-$(git rev-parse --show-toplevel)}"
 run_kind() {
 
     echo "Get kind binary..."
-    docker run --rm -it -v "$(pwd)":/go/bin golang go get -v sigs.k8s.io/kind
+    docker run --rm -it -v "$(pwd)":/go/bin golang go get sigs.k8s.io/kind
     sudo mv kind /usr/local/bin/
 
     echo "Create Kubernetes cluster with kind..."
@@ -17,10 +17,6 @@ run_kind() {
 }
 
 set_kind() {
-
-    #echo "Download kubectl..."
-    #curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/"${K8S_VERSION}"/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
-    #echo
 
     echo "Copy kubectl out of the kind container..."
     tmp_path=$(mktemp -d)
@@ -67,6 +63,9 @@ main() {
 
     set_kind
 
+    # Copy kubeconfig file
+    docker cp "$KUBECONFIG" "$config_container_id:/root/.kube/config"
+    
     echo "Add git remote k8s ${CHARTS_REPO}"
     git remote add k8s "${CHARTS_REPO}" &> /dev/null || true
     git fetch k8s master
