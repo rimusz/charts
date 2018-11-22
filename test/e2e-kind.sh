@@ -6,14 +6,11 @@ set -o pipefail
 
 readonly REPO_ROOT="${REPO_ROOT:-$(git rev-parse --show-toplevel)}"
 
-get_kind(){
+run_kind() {
+
     echo "Get kind binary..."
     docker run --rm -it -v "$(pwd)":/go/bin golang go get -v sigs.k8s.io/kind
     sudo mv kind /usr/local/bin/
-}
-
-
-run_kind() {
 
     echo "Create Kubernetes cluster with kind..."
     kind create cluster
