@@ -31,6 +31,7 @@ jobs:
       TEST_IMAGE: gcr.io/kubernetes-charts-ci/test-image
       TEST_IMAGE_TAG: v3.0.1
       CHARTS_REPO: https://github.com/rimusz/charts
+      K8S_VERSION: v1.11.3
     steps:
       - checkout
       - run: go get sigs.k8s.io/kind

@@ -14,6 +14,10 @@ run_kind() {
 
 set_kind() {
 
+    echo "Download kubectl..."
+    curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/"${K8S_VERSION}"/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+    echo
+
     echo "Copy kubectl out of the kind container..."
     tmp_path=$(mktemp -d)
     docker cp "$config_container_id":"$(docker exec "$config_container_id" which kubectl)" "${tmp_path}/kubectl" && sudo mv "${tmp_path}"/kubectl /usr/local/bin/
