@@ -20,6 +20,7 @@ set_kind() {
     echo
 
     echo "Export kubeconfig..."
+    # shellcheck disable=SC2155
     export KUBECONFIG="$(kind get kubeconfig-path)"
     echo
 
