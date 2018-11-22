@@ -15,13 +15,8 @@ run_kind() {
     echo "Create Kubernetes cluster with kind..."
     kind create cluster --image=kindest/node:"$K8S_VERSION"
 
-    #echo "Download kubectl..."
-    #curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/"${K8S_VERSION}"/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
-    #echo
-
-    echo "Copy kubectl out of the kind container..."
-    tmp_path=$(mktemp -d)
-    docker cp kind-1-control-plane:"$(docker exec kind-1-control-plane which kubectl)" "${tmp_path}/kubectl" && sudo mv "${tmp_path}"/kubectl /usr/local/bin/
+    echo "Download kubectl..."
+    curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/"${K8S_VERSION}"/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
     echo
 
     echo "Export kubeconfig..."
