@@ -34,7 +34,6 @@ jobs:
       K8S_VERSION: v1.11.3
     steps:
       - checkout
-      - run: go get sigs.k8s.io/kind
       - run:
           name: install.
           command: |

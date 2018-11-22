@@ -6,6 +6,13 @@ set -o pipefail
 
 readonly REPO_ROOT="${REPO_ROOT:-$(git rev-parse --show-toplevel)}"
 
+get_kind(){
+    echo "Get kind binary..."
+    docker run --rm -it -v "$(pwd)":/go/bin golang go get -v sigs.k8s.io/kind
+    sudo mv kind /usr/local/bin/
+}
+
+
 run_kind() {
 
     echo "Create Kubernetes cluster with kind..."
@@ -14,9 +21,9 @@ run_kind() {
 
 set_kind() {
 
-    echo "Download kubectl..."
-    curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/"${K8S_VERSION}"/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
-    echo
+    #echo "Download kubectl..."
+    #curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/"${K8S_VERSION}"/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+    #echo
 
     echo "Copy kubectl out of the kind container..."
     tmp_path=$(mktemp -d)
