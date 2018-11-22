@@ -21,7 +21,7 @@ run_kind() {
 
     echo "Copy kubectl out of the kind container..."
     tmp_path=$(mktemp -d)
-    docker cp kind-1-control-plane :"$(docker exec kind-1-control-plane which kubectl)" "${tmp_path}/kubectl" && sudo mv "${tmp_path}"/kubectl /usr/local/bin/
+    docker cp kind-1-control-plane:"$(docker exec kind-1-control-plane which kubectl)" "${tmp_path}/kubectl" && sudo mv "${tmp_path}"/kubectl /usr/local/bin/
     echo
 
     echo "Export kubeconfig..."
