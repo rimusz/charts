@@ -42,12 +42,12 @@ jobs:
           no_output_timeout: 3600
 workflows:
   version: 2
-  lint:
+  lint_and_install:
     jobs:
       - lint-scripts
-      - lint-charts
+      - lint-charts:
           requires:
             - lint-scripts
-      - install-charts
+      - install-charts:
           requires:
             - lint-charts
