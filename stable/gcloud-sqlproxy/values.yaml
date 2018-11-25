@@ -2,7 +2,7 @@
 ## ref: https://cloud.google.com/sql/docs/mysql/sql-proxy
 ## ref: https://cloud.google.com/sql/docs/postgres/sql-proxy
 image: b.gcr.io/cloudsql-docker/gce-proxy
-imageTag: "1.11"
+imageTag: "1.13"
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
@@ -54,14 +54,15 @@ rbac:
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
-##
-resources:
-  requests:
-    cpu: 100m
-    memory: 100Mi
-  limits:
-    memory: 150Mi
-    cpu: 150m
+## Resources are commente out as sometimes Memory/CPU limit causes spikes in query times
+## https://github.com/GoogleCloudPlatform/cloudsql-proxy/issues/168#issuecomment-394099416
+resources: {}
+#  requests:
+#    cpu: 100m
+#    memory: 100Mi
+#  limits:
+#    memory: 256Mi
+#    cpu: 256m
 
 ## Node selector
 nodeSelector: {}
