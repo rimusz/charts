@@ -1,4 +1,4 @@
-appVersion: "1.11"
+appVersion: "1.13"
 description: Google Cloud SQL Proxy
 engine: gotpl
 home: https://cloud.google.com/sql/docs/postgres/sql-proxy
@@ -15,4 +15,4 @@ maintainers:
 name: gcloud-sqlproxy
 sources:
 - https://github.com/rimusz/charts
-version: 0.6.2
+version: 0.6.3
