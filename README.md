@@ -19,13 +19,13 @@ Get the latest [Helm release](https://github.com/kubernetes/helm#install).
 
 ### Install some chart
 
-To install the Keel chart with the release name `keel`:
+To install the Keel chart with the release name `contour`:
 
 ```console
-$ helm upgrade --install keel rimusz/keel
+$ helm upgrade --install keel rimusz/contour
 ```
 
-Check Keel chart [readme](stable/keel/README.md) for more customisation options.
+Check contour chart [readme](stable/contour/README.md) for more customisation options.
 
 ## Contributing to Rimusz Charts
 
