@@ -4,7 +4,7 @@ description: A Helm chart for Heptio Contour
 version: 0.2.2
 # Note that we use appVersion to get images tag, so make sure this is correct.
 appVersion: v0.8.0
-source: https://github.com/heptio/contour/tree/master/deployment
+source: https://github.com/rimusz/charts/blob/master/stable/contour
 home: https://github.com/heptio/contour
 keywords:
 - ingress
