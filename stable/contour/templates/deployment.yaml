@@ -2,7 +2,6 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: {{ template "contour.fullname" . }}
-  namespace: {{ .Values.namespace }}
   labels:
     app: {{ template "contour.name" . }}
     chart: {{ template "contour.chart" . }}

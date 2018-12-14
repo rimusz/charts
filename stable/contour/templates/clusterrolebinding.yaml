@@ -10,5 +10,5 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ template "contour.name" . }}
-    namespace: {{ .Values.namespace }}
+    namespace: {{ .Release.Namespace }}
 {{ end }}
