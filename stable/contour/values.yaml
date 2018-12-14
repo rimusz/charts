@@ -14,7 +14,7 @@ contour:
 envoy:
   image:
     repository: docker.io/envoyproxy/envoy-alpine
-    tag: v1.7.0
+    tag: v1.8.0
     pullPolicy: IfNotPresent
 # Contour specific Deployment annotations
 annotations:
