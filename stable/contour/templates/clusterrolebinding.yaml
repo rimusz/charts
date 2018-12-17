@@ -9,6 +9,6 @@ roleRef:
   name: {{ template "contour.name" . }}
 subjects:
   - kind: ServiceAccount
-    name: {{ template "contour.name" . }}
+    name: {{ template "contour.fullname" . }}
     namespace: {{ .Release.Namespace }}
 {{ end }}

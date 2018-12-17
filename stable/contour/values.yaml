@@ -4,24 +4,31 @@
 
 replicaCount: 1
 
-contour:
-  image:
-    repository: gcr.io/heptio-images/contour
-    # Note that by default we use appVersion to get images tag
-    # tag:
-    pullPolicy: Always
-
-envoy:
-  image:
-    repository: docker.io/envoyproxy/envoy-alpine
-    tag: v1.7.0
-    pullPolicy: IfNotPresent
-# Contour specific Deployment annotations
+# Contour Deployment specific annotations
 annotations:
   prometheus.io/scrape: "true"
   prometheus.io/port: "9001"
   prometheus.io/path: "/stats"
   prometheus.io/format: "prometheus"
+
+controller:
+  image:
+    repository: gcr.io/heptio-images/contour
+    # Note that by default we use appVersion to get images tag
+    # tag:
+    pullPolicy: IfNotPresent
+  # Enable statsd metrics
+  statsd:
+    enabled: false
+  stats: {}
+    # address: 0.0.0.0
+    # port: 8002
+
+proxy:
+  image:
+    repository: docker.io/envoyproxy/envoy-alpine
+    tag: v1.7.0
+    pullPolicy: IfNotPresent
 
 service:
   type: LoadBalancer
@@ -35,9 +42,6 @@ service:
   # for information about enabling the PROXY protocol on the ELB to recover
   # the original remote IP address.
   # service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
-
-ingressRoutes:
-  enabled: false
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -58,3 +62,9 @@ rbac:
 nodeSelector: {}
 
 tolerations: {}
+
+# Enable and set Pod Disruption Budget
+podDisruptionBudget:
+  enabled: false
+  maxUnavailable: 1
+  minAvailable: null
