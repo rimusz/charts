@@ -1,4 +1,3 @@
-{{- if contains "LoadBalancer" .Values.service.type }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -13,7 +12,7 @@ metadata:
 {{ toYaml . | indent 4 }}
     {{- end }}
 spec:
-  type: LoadBalancer
+  type: {{ .Values.service.type }}
 {{- if .Values.service.loadBalancerIP }}
   loadBalancerIP: "{{ .Values.service.loadBalancerIP }}"
 {{- end }}
@@ -29,4 +28,3 @@ spec:
   selector:
     app: {{ template "contour.name" . }}
     release: {{ .Release.Name }}
-{{- end }}

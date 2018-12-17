@@ -74,7 +74,7 @@ main() {
     run_tillerless
 
     # shellcheck disable=SC2086
-    docker exec -e HELM_HOST=127.0.0.1:44134 -e HELM_TILLER_SILENT=true "$config_container_id" ct install --config /workdir/test/ct.yaml
+    docker exec -e HELM_HOST=127.0.0.1:44134 -e HELM_TILLER_SILENT=true "$config_container_id" ct install --config /workdir/.test/ct.yaml
 
     echo "Done Testing!"
 }

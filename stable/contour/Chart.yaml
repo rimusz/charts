@@ -9,6 +9,7 @@ home: https://github.com/heptio/contour
 keywords:
 - ingress
 - proxy
+- envoy
 maintainers:
 - name: rimusz
   email: rmocius@gmail.com
