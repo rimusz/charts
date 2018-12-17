@@ -13,7 +13,7 @@ Unlike other Ingress controllers, Contour supports dynamic configuration updates
 To install the chart with the release name `contour`:
 
 ```console
-$ helm upgrade --install --name contour --namespace heptio-contour rimusz/contour
+$ helm upgrade --install contour --namespace heptio-contour rimusz/contour
 ```
 
 By default `contour` uses `LoadBalancer` to expose ports 80/443. You can change the `service type` via `--set` or in `values.yaml` file.
@@ -56,7 +56,7 @@ Alternatively, a YAML file that specifies the values for the configurable parame
 For example:
 
 ```console
-$ helm upgrade --install --name contour --namespace heptio-contour rimusz/contour -f values.yaml .
+$ helm upgrade --install contour --namespace heptio-contour rimusz/contour -f values.yaml .
 ```
 > **Tip**: You can use the default [values.yaml](values.yaml)
 

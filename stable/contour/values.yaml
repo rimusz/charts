@@ -27,7 +27,7 @@ controller:
 proxy:
   image:
     repository: docker.io/envoyproxy/envoy-alpine
-    tag: v1.8.0
+    tag: v1.7.0
     pullPolicy: IfNotPresent
 
 service:
@@ -42,10 +42,6 @@ service:
   # for information about enabling the PROXY protocol on the ELB to recover
   # the original remote IP address.
   # service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
-
-ingressRoutes:
-  # Enable ingressRoutes CRD creation
-  enabled: false
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
