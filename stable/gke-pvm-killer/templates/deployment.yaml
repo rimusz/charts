@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "gke-pvm-killer.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "gke-pvm-killer.name" . }}
+    helm.sh/chart: {{ include "gke-pvm-killer.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "gke-pvm-killer.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "gke-pvm-killer.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      {{- with .Values.annotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    spec:
+      serviceAccount: {{ include "gke-pvm-killer.fullname" . }}
+      terminationGracePeriodSeconds: {{ .Values.node.drainTimeout }}
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        runAsUser: {{ .Values.securityContext.userId }}
+        fsGroup: {{ .Values.securityContext.groupId }}
+      {{- end }}
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecrets }}
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ default .Chart.AppVersion .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: "DRAIN_TIMEOUT"
+              value: {{ .Values.node.drainTimeout | quote }}
+            - name: "INTERVAL"
+              value: {{ .Values.node.interval | quote }}
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /etc/app-secrets/google-service-account.json
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: app-secrets
+              mountPath: /etc/app-secrets
+      volumes:
+        - name: app-secrets
+          secret:
+            secretName: {{ default (include "gke-pvm-killer.fullname" .) .Values.existingSecret }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

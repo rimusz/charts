@@ -1,0 +1,7 @@
+Check the {{ .Chart.Name }} application by running:
+
+kubectl get pods --namespace {{ .Release.Namespace }}
+
+Check the logs of the {{ .Chart.Name }} to see whether all runs well:
+
+kubectl logs --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "gke-pvm-killer.fullname" . }}"

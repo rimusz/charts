@@ -1,0 +1,13 @@
+apiVersion: v1
+appVersion: 1.0.46
+version: 0.1.0
+description: A Helm chart for gke-pvm-killer
+name: gke-pvm-killer
+keywords:
+- gke
+- preemptible
+source: https://github.com/rimusz/charts/blob/master/stable/gke-pvm-killer
+home: https://github.com/estafette/estafette-gke-preemptible-killer
+maintainers:
+- email: rmocius@gmail.com
+  name: rimusz
