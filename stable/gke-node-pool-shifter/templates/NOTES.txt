@@ -1,0 +1,27 @@
+{{ if not (or .Values.googleServiceAccount .Values.existingSecret) -}}
+################################################################################
+####   WARNING: You did not provide Google Cloud Service Account key.       ####
+################################################################################
+
+gke-node-pool-shifter requires API access to Compute API.
+This deployment will be incomplete until you provide GCP Service Account key:
+
+  helm upgrade {{ .Release.Name }} rimusz/gke-node-pool-shifter \
+      --set googleServiceAccount="$(cat google-service-account.json | base64)" 
+
+  or
+
+  helm upgrade {{ .Release.Name }} rimusz/gke-node-pool-shifter \
+      --set existingSecret="gke-pvm-killer"       
+
+{{- else }}
+
+Check the {{ .Chart.Name }} application by running:
+
+kubectl get pods --namespace {{ .Release.Namespace }}
+
+Check the logs of the {{ .Chart.Name }} to see whether all runs well:
+
+kubectl logs --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "gke-node-pool-shifter.fullname" . }}"
+
+{{- end }}

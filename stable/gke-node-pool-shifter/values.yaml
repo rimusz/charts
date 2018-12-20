@@ -1,10 +1,10 @@
-# Default values for gke-pvm-killer.
+# Default values for gke-node-pool-shifter.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 image:
-  repository: estafette/estafette-gke-preemptible-killer
-  # tag: 1.0.46
+  repository: estafette/estafette-gke-node-pool-shifter
+  # tag: 1.0.21
   pullPolicy: IfNotPresent
   pullSecrets:
 
@@ -15,13 +15,17 @@ googleServiceAccount: ""
 # Specify an existing secret holding the google-service-account.json
 existingSecret: ""
 
-node:
-  # Max time in second to wait before deleting a node
-  drainTimeout: 300
-  # Time in second to wait between each node check
-  interval: 600
+nodePool:
+  # Time in second to wait between each node pool check
+  interval: 300
+  # The name of the node pool to shift from
+  from: ""
+  # The name of the node pool to shift to
+  to: ""
+  # The minimum number of nodes to keep for the node pool to shift from
+  fromMinNode: 0
 
-# Set which user:group you want gke-preemptible-killer to be run with
+# Set which user:group you want gke-node-pool-shifter to be run with
 securityContext:
   enabled: true
   userId: 1000
