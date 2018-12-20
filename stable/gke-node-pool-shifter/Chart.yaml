@@ -1,0 +1,15 @@
+apiVersion: v1
+appVersion: 1.0.21
+version: 0.1.0
+description: A Helm chart for gke-node-pool-shifter
+name: gke-node-pool-shifter
+keywords:
+- gke
+- preemptible
+- shifter
+- node-pool
+source: https://github.com/rimusz/charts/blob/master/stable/gke-node-pool-shifter
+home: https://github.com/estafette/estafette-gke-node-pool-shifter
+maintainers:
+- email: rmocius@gmail.com
+  name: rimusz

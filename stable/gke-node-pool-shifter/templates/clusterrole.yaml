@@ -1,0 +1,30 @@
+{{- if .Values.rbac.enabled }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "gke-node-pool-shifter.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "gke-node-pool-shifter.name" . }}
+    helm.sh/chart: {{ include "gke-node-pool-shifter.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+rules:
+  - apiGroups: 
+      - ""  # "" indicates the core API group
+    resources:
+      - nodes
+    verbs:
+      - get
+      - list
+      - patch
+      - update
+      - delete
+  - apiGroups: 
+      - ""   # "" indicates the core API group
+    resources:
+      - pods
+    verbs:
+      - delete
+      - get
+      - list
+{{ end }}
