@@ -16,6 +16,12 @@ random range between 12h and 24h based on the node creation time stamp.
 When the time to kill time is passed, the Kubernetes node is marked as unschedulable, drained and the instance
 deleted on Google Cloud.
 
+
+## Prerequisites
+
+- Kubernetes cluster on Google Container Engine (GKE)
+- GCP Service account with role set to `Compute Instance Admin` and `Kubernetes Engine Admin`. This key is going to be used to authenticate from the application to the GCP Compute API. See [documentation](https://developers.google.com/identity/protocols/application-default-credentials).
+
 ## Installing the Chart
 
 To install the chart with the release name `gke-pvm-killer`:
