@@ -1,4 +1,4 @@
-{{ if not (or .Values.googleServiceAccount .Values.existingSecret) -}}
+{{- if not (or .Values.googleServiceAccount .Values.existingSecret) }}
 ################################################################################
 ####   WARNING: You did not provide Google Cloud Service Account key.       ####
 ################################################################################
