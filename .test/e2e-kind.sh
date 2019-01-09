@@ -9,8 +9,8 @@ readonly REPO_ROOT="${REPO_ROOT:-$(git rev-parse --show-toplevel)}"
 run_kind() {
 
     echo "Get kind binary..."
-    #docker run --rm -it -v "$(pwd)":/go/bin golang go get sigs.k8s.io/kind && chmod +x kind && sudo mv kind /usr/local/bin/
-    curl -Lo kind https://storage.googleapis.com/rimusz-ci-artifacts/kind && chmod +x kind && sudo mv kind /usr/local/bin/
+    docker run --rm -it -v "$(pwd)":/go/bin golang go get sigs.k8s.io/kind && sudo mv kind /usr/local/bin/
+    #curl -Lo kind https://storage.googleapis.com/rimusz-ci-artifacts/kind && chmod +x kind && sudo mv kind /usr/local/bin/
 
     echo "Download kubectl..."
     curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/"${K8S_VERSION}"/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
