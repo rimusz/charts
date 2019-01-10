@@ -69,6 +69,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `resources`                       | CPU/Memory resource requests/limits     | Memory: `100/150Mi`, CPU: `100/150m`                                                        |
 | `nodeSelector`                    | Node Selector                           |                                                                                             |
 | `rbac.create`                     | Create RBAC configuration w/ SA         | `false`                                                                                     |
+| `extraArgs`                       | Additional container arguments          | `{}`                                                                                        |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 

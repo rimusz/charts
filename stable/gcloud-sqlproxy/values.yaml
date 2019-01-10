@@ -75,3 +75,6 @@ affinity: {}
 
 podDisruptionBudget: |
   maxUnavailable: 1
+
+## Additional container arguments
+extraArgs: {}
