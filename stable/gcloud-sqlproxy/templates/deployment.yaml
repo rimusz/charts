@@ -33,6 +33,9 @@ spec:
         {{ if or .Values.serviceAccountKey .Values.existingSecret -}}
         - -credential_file=/secrets/cloudsql/{{- if .Values.existingSecret -}} {{ .Values.existingSecretKey }} {{- else -}} credentials.json {{- end }}
         {{ end -}}
+        {{- range $key, $value := .Values.extraArgs }}
+        - --{{ $key }}={{ $value }}
+        {{- end }}
         ports:
         {{- range .Values.cloudsql.instances }}
         - name: {{ .instanceShortName | default (.instance | trunc 15) }}
