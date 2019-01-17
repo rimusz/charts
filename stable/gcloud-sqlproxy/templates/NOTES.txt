@@ -1,6 +1,6 @@
 ** Please be patient while the chart is being deployed **
 
-{{ if not (or .Values.serviceAccountKey .Values.existingSecret) -}}
+{{ if not (include "gcloud-sqlproxy.hasCredentials" . ) -}}
 ################################################################################
 ####   WARNING: You did not provide Google Cloud Service Account key.       ####
 ################################################################################
