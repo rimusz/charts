@@ -1,4 +1,5 @@
 {{- if ne (index .Values.cloudsql.instances 0).instance "instance" }}
+{{- $hasCredentials := include "gcloud-sqlproxy.hasCredentials" . -}}
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -30,8 +31,8 @@ spec:
         - -instances={{- range .Values.cloudsql.instances -}}
                         {{ .project }}:{{ .region }}:{{ .instance }}=tcp:0.0.0.0:{{ .port }},
                      {{- end }}
-        {{ if or .Values.serviceAccountKey .Values.existingSecret -}}
-        - -credential_file=/secrets/cloudsql/{{- if .Values.existingSecret -}} {{ .Values.existingSecretKey }} {{- else -}} credentials.json {{- end }}
+        {{ if $hasCredentials -}}
+        - -credential_file=/secrets/cloudsql/{{ template "gcloud-sqlproxy.secretKey" . }}
         {{ end -}}
         {{- range $key, $value := .Values.extraArgs }}
         - --{{ $key }}={{ $value }}
@@ -42,17 +43,17 @@ spec:
           containerPort: {{ .port }}
         {{- end }}
         volumeMounts:
-        {{ if or .Values.serviceAccountKey .Values.existingSecret -}}
+        {{ if $hasCredentials -}}
         - name: cloudsql-oauth-credentials
           mountPath: /secrets/cloudsql
         {{ end -}}
         - name: cloudsql
           mountPath: /cloudsql
       volumes:
-      {{ if or .Values.serviceAccountKey .Values.existingSecret -}}
+      {{ if $hasCredentials -}}
       - name: cloudsql-oauth-credentials
         secret:
-          secretName: {{ default (include "gcloud-sqlproxy.fullname" .) .Values.existingSecret }}
+          secretName: {{ template "gcloud-sqlproxy.secretName" . }}
       {{ end -}}
       - name: cloudsql
         emptyDir: {}

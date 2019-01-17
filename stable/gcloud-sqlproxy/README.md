@@ -65,6 +65,8 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `serviceAccountKey`               | Service account key JSON file           | Must be provided and base64 encoded when no existing secret is used, in this case a new secret will be created holding this service account |
 | `existingSecret`                  | Name of an existing secret to be used for the cloud-sql credentials | `""`                                                            |
 | `existingSecretKey`               | The key to use in the provided existing secret   | `""`                                                                               |
+| `usingGCPController` | enable the use of the GCP Service Account Controller     | `false`                                                                                 |
+| `serviceAccountName` | specify a service account name to use     | `""`                                                                                                  |
 | `cloudsql.instances`              | List of PostgreSQL/MySQL instances      | [{instance: `instance`, project: `project`, region: `region`, port: 5432}] must be provided |
 | `resources`                       | CPU/Memory resource requests/limits     | Memory: `100/150Mi`, CPU: `100/150m`                                                        |
 | `nodeSelector`                    | Node Selector                           |                                                                                             |
@@ -80,6 +82,9 @@ $ helm install --name my-release -f values.yaml rimusz/gcloud-sqlproxy
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
+
+### Auto generating the gcp service account
+By enabling the flag `usingGCPController` and having a GCP Service Account Controller deployed in your cluster, it is possible to autogenerate and inject the service account used for connecting to the database. For more information see https://github.com/kiwigrid/helm-charts/tree/master/charts/gcp-serviceaccount-controller
 
 ## Documentation
 
