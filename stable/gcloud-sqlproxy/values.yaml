@@ -26,7 +26,7 @@ existingSecret: ""
 ## The key in the existing secret that stores the credenials
 existingSecretKey: ""
 
-## serviceAccountName to specify the service account name that will be generated 
+## serviceAccountName to specify the service account name that will be generated
 serviceAccountName: ""
 
 ## usingGCPController to control if the service account should be generated and injected
