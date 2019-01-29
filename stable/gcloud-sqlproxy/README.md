@@ -25,7 +25,7 @@ Install from remote URL with the release name `pg-sqlproxy` into namespace `sqlp
 
 ```console
 $ helm upgrade pg-sqlproxy rimusz/gcloud-sqlproxy --namespace sqlproxy \
-    --set serviceAccountKey="$(cat service-account.json | base64)" \
+    --set serviceAccountKey="$(cat service-account.json | base64 | tr -d '\n')" \
     --set cloudsql.instances[0].instance=INSTANCE \
     --set cloudsql.instances[0].project=PROJECT \
     --set cloudsql.instances[0].region=REGION \
@@ -71,6 +71,8 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `resources`                       | CPU/Memory resource requests/limits     | Memory: `100/150Mi`, CPU: `100/150m`                                                        |
 | `nodeSelector`                    | Node Selector                           |                                                                                             |
 | `rbac.create`                     | Create RBAC configuration w/ SA         | `false`                                                                                     |
+| `networkPolicy.enabled`           | Enable NetworkPolicy                    | `false` |
+| `networkPolicy.ingress.from`     | List of sources which should be able to access the pods selected for this rule. If empty, allows all sources. | `[]` |
 | `extraArgs`                       | Additional container arguments          | `{}`                                                                                        |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.

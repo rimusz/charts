@@ -58,6 +58,22 @@ cloudsql:
 rbac:
   create: false
 
+networkPolicy:
+  ## Specifies whether a NetworkPolicy should be created
+  ##
+  enabled: true
+
+  ingress:
+    from: []
+    # # List of sources which should be able to access the pods selected for this rule.
+    # # Items in this list are combined using a logical OR operation.
+    # # If this field is empty or missing, this rule matches all sources (traffic not restricted by source).
+    # # If this field is present and contains at least on item,
+    # # this rule allows traffic only if the traffic matches at least one item in the from list.
+    #   - podSelector:           # chooses pods with gcloud-sqlproxy-client="true"
+    #       matchLabels:
+    #         gcloud-sqlproxy-client: "true"
+
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
 ## Resources are commente out as sometimes Memory/CPU limit causes spikes in query times
