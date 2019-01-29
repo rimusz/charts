@@ -25,7 +25,7 @@ Install from remote URL with the release name `pg-sqlproxy` into namespace `sqlp
 
 ```console
 $ helm upgrade pg-sqlproxy rimusz/gcloud-sqlproxy --namespace sqlproxy \
-    --set serviceAccountKey="$(cat service-account.json | base64)" \
+    --set serviceAccountKey="$(cat service-account.json | base64 | tr -d '\n')" \
     --set cloudsql.instances[0].instance=INSTANCE \
     --set cloudsql.instances[0].project=PROJECT \
     --set cloudsql.instances[0].region=REGION \
