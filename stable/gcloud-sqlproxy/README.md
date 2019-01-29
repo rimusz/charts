@@ -101,3 +101,7 @@ By enabling the flag `usingGCPController` and having a GCP Service Account Contr
 
 Please note, if chart name is included in release name, it will now be used as full name.
 E.g. service `gcloud-sqlproxy-gcloud-sqlproxy` will now show up as `gcloud-sqlproxy`.
+
+**From < 0.11.0 to >= 0.11.0**
+
+Please note, as of `0.11.0` recommended labels are used. Please take into anything that may target your release's objects via labels.

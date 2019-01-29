@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: {{ include "gcloud-sqlproxy.fullname" . }}
   labels:
-    app: {{ include "gcloud-sqlproxy.fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
+    helm.sh/chart: {{ include "gcloud-sqlproxy.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   ports:
   {{- range .Values.cloudsql.instances }}
@@ -16,4 +16,5 @@ spec:
     targetPort: {{ .instanceShortName | default (.instance | trunc 15) }}
   {{- end }}
   selector:
-    app: {{ include "gcloud-sqlproxy.fullname" . }}
+    app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

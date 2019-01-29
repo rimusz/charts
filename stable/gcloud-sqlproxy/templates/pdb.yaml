@@ -3,14 +3,15 @@ apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   labels:
-    app: {{ include "gcloud-sqlproxy.fullname" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
-    heritage: {{ .Release.Service }}
-    release: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
+    helm.sh/chart: {{ include "gcloud-sqlproxy.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
   name: {{ include "gcloud-sqlproxy.fullname" . }}
 spec:
   selector:
     matchLabels:
-      app: {{ include "gcloud-sqlproxy.fullname" . }}
+      app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
 {{ .Values.podDisruptionBudget | indent 2 }}
 {{- end -}}

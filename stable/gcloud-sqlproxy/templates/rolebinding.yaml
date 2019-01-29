@@ -4,10 +4,10 @@ kind: RoleBinding
 metadata:
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ include "gcloud-sqlproxy.fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
+    helm.sh/chart: {{ include "gcloud-sqlproxy.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
   name: {{ .Release.Name }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
