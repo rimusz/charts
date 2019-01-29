@@ -17,7 +17,7 @@ You need to enable Cloud SQL Administration API and create a service account for
 - Kubernetes cluster on Google Container Engine (GKE)
 - Kubernetes cluster on Google Compute Engine (GCE)
 - Cloud SQL Administration API enabled
-- GCP Service account for the proxy with `Cloud SQL Admin` role, and `Cloud SQL Admin API` enabled. 
+- GCP Service account for the proxy with `Cloud SQL Admin` role, and `Cloud SQL Admin API` enabled.
 
 ## Installing the Chart
 
@@ -93,3 +93,11 @@ By enabling the flag `usingGCPController` and having a GCP Service Account Contr
 - [Cloud SQL Proxy for Postgres](https://cloud.google.com/sql/docs/postgres/sql-proxy)
 - [Cloud SQL Proxy for MySQL](https://cloud.google.com/sql/docs/mysql/sql-proxy)
 - [GKE samples](https://github.com/GoogleCloudPlatform/container-engine-samples/tree/master/cloudsql)
+
+
+## Upgrading
+
+**From < 0.10.0 to >= 0.10.0**
+
+Please note, if chart name is included in release name, it will now be used as full name.
+E.g. service `gcloud-sqlproxy-gcloud-sqlproxy` will now show up as `gcloud-sqlproxy`.

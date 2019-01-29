@@ -3,9 +3,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "gcloud-sqlproxy.fullname" . }}
+  name: {{ include "gcloud-sqlproxy.fullname" . }}
   labels:
-    app: {{ template "gcloud-sqlproxy.fullname" . }}
+    app: {{ include "gcloud-sqlproxy.fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -14,10 +14,10 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "gcloud-sqlproxy.fullname" . }}
+        app: {{ include "gcloud-sqlproxy.fullname" . }}
     spec:
       {{- if .Values.rbac.create }}
-      serviceAccountName: {{ template "gcloud-sqlproxy.fullname" . }}
+      serviceAccountName: {{ include "gcloud-sqlproxy.fullname" . }}
       {{- end }}
       containers:
       - name: sqlproxy
@@ -32,7 +32,7 @@ spec:
                         {{ .project }}:{{ .region }}:{{ .instance }}=tcp:0.0.0.0:{{ .port }},
                      {{- end }}
         {{ if $hasCredentials -}}
-        - -credential_file=/secrets/cloudsql/{{ template "gcloud-sqlproxy.secretKey" . }}
+        - -credential_file=/secrets/cloudsql/{{ include "gcloud-sqlproxy.secretKey" . }}
         {{ end -}}
         {{- range $key, $value := .Values.extraArgs }}
         - --{{ $key }}={{ $value }}
@@ -53,7 +53,7 @@ spec:
       {{ if $hasCredentials -}}
       - name: cloudsql-oauth-credentials
         secret:
-          secretName: {{ template "gcloud-sqlproxy.secretName" . }}
+          secretName: {{ include "gcloud-sqlproxy.secretName" . }}
       {{ end -}}
       - name: cloudsql
         emptyDir: {}
