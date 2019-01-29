@@ -30,7 +30,7 @@ The SQL server instances can be accessed via ports:
   - {{ .port }} ({{ .instance }})
 {{- end }}
 on the following DNS name from within your cluster:
-- {{ template "gcloud-sqlproxy.fullname" . }}.{{ .Release.Namespace }}
+- {{ include "gcloud-sqlproxy.fullname" . }}.{{ .Release.Namespace }}
 
 {{- else }}
 

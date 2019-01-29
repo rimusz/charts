@@ -4,11 +4,11 @@ kind: Role
 metadata:
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ template "gcloud-sqlproxy.fullname" . }}
+    app: {{ include "gcloud-sqlproxy.fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-  name: {{ template "gcloud-sqlproxy.fullname" . }}
+  name: {{ include "gcloud-sqlproxy.fullname" . }}
 rules:
 - apiGroups: [""]
   resources: ["secrets"]
