@@ -15,6 +15,7 @@ spec:
     metadata:
       labels:
         app: {{ include "gcloud-sqlproxy.fullname" . }}
+        release: "{{ .Release.Name }}"
     spec:
       {{- if .Values.rbac.create }}
       serviceAccountName: {{ include "gcloud-sqlproxy.fullname" . }}
