@@ -4,15 +4,15 @@ apiVersion: networking.k8s.io/v1
 metadata:
   name: "{{ include "gcloud-sqlproxy.fullname" . }}"
   labels:
-    app: {{ include "gcloud-sqlproxy.name" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
+    helm.sh/chart: {{ include "gcloud-sqlproxy.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   podSelector:
     matchLabels:
-      app: {{ include "gcloud-sqlproxy.name" . }}
-      release: "{{ .Release.Name }}"
+      app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
   ingress:
     # Allow inbound connections
     - ports:
