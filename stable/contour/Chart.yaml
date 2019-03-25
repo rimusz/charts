@@ -1,9 +1,9 @@
 apiVersion: v1
 name: contour
 description: A Helm chart for Heptio Contour
-version: 0.2.7
+version: 0.2.8
 # Note that we use appVersion to get images tag, so make sure this is correct.
-appVersion: v0.8.1
+appVersion: v0.10.0
 source: https://github.com/rimusz/charts/blob/master/stable/contour
 home: https://github.com/heptio/contour
 keywords:
