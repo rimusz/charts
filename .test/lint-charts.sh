@@ -4,8 +4,10 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly IMAGE_TAG="${IMAGE_TAG:-CHART_TESTING_TAG}"
-readonly IMAGE_REPOSITORY="${IMAGE_REPOSITORY:-$CHART_TESTING_IMAGE}"
+# shellcheck disable=SC2082
+readonly IMAGE_TAG=${CHART_TESTING_TAG}
+# shellcheck disable=SC2082
+readonly IMAGE_REPOSITORY=${$CHART_TESTING_IMAGE}
 readonly REPO_ROOT="${REPO_ROOT:-$(git rev-parse --show-toplevel)}"
 
 main() {
