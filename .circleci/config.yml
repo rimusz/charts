@@ -11,16 +11,20 @@ jobs:
             shellcheck -x .scripts/repo-sync.sh
             shellcheck -x .scripts/gen_packages.sh
             shellcheck -x .scripts/index_repo.sh
+            shellcheck -x .test/lint-charts.sh
             shellcheck -x .test/e2e-kind.sh
             
   lint-charts:
-    docker:
-      - image: quay.io/helmpack/chart-testing:v2.2.0
+    machine: true
+    environment:
+      CHART_TESTING_IMAGE: quay.io/helmpack/chart-testing
+      CHART_TESTING_TAG: v2.2.0
+      CHARTS_REPO: https://github.com/rimusz/charts
     steps:
       - checkout
       - run:
-          name: lint
-          command: ct lint --config .test/ct.yaml
+          name: install
+          command: .test/lint-charts.sh
           
   install-charts:
     machine: true
