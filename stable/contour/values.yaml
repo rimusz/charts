@@ -27,7 +27,7 @@ controller:
 proxy:
   image:
     repository: docker.io/envoyproxy/envoy-alpine
-    tag: v1.7.0
+    tag: v1.9.0
     pullPolicy: IfNotPresent
 
 service:
