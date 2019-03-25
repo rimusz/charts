@@ -40,7 +40,7 @@ spec:
           name: https
         command: ["envoy"]
         args:
-        - --config-path /config/contour.json
+        - --config-path /config/contour.yaml
         - --service-cluster cluster0
         - --service-node node0
         - --log-level info
