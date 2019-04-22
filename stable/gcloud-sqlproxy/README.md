@@ -70,6 +70,8 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `cloudsql.instances`              | List of PostgreSQL/MySQL instances      | [{instance: `instance`, project: `project`, region: `region`, port: 5432}] must be provided |
 | `resources`                       | CPU/Memory resource requests/limits     | Memory: `100/150Mi`, CPU: `100/150m`                                                        |
 | `nodeSelector`                    | Node Selector                           |                                                                                             |
+| `service.type`                    | Kubernetes LoadBalancer type            | `ClusterIP` |
+| `service.internalLB`              | Create service with `cloud.google.com/load-balancer-type: "Internal"` | Default `false`, when set to `true` you have to set also `service.type=LoadBalancer` |
 | `rbac.create`                     | Create RBAC configuration w/ SA         | `false`                                                                                     |
 | `networkPolicy.enabled`           | Enable NetworkPolicy                    | `false` |
 | `networkPolicy.ingress.from`     | List of sources which should be able to access the pods selected for this rule. If empty, allows all sources. | `[]` |

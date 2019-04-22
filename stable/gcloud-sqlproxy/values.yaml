@@ -58,6 +58,12 @@ cloudsql:
 rbac:
   create: false
 
+## Specifies service type and option to enable internal LoadBalancer
+## If service.internalLB is true, service.type shoul be: LoadBalancer
+service:
+  type: ClusterIP
+  internalLB: false
+
 networkPolicy:
   ## Specifies whether a NetworkPolicy should be created
   ##
