@@ -9,6 +9,8 @@ jobs:
           name: run-lint
           command: |
             shellcheck -x .test/e2e-kind.sh
+            shellcheck -x .test/lint-charts-local.sh
+            shellcheck -x .test/e2e-docker4mac.sh
             
   lint-charts:
     docker:
