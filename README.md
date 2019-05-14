@@ -9,8 +9,8 @@ Get the latest [Helm release](https://github.com/kubernetes/helm#install).
 ### Add Helm chart repository
 
  ```console
- $ helm repo add rimusz https://charts.rimusz.net
- $ helm repo update
+ helm repo add rimusz https://charts.rimusz.net
+ helm repo update
  ```
 
 ### Install some chart
@@ -18,7 +18,7 @@ Get the latest [Helm release](https://github.com/kubernetes/helm#install).
 To install the `contour` chart with the release name `contour`:
 
 ```console
-$ helm upgrade --install contour rimusz/contour
+helm upgrade --install contour rimusz/contour
 ```
 
 Check contour chart [readme](stable/contour/README.md) for more customization options.
