@@ -6,38 +6,33 @@ jobs:
     steps:
       - checkout
       - run:
-          name: lint
+          name: run-lint
           command: |
-            shellcheck -x .scripts/repo-sync.sh
-            shellcheck -x .scripts/gen_packages.sh
-            shellcheck -x .scripts/index_repo.sh
-            shellcheck -x .test/lint-charts.sh
             shellcheck -x .test/e2e-kind.sh
+            shellcheck -x .test/lint-charts-local.sh
+            shellcheck -x .test/e2e-docker4mac.sh
             
   lint-charts:
-    machine: true
-    environment:
-      CHART_TESTING_IMAGE: quay.io/helmpack/chart-testing
-      CHART_TESTING_TAG: v2.2.0
-      CHARTS_REPO: https://github.com/rimusz/charts
+    docker:
+      - image: quay.io/helmpack/chart-testing:v2.3.3
     steps:
       - checkout
       - run:
-          name: install
-          command: .test/lint-charts.sh
+          name: run-lint
+          command: ct lint --config .test/ct.yaml
           
   install-charts:
     machine: true
     environment:
       CHART_TESTING_IMAGE: quay.io/helmpack/chart-testing
-      CHART_TESTING_TAG: v2.2.0
+      CHART_TESTING_TAG: v2.3.3
       CHARTS_REPO: https://github.com/rimusz/charts
       K8S_VERSION: v1.13.4
-      KIND_VERSION: 0.2.0
+      KIND_VERSION: 0.2.1
     steps:
       - checkout
       - run:
-          name: install
+          name: run-install
           command: .test/e2e-kind.sh
           no_output_timeout: 3600
           

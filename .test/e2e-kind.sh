@@ -4,13 +4,12 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly REPO_ROOT="${REPO_ROOT:-$(git rev-parse --show-toplevel)}"
 readonly CLUSTER_NAME=chart-testing
 
 run_ct_container() {
     echo 'Running ct container...'
     docker run --rm --interactive --detach --network host --name ct \
-        --volume "$REPO_ROOT:/workdir" \
+        --volume "$(pwd):/workdir" \
         --workdir /workdir \
         "$CHART_TESTING_IMAGE:$CHART_TESTING_TAG" \
         cat
@@ -64,9 +63,6 @@ create_kind_cluster() {
 }
 
 install_local-path-provisioner() {
-    # kind doesn't support Dynamic PVC provisioning yet, this is one ways to get it working
-    # https://github.com/rancher/local-path-provisioner
-
     # Remove default storage class. It will be recreated by local-path-provisioner
     docker_exec kubectl delete storageclass standard
 
@@ -86,11 +82,6 @@ install_tiller() {
 }
 
 install_charts() {
-    echo "Add git remote k8s ${CHARTS_REPO}"
-    git remote add k8s "${CHARTS_REPO}" &> /dev/null || true
-    git fetch k8s master
-    echo
-    
     docker_exec ct install --config /workdir/.test/ct.yaml
     echo
 }
