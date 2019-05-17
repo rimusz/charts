@@ -11,6 +11,7 @@ jobs:
             shellcheck -x .test/e2e-kind.sh
             shellcheck -x .test/lint-charts-local.sh
             shellcheck -x .test/e2e-docker4mac.sh
+            shellcheck -x .test/e2e-local-gke.sh
             
   lint-charts:
     docker:
@@ -27,8 +28,8 @@ jobs:
       CHART_TESTING_IMAGE: quay.io/helmpack/chart-testing
       CHART_TESTING_TAG: v2.3.3
       CHARTS_REPO: https://github.com/rimusz/charts
-      K8S_VERSION: v1.13.4
-      KIND_VERSION: 0.2.1
+      K8S_VERSION: v1.14.2
+      KIND_VERSION: v0.3.0
     steps:
       - checkout
       - run:
