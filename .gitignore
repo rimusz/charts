@@ -1,6 +1,7 @@
 .DS_Store
 sshkeys
 .DS_Store
+tmp/
 
 # Packed Charts
 temp
