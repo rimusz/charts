@@ -7,9 +7,8 @@ replicaCount: 1
 # Contour Deployment specific annotations
 annotations:
   prometheus.io/scrape: "true"
-  prometheus.io/port: "9001"
-  prometheus.io/path: "/stats"
-  prometheus.io/format: "prometheus"
+  prometheus.io/port: "8002"
+  prometheus.io/path: "/stats/prometheus"
 
 controller:
   image:
@@ -27,14 +26,16 @@ controller:
 proxy:
   image:
     repository: docker.io/envoyproxy/envoy-alpine
-    tag: v1.9.0
+    tag: v1.9.1
     pullPolicy: IfNotPresent
 
 service:
   type: LoadBalancer
   loadBalancerIP: ""
   # Contour specific Service annotations
-  annotations: {}
+  annotations:
+    prometheus.io/port: "8000"
+    prometheus.io/scrape: "true"
   # This annotation puts the AWS ELB into "TCP" mode so that it does not
   # do HTTP negotiation for HTTPS connections at the ELB edge.
   # The downside of this is the remote IP address of all connections will

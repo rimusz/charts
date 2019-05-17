@@ -28,15 +28,14 @@ The following table lists the configurable parameters of the `Contour` chart and
 |--------------------------------------|----------------------------------------------------|-------------------------------------|
 | `replicaCount`                       | Default replicaCount                               | `1`                                 |
 | `annotationsprometheus.io/scrape`    | Enable Prometheus scrape                           | `true`                              |
-| `annotationsprometheus.io/port`      | Set Prometheus scrape port                         | `9001`                              |
-| `annotationsprometheus.io/path`      | Set Prometheus scrape path                         | `stats`                             |
-| `annotationsprometheus.io/format`    | Set Prometheus scrape format                       | `prometheus`                        |
+| `annotationsprometheus.io/port`      | Set Prometheus scrape port                         | `8002`                              |
+| `annotationsprometheus.io/path`      | Set Prometheus scrape path                         | `/stats/prometheus`                 |
 | `controller.image.repository`        | Set Controller image repository                    | `gcr.io/heptio-images/contour`      |
 | `controller.image.PullPolicy`        | Set Controller image pull policy                   | `IfNotPresent`                      |
 | `controller.statsd.enabled`          | Enable Controller `statsd`                         | `false`                             |
 | `controller.stats`                   | Set Controller `stats`                             | `{}`                                |
 | `proxy.image.repository`             | Set Proxy image repository                         | `docker.io/envoyproxy/envoy-alpine` |
-| `proxy.image.tag`                    | Set Proxy image tag                                | `v1.8.0`                            |
+| `proxy.image.tag`                    | Set Proxy image tag                                | `v1.9.1`                            |
 | `proxy.image.PullPolicy`             | Set Proxy image pull policy                        | `IfNotPresent`                      |
 | `service.type`                       | Service type                                       | `LoadBalancer`                      |
 | `service.loadBalancerIP`             | Loadbalancer IP                                    | ``                                  |

@@ -50,7 +50,7 @@ spec:
                   properties:
                     secretName:
                       type: string
-                      pattern: ^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$ # DNS-1123 subdomain
+                      pattern: ^[a-z0-9]([-a-z0-9]*[a-z0-9])?([\.\/][a-z0-9]([-a-z0-9]*[a-z0-9])?)*$
                     minimumProtocolVersion:
                       type: string
                       enum:
@@ -154,3 +154,20 @@ spec:
   names:
     plural: tlscertificatedelegations
     kind: TLSCertificateDelegation
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            delegations:
+              type: array
+              items:
+                type: object
+                required:
+                  - secretName
+                  - targetNamespaces
+                properties:
+                  match:
+                    type: string
+                  targetNamespaces:
+                    type: array
