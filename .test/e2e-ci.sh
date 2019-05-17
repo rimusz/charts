@@ -6,7 +6,7 @@ set -o pipefail
 
 readonly CLUSTER_NAME=chart-testing
 
-lint_chart() {
+lint_charts() {
     echo
     echo "Starting charts linting..."
     mkdir -p tmp
