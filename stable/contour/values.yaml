@@ -4,7 +4,7 @@
 
 replicaCount: 1
 
-# Contour Deployment specific annotations adding CI trigger
+# Contour Deployment specific annotations
 annotations:
   prometheus.io/scrape: "true"
   prometheus.io/port: "8002"
