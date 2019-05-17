@@ -13,11 +13,11 @@ lint_chart() {
     docker run --rm -v "$(pwd):/workdir" --workdir /workdir "$CHART_TESTING_IMAGE:$CHART_TESTING_TAG" ct lint --config /workdir/test/ct.yaml | tee tmp/lint.log || true
     echo "Done Charts Linting!"
 
-    if cat tmp/lint.log | grep "No chart changes detected" > /dev/null; then
+    if grep -q "No chart changes detected" tmp/lint.log  > /dev/null; then
         echo "No chart changes detected, stopping pipeline!"
         exit 0
-    elif cat tmp/lint.log | grep "Error linting charts" > /dev/null; then
-        echo "Error linting charts, stopping pipeline!"
+    elif grep -q "Error linting charts" tmp/lint.log  > /dev/null; then
+        echo "Error linting charts stopping pipeline!"
         exit 1
     fi
 }
