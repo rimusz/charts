@@ -6,6 +6,22 @@ set -o pipefail
 
 readonly CLUSTER_NAME=chart-testing
 
+lint_chart() {
+    echo
+    echo "Starting charts linting..."
+    mkdir -p tmp
+    docker run --rm -v "$(pwd):/workdir" --workdir /workdir "$CHART_TESTING_IMAGE:$CHART_TESTING_TAG" ct lint --config /workdir/test/ct.yaml | tee tmp/lint.log || true
+    echo "Done Charts Linting!"
+
+    if cat tmp/lint.log | grep "No chart changes detected" > /dev/null; then
+        echo "No chart changes detected, stopping pipeline!"
+        exit 0
+    elif cat tmp/lint.log | grep "Error linting charts" > /dev/null; then
+        echo "Error linting charts, stopping pipeline!"
+        exit 1
+    fi
+}
+
 run_ct_container() {
     echo 'Running ct container...'
     docker run --rm --interactive --detach --network host --name ct \
@@ -87,6 +103,9 @@ install_charts() {
 }
 
 main() {
+    lint_charts
+
+    echo "Starting charts install testing..."
     run_ct_container
     trap cleanup EXIT
 
