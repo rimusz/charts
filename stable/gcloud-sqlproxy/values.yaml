@@ -30,8 +30,7 @@ existingSecretKey: ""
 serviceAccountName: ""
 
 ## usingGCPController to control if the service account should be generated and injected
-usingGCPController: false
-
+usingGCPController: ""
 
 ## SQL connection settings
 ##
