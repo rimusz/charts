@@ -58,7 +58,7 @@ rbac:
   create: false
 
 ## Specifies service type and option to enable internal LoadBalancer
-## If service.internalLB is true, service.type shoul be: LoadBalancer
+## If service.internalLB is true, service.type should be: LoadBalancer
 service:
   type: ClusterIP
   internalLB: false
@@ -81,7 +81,7 @@ networkPolicy:
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
-## Resources are commente out as sometimes Memory/CPU limit causes spikes in query times
+## Resources are commented out as sometimes Memory/CPU limit causes spikes in query times
 ## https://github.com/GoogleCloudPlatform/cloudsql-proxy/issues/168#issuecomment-394099416
 resources: {}
 #  requests:
@@ -90,6 +90,17 @@ resources: {}
 #  limits:
 #    memory: 256Mi
 #    cpu: 256m
+
+## Configure a HorizontalPodAutoscaler for pod autoscaling.
+## Requires that resources requests are set above.
+autoscaling:
+  enabled: false
+#  minReplicas: 1
+#  maxReplicas: 3
+## Only one of target CPU and Memory are required to enable the HPA.
+## The ideal target varies and depends on gcloud-sqlproxy usage.
+#  targetCPUUtilizationPercentage: 50
+#  targetMemoryUtilizationPercentage: 50
 
 ## Node selector
 nodeSelector: {}
