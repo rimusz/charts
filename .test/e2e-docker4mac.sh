@@ -6,7 +6,6 @@ set -o pipefail
 
 readonly IMAGE_TAG=${CHART_TESTING_TAG}
 readonly IMAGE_REPOSITORY="quay.io/helmpack/chart-testing"
-readonly CLUSTER_NAME=chart-testing
 
 run_ct_container() {
     echo 'Running ct container...'
