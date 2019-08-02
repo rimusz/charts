@@ -11,7 +11,7 @@ You can read more about the use case on [Travix Engineering blog post](https://t
 
 ## How does that work
 
-At a given interval, the application get the list of preemptible (PVMs) nodes and check either the node should be
+At a given interval, the application gets the list of preemptible (PVMs) nodes and checks either the node should be
 deleted or not. If the annotation doesn't exist, a time to kill value is added to the node annotation with a
 random range between 12h and 24h based on the node creation time stamp.
 When the time to kill time is passed, the Kubernetes node is marked as unschedulable, drained and the instance
