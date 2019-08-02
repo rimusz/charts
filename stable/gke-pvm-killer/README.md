@@ -4,7 +4,7 @@ This small Kubernetes application loop through a given GKE [preemptibles](https:
 
 ## Why?
 
-When creating a cluster, all the node are created at the same time and should be deleted after 24h of activity. To
+When creating a cluster, all the nodes are created at the same time and should be deleted after 24h of activity. To
 prevent large disruption, the [estafette-gke-preemptible-killer](https://github.com/estafette/estafette-gke-preemptible-killer) can be used to kill instances during a random period of time between 12 and 24h. It makes use of the node annotation to store the time to kill value.
 
 You can read more about the use case on [Travix Engineering blog post](https://travix.io/how-we-run-kubernetes-engine-at-travix-cde7a66af2bb).
