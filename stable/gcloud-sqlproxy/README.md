@@ -1,3 +1,4 @@
+
 # GCP SQL Proxy
 
 [sql-proxy](https://cloud.google.com/sql/docs/postgres/sql-proxy) The Cloud SQL Proxy provides secure access to your Cloud SQL Postgres/MySQL instances without having to whitelist IP addresses or configure SSL.
@@ -83,6 +84,8 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `extraArgs`                       | Additional container arguments          | `{}`                                                                                        |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
+
+The `extraArgs` can be provided via dot notation, e.g. `--set extraArgs.log_debug_stdout=true` passes `--log_debug_stdout=false` to the SQL Proxy command.
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
