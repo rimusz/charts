@@ -43,6 +43,12 @@ service:
   # for information about enabling the PROXY protocol on the ELB to recover
   # the original remote IP address.
   # service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+  # Due to the implementation of this feature, the source IP seen in the
+  # target container is not the original source IP of the client. To enable
+  # preservation of the client IP, the following fields can be configured in the
+  # service spec (supported in GCE/Google Kubernetes Engine environments)
+  # There are two available options: Cluster (default) and Local
+  # externalTrafficPolicy: "Cluster"
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
