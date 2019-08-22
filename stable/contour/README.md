@@ -40,6 +40,7 @@ The following table lists the configurable parameters of the `Contour` chart and
 | `service.type`                       | Service type                                       | `LoadBalancer`                      |
 | `service.loadBalancerIP`             | Loadbalancer IP                                    | ``                                  |
 | `service.annotations`                | Service annotations                                | `{}`                                |
+| `service.externalTrafficPolicy`      | externalTrafficPolicy                              | `Cluster`                           |
 | `ingressRoutes.enabled`              | If true, Enable ingressRoutes CRD will be created  | `false`                             |
 | `resources`                          | Set Compute resources                              | `{}`                                |
 | `rbac.enabled`                       | Specifies whether RBAC resources should be created | `true`                              |
