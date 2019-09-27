@@ -19,8 +19,8 @@ jobs:
       CHART_TESTING_IMAGE: quay.io/helmpack/chart-testing
       CHART_TESTING_TAG: v2.3.3
       CHARTS_REPO: https://github.com/rimusz/charts
-      K8S_VERSION: v1.14.2
-      KIND_VERSION: v0.3.0
+      K8S_VERSION: v1.15.3
+      KIND_VERSION: v0.5.1
     steps:
       - checkout
       - run:
