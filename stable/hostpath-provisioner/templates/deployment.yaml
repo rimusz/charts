@@ -31,6 +31,8 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: spec.nodeName
+            - name: NODE_HOST_PATH
+              value: "{{ .Values.NodeHostPath }}"
           volumeMounts:
             - name: pv-volume
               mountPath: /mnt/hostpath
@@ -39,4 +41,4 @@ spec:
       volumes:
         - name: pv-volume
           hostPath:
-            path: /mnt/hostpath
+            path: {{ .Values.NodeHostPath }}
