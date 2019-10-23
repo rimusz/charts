@@ -38,6 +38,10 @@ spec:
         {{- range $key, $value := .Values.extraArgs }}
         - --{{ $key }}={{ $value }}
         {{- end }}
+        {{- if .Values.lifecycleHooks }}
+        lifecycle:
+{{ toYaml .Values.lifecycleHooks | indent 10 }}
+        {{- end }}
         ports:
         {{- range .Values.cloudsql.instances }}
         - name: {{ .instanceShortName | default (.instance | trunc 15) }}
