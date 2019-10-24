@@ -111,6 +111,7 @@ tolerations: []
 ## Affinity
 affinity: {}
 
+## Configure the PodDisruptionBudget
 podDisruptionBudget: |
   maxUnavailable: 1
 
