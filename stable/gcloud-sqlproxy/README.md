@@ -70,6 +70,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `serviceAccountName`              | specify a service account name to use   | `""`                                                                                        |
 | `cloudsql.instances`              | List of PostgreSQL/MySQL instances      | [{instance: `instance`, project: `project`, region: `region`, port: 5432}] must be provided |
 | `resources`                       | CPU/Memory resource requests/limits     | Memory: `100/150Mi`, CPU: `100/150m`                                                        |
+| `lifecycleHooks`                  | Container lifecycle hooks               | `{}`                                                                                        |
 | `autoscaling.enabled`             | Enable CPU/Memory horizontal pod autoscaler | `false`                                                                                 |
 | `autoscaling.minReplicas`         | Autoscaler minimum pod replica count    | `1`                                                                                         |
 | `autoscaling.maxReplicas`         | Autoscaler maximum pod replica count    | `3`                                                                                         |

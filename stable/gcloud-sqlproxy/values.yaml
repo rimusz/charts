@@ -111,6 +111,14 @@ tolerations: []
 ## Affinity
 affinity: {}
 
+## Lifecycle hooks
+## This can be helpful for gracefully terminating the proxy, when used in combination with the -term_timeout=10s extra arg
+## NOTE: Your Docker image must have a shell for the preStop command to work, the default Docker image does not have one
+lifecycleHooks: {}
+#   preStop:
+#     exec:
+#       command: ['sleep', '10']
+
 ## Configure the PodDisruptionBudget
 podDisruptionBudget: |
   maxUnavailable: 1
