@@ -102,6 +102,10 @@ autoscaling:
 #  targetCPUUtilizationPercentage: 50
 #  targetMemoryUtilizationPercentage: 50
 
+## Number of seconds to wait before deleting the pod
+## This must be greater than or equal to the time specified with the term_timeout arg, if you have set it
+terminationGracePeriodSeconds: 30
+
 ## Node selector
 nodeSelector: {}
 
@@ -112,7 +116,7 @@ tolerations: []
 affinity: {}
 
 ## Lifecycle hooks
-## This can be helpful for gracefully terminating the proxy, when used in combination with the -term_timeout=10s extra arg
+## These can be helpful for custom graceful termination logic
 ## NOTE: Your Docker image must have a shell for the preStop command to work, the default Docker image does not have one
 lifecycleHooks: {}
 #   preStop:
@@ -124,4 +128,6 @@ podDisruptionBudget: |
   maxUnavailable: 1
 
 ## Additional container arguments
+## Uncomment the term_timeout line for the proxy to wait your chosen time before terminating connections
 extraArgs: {}
+#  term_timeout: 30s

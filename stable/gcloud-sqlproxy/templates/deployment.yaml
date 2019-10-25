@@ -62,6 +62,7 @@ spec:
       {{ end -}}
       - name: cloudsql
         emptyDir: {}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
       affinity:
