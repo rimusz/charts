@@ -77,6 +77,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `autoscaling.targetCPUUtilizationPercentage` | Scaling target for CPU Utilization Percentage | `50`                                                                       |
 | `autoscaling.targetMemoryUtilizationPercentage` | Scaling target for Memory Utilization Percentage | `50`                                                                 |
 | `terminationGracePeriodSeconds`   | # of seconds to wait before pod killed  | `30` (Kubernetes default)                                                                   |
+| `podAnnotations`                  | Pod Annotations                         |                                                                                             |
 | `nodeSelector`                    | Node Selector                           |                                                                                             |
 | `podDisruptionBudget`             | Pod disruption budget                   | `maxUnavailable: 1` if `replicasCount` > 1, does not create the PDB otherwise               |
 | `service.type`                    | Kubernetes LoadBalancer type            | `ClusterIP`                                                                                 |
