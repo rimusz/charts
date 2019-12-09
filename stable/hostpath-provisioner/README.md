@@ -36,9 +36,9 @@ spec:
   storageClassName: hostpath
   accessModes:
     - ReadWriteOnce
-    resources:
-      requests:
-        storage: 100Mi
+  resources:
+    requests:
+      storage: 100Mi
 ```
 
 ## Uninstalling the Chart
