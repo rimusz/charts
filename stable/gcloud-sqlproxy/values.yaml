@@ -110,7 +110,7 @@ terminationGracePeriodSeconds: 30
 podAnnotations: {}
 
 ## Configure Pod Priority
-priorityClassName: 0
+priorityClassName: ""
 
 ## Node selector
 nodeSelector: {}
