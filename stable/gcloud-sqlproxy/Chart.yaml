@@ -12,6 +12,8 @@ keywords:
 maintainers:
 - email: rmocius@gmail.com
   name: rimusz
+- email: naseemkullah@gmail.com
+  name: naseemkullah
 name: gcloud-sqlproxy
 sources:
 - https://github.com/rimusz/charts
