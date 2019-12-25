@@ -40,6 +40,9 @@ spec:
         {{ if $hasCredentials -}}
         - -credential_file=/secrets/cloudsql/{{ include "gcloud-sqlproxy.secretKey" . }}
         {{ end -}}
+        {{ if .Values.cloudsql.private -}}
+        - -ip_address_types=PRIVATE
+        {{ end -}}
         {{- range $key, $value := .Values.extraArgs }}
         - --{{ $key }}={{ $value }}
         {{- end }}

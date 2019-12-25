@@ -42,7 +42,7 @@ cloudsql:
   ## Use different ports for different instances.
   instances:
     # GCP instance name.
-  - instance: "instance"
+  - instance: "instance1"
     # Optional abbreviation used to override the truncated instance name if the
     # 15 character instance name prefix is not unique for use as a port
     # identifier.
@@ -53,9 +53,18 @@ cloudsql:
     region: "region"
     # Port number for the proxy to expose for this instance.
     port: 5432
+    # Use private network connection
+  private: false
 
 rbac:
   create: false
+
+## service account with annotations to use iam workload identity
+## https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
+## this option with rbac should be mutually exclusive
+iamServiceAccount:
+  create: false
+  annotations: ""
 
 ## Specifies service type and option to enable internal LoadBalancer
 ## If service.internalLB is true, service.type should be: LoadBalancer

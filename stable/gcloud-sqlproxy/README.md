@@ -69,6 +69,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `usingGCPController`              | enable the use of the GCP Service Account Controller     | `""`                                                                       |
 | `serviceAccountName`              | specify a service account name to use   | `""`                                                                                        |
 | `cloudsql.instances`              | List of PostgreSQL/MySQL instances      | [{instance: `instance`, project: `project`, region: `region`, port: 5432}] must be provided |
+| `cloudsql.private`                | Flag to enable private ip connection    | false |
 | `resources`                       | CPU/Memory resource requests/limits     | Memory: `100/150Mi`, CPU: `100/150m`                                                        |
 | `lifecycleHooks`                  | Container lifecycle hooks               | `{}`                                                                                        |
 | `autoscaling.enabled`             | Enable CPU/Memory horizontal pod autoscaler | `false`                                                                                 |
