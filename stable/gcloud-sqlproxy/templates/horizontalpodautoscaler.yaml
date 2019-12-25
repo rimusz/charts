@@ -3,10 +3,7 @@ apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   labels:
-    app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
-    helm.sh/chart: {{ include "gcloud-sqlproxy.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{- include "gcloud-sqlproxy.labels" . | nindent 4 }}
   name: {{ include "gcloud-sqlproxy.fullname" . }}
 spec:
   scaleTargetRef:

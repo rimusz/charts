@@ -32,6 +32,26 @@ Create chart name and version as used by the chart label.
 {{- end -}}
 
 {{/*
+Common labels
+*/}}
+{{- define "gcloud-sqlproxy.labels" -}}
+helm.sh/chart: {{ include "gcloud-sqlproxy.chart" . }}
+{{ include "gcloud-sqlproxy.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
+
+{{/*
+Selector labels
+*/}}
+{{- define "gcloud-sqlproxy.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end -}}
+
+{{/*
 Generate gcp service account name
 */}}
 {{- define "gcloud-sqlproxy.serviceAccountName" -}}

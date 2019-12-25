@@ -7,10 +7,7 @@ metadata:
     cloud.google.com/load-balancer-type: "Internal"
   {{- end }}
   labels:
-    app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
-    helm.sh/chart: {{ include "gcloud-sqlproxy.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{- include "gcloud-sqlproxy.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -21,5 +18,4 @@ spec:
     targetPort: {{ .instanceShortName | default (.instance | trunc 15) }}
   {{- end }}
   selector:
-    app.kubernetes.io/name: {{ include "gcloud-sqlproxy.name" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
+    {{- include "gcloud-sqlproxy.selectorLabels" . | nindent 4 }}
