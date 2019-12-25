@@ -42,7 +42,7 @@ cloudsql:
   ## Use different ports for different instances.
   instances:
     # GCP instance name.
-  - instance: "instance1"
+  - instance: "instance"
     # Optional abbreviation used to override the truncated instance name if the
     # 15 character instance name prefix is not unique for use as a port
     # identifier.
