@@ -65,6 +65,7 @@ The following table lists the configurable parameters of the `hostpath-provision
 | `storageClass.create`          | Enable creation of a StorageClass to consume this hostpath-provisioner instance   | `true`                                |
 | `storageClass.defaultClass`    | Enable as default storage class                                                   | `true`                                |
 | `storageClass.name`            | The name to assign the created StorageClass                                       | `hostpath`                            |
+| `provisionerName`              | The name to assign the created Provisioner                                        | `hostpath`                            |
 | `rbac.create`                  | Enable RABC                                                                       | `true`                                |
 | `rbac.serviceAccountName`      | Service account name                                                              | `default`                             |
 | `resources`                    | Resource limits for hostpath-provisioner pod                                      | `{}`                                  |
