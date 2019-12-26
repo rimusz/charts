@@ -7,7 +7,9 @@ metadata:
   labels:
     {{- include "gcloud-sqlproxy.labels" . | nindent 4 }}
 spec:
+{{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicasCount }}
+{{- end }}
   selector:
     matchLabels:
       {{- include "gcloud-sqlproxy.selectorLabels" . | nindent 6 }}
