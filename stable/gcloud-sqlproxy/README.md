@@ -84,7 +84,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `service.type`                    | Kubernetes LoadBalancer type            | `ClusterIP`                                                                                 |
 | `service.internalLB`              | Create service with `cloud.google.com/load-balancer-type: "Internal"` | Default `false`, when set to `true` you have to set also `service.type=LoadBalancer` |
 | `rbac.create`                     | Create RBAC configuration w/ SA         | `false`                                                                                     |
-| `serviceAccount.create`           | Create a service account | `false` |
+| `serviceAccount.create` | Create a service account | `true` |
 | `serviceAccount.annotations` | Annotations for the service account | `{}` |
 | `serviceAccount.name` |  Service account name | Generated using the fullname template |
 | `networkPolicy.enabled`           | Enable NetworkPolicy                    | `false`                                                                                     |
