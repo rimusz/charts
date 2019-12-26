@@ -53,15 +53,13 @@ cloudsql:
     region: "region"
     # Port number for the proxy to expose for this instance.
     port: 5432
-    # Use private network connection
-  private: false
 
 rbac:
   create: false
 
 serviceAccount:
   # Specifies whether a ServiceAccount should be created
-  create: false
+  create: true
   annotations: {}
   # The name of the ServiceAccount to use.
   # If not set and create is true, a name is generated using the fullname template
