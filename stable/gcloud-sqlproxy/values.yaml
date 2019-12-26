@@ -62,10 +62,10 @@ rbac:
 serviceAccount:
   # Specifies whether a ServiceAccount should be created
   create: false
+  annotations: {}
   # The name of the ServiceAccount to use.
   # If not set and create is true, a name is generated using the fullname template
   name:
-  annotations: ""
 
 ## Specifies service type and option to enable internal LoadBalancer
 ## If service.internalLB is true, service.type should be: LoadBalancer
