@@ -59,11 +59,12 @@ cloudsql:
 rbac:
   create: false
 
-## service account with annotations to use iam workload identity
-## https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
-## this option with rbac should be mutually exclusive
-iamServiceAccount:
+serviceAccount:
+  # Specifies whether a ServiceAccount should be created
   create: false
+  # The name of the ServiceAccount to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name:
   annotations: ""
 
 ## Specifies service type and option to enable internal LoadBalancer
