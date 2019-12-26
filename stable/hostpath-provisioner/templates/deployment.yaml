@@ -33,6 +33,8 @@ spec:
                   fieldPath: spec.nodeName
             - name: NODE_HOST_PATH
               value: "{{ .Values.NodeHostPath }}"
+            - name: HOSTPATH_PROVISIONER_NAME
+              value: "{{.Values.provisionerName }}"
           volumeMounts:
             - name: pv-volume
               mountPath: /mnt/hostpath
