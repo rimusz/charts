@@ -67,7 +67,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `existingSecret`                  | Name of an existing secret to be used for the cloud-sql credentials | `""`                                                            |
 | `existingSecretKey`               | The key to use in the provided existing secret   | `""`                                                                               |
 | `usingGCPController`              | enable the use of the GCP Service Account Controller     | `""`                                                                       |
-| `gcpServiceAccountName`           | specify a service account name to use with GCP Controller | `""`                                                                                        |
+| `serviceAccountName`              | specify a service account name to use with GCP Controller | `""`                                                                                        |
 | `cloudsql.instances`              | List of PostgreSQL/MySQL instances      | [{instance: `instance`, project: `project`, region: `region`, port: 5432}] must be provided |
 | `resources`                       | CPU/Memory resource requests/limits     | Memory: `100/150Mi`, CPU: `100/150m`                                                        |
 | `lifecycleHooks`                  | Container lifecycle hooks               | `{}`                                                                                        |
