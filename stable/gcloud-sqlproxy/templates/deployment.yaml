@@ -18,7 +18,7 @@ spec:
       annotations:
 {{ toYaml .Values.podAnnotations | indent 8 }}
     spec:
-      {{- if .Values.rbac.create }}
+      {{- if .Values.serviceAccount.create }}
       serviceAccountName: {{ include "gcloud-sqlproxy.serviceAccountName" . }}
       {{- end }}
       {{- if .Values.priorityClassName }}
