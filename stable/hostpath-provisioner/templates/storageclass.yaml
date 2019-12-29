@@ -11,4 +11,4 @@ metadata:
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
 {{- end }}
-provisioner: hostpath
+provisioner: {{ .Values.provisionerName }}
