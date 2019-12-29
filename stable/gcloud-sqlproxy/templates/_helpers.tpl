@@ -54,7 +54,7 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 {{/*
 Generate gcp service account name
 */}}
-{{- define "gcloud-sqlproxy.serviceAccountName" -}}
+{{- define "gcloud-sqlproxy.gcpServiceAccountName" -}}
 {{ default (include "gcloud-sqlproxy.fullname" .) .Values.serviceAccountName }}
 {{- end -}}
 
@@ -77,4 +77,15 @@ Check if any type of credentials are defined
 */}}
 {{- define "gcloud-sqlproxy.hasCredentials" -}}
 {{ or .Values.serviceAccountKey ( or .Values.existingSecret .Values.usingGCPController ) -}}
+{{- end -}}
+
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "gcloud-sqlproxy.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create -}}
+    {{ default (include "gcloud-sqlproxy.fullname" .) .Values.serviceAccount.name }}
+{{- else -}}
+    {{ default "default" .Values.serviceAccount.name }}
+{{- end -}}
 {{- end -}}

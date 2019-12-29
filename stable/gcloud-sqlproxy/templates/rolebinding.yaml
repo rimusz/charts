@@ -12,6 +12,6 @@ roleRef:
   name: {{ include "gcloud-sqlproxy.fullname" . }}
 subjects:
   - kind: ServiceAccount
-    name: {{ include "gcloud-sqlproxy.fullname" . }}
+    name: {{ template "gcloud-sqlproxy.serviceAccountName" . }}
     namespace: {{ .Release.Namespace }}
 {{- end }}
