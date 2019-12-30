@@ -123,3 +123,7 @@ E.g. service `gcloud-sqlproxy-gcloud-sqlproxy` will now show up as `gcloud-sqlpr
 **From < 0.11.0 to >= 0.11.0**
 
 Please note, as of `0.11.0` recommended labels are used. Please take into anything that may target your release's objects via labels.
+
+## Support
+
+Kubernetes versions older than 1.9 are not supported by this chart.
