@@ -17,4 +17,4 @@ maintainers:
 name: gcloud-sqlproxy
 sources:
 - https://github.com/rimusz/charts
-version: 0.19.5
+version: 0.19.6
