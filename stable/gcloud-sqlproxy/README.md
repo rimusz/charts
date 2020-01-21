@@ -90,6 +90,20 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `networkPolicy.enabled`           | Enable NetworkPolicy                    | `false`                                                                                     |
 | `networkPolicy.ingress.from`      | List of sources which should be able to access the pods selected for this rule. If empty, allows all sources. | `[]`                  |
 | `extraArgs`                       | Additional container arguments          | `{}`                                                                                        |
+| `livenessProbe.enabled`           | Would you like a livenessProbe to be enabled  | `false`                                                                               |
+| `livenessProbe.port`              | The port which will be checked by the probe   | 5432                                                                                  |
+| `livenessProbe.initialDelaySeconds` | Delay before liveness probe is initiated    | 30                                                                                    |
+| `livenessProbe.periodSeconds`     | How often to perform the probe                | 10                                                                                    |
+| `livenessProbe.timeoutSeconds`    | When the probe times out                      | 5                                                                                     |
+| `livenessProbe.failureThreshold`  | Minimum consecutive failures for the probe to be considered failed after having succeeded.  | 6                                       |
+| `livenessProbe.successThreshold`  | Minimum consecutive successes for the probe to be considered successful after having failed | 1                                       |
+| `readinessProbe.enabled`          | would you like a readinessProbe to be enabled | `false`                                                                               |
+| `readinessProbe.port`              | The port which will be checked by the probe  | 5432                                                                                  |
+| `readinessProbe.initialDelaySeconds` | Delay before readiness probe is initiated  | 5                                                                                     |
+| `readinessProbe.periodSeconds`    | How often to perform the probe                | 10                                                                                    |
+| `readinessProbe.timeoutSeconds`   | When the probe times out                      | 5                                                                                     |
+| `readinessProbe.failureThreshold` | Minimum consecutive failures for the probe to be considered failed after having succeeded.  | 6                                       |
+| `readinessProbe.successThreshold` | Minimum consecutive successes for the probe to be considered successful after having failed | 1                                       |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 

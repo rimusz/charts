@@ -99,6 +99,24 @@ resources: {}
 #    memory: 256Mi
 #    cpu: 256m
 
+livenessProbe:
+  enabled: false
+  port: 5432
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+  successThreshold: 1
+
+readinessProbe:
+  enabled: false
+  port: 5432
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+  successThreshold: 1
+
 ## Configure a HorizontalPodAutoscaler for pod autoscaling.
 ## Requires that resources requests are set above.
 autoscaling:
