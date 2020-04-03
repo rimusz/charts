@@ -70,6 +70,10 @@ serviceAccount:
 service:
   type: ClusterIP
   internalLB: false
+  # Configures custom LoadBalancer IP. Compatibility depends on the cloud provider.
+  # For instance, GCP Internal LoadBalancer will take it into account.
+  # If left blank or if not supported by your cloud provider, it will be ignored.
+  loadBalancerIP: ""
 
 networkPolicy:
   ## Specifies whether a NetworkPolicy should be created

@@ -10,6 +10,9 @@ metadata:
     {{- include "gcloud-sqlproxy.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
+  {{- if .Values.service.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.loadBalancerIP }}
+  {{- end }}
   ports:
   {{- range .Values.cloudsql.instances }}
   - name: {{ .instance }}
