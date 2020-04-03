@@ -83,6 +83,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `podDisruptionBudget`             | Pod disruption budget                   | `maxUnavailable: 1` if `replicasCount` > 1, does not create the PDB otherwise               |
 | `service.type`                    | Kubernetes LoadBalancer type            | `ClusterIP`                                                                                 |
 | `service.internalLB`              | Create service with `cloud.google.com/load-balancer-type: "Internal"` | Default `false`, when set to `true` you have to set also `service.type=LoadBalancer` |
+| `service.loadBalancerIP`          | Set custom Load Balancer IP             | `""`                                                                                                    |
 | `rbac.create`                     | Create RBAC configuration w/ SA         | `false`                                                                                     |
 | `serviceAccount.create` | Create a service account | `true` |
 | `serviceAccount.annotations` | Annotations for the service account | `{}` |
