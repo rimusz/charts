@@ -1,3 +1,4 @@
+apiVersion: v1
 appVersion: "1.16"
 description: Google Cloud SQL Proxy
 engine: gotpl
