@@ -15,7 +15,7 @@ spec:
   {{- end }}
   ports:
   {{- range .Values.cloudsql.instances }}
-  - name: {{ .instance }}
+  - name: {{ .instanceShortName | default (.instance | trunc 15) }}
     protocol: TCP
     port: {{ .port }}
     targetPort: {{ .instanceShortName | default (.instance | trunc 15) }}
