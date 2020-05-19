@@ -12,3 +12,4 @@ metadata:
     storageclass.kubernetes.io/is-default-class: "true"
 {{- end }}
 provisioner: {{ .Values.provisionerName }}
+reclaimPolicy: {{ .Values.reclaimPolicy }}

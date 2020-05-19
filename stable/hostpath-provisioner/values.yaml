@@ -24,6 +24,9 @@ storageClass:
 ## Set the provisioner name
 provisionerName: hostpath
 
+## Set the reclaimPolicy
+reclaimPolicy: Delete
+
 ## Set the local HostPath to be used on the node
 NodeHostPath: /mnt/hostpath
 
