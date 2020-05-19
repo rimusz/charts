@@ -66,6 +66,7 @@ The following table lists the configurable parameters of the `hostpath-provision
 | `storageClass.defaultClass`    | Enable as default storage class                                                   | `true`                                |
 | `storageClass.name`            | The name to assign the created StorageClass                                       | `hostpath`                            |
 | `provisionerName`              | The name to assign the created Provisioner                                        | `hostpath`                            |
+| `reclaimPolicy`                | Set the reclaimPolicy | `Delete` |
 | `rbac.create`                  | Enable RABC                                                                       | `true`                                |
 | `rbac.serviceAccountName`      | Service account name                                                              | `default`                             |
 | `resources`                    | Resource limits for hostpath-provisioner pod                                      | `{}`                                  |
