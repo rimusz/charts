@@ -18,7 +18,7 @@ You need to enable Cloud SQL Administration API and create a service account for
 - Kubernetes cluster on Google Container Engine (GKE)
 - Kubernetes cluster on Google Compute Engine (GCE)
 - Cloud SQL Administration API enabled
-- GCP Service account for the proxy with `Cloud SQL Admin` role, and `Cloud SQL Admin API` enabled.
+- GCP Service account for the proxy with `Cloud SQL Client` role
 
 ## Installing the Chart
 
