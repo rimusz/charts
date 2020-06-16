@@ -4,6 +4,15 @@ description: A security sample Helm chart
 type: application
 version: 0.1.0
 appVersion: 0.1.0
+home: https://github.com/rimusz/security-sample-app
+keywords:
+- security
+- mitigation
+maintainers:
+- email: rmocius@gmail.com
+  name: rimusz
+sources:
+- https://github.com/rimusz/charts
 dependencies:
 - name: postgresql
   version: 8.10.5
