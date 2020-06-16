@@ -1,0 +1,11 @@
+apiVersion: v2
+name: security-sample-chart
+description: A security sample Helm chart
+type: application
+version: 0.1.0
+appVersion: 0.1.0
+dependencies:
+- name: postgresql
+  version: 8.10.5
+  repository: https://charts.bitnami.com/bitnami
+  condition: postgresql.enabled
