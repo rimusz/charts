@@ -18,6 +18,7 @@ do
  then
     # Will generate a helm package per chart in a folder
     echo "$d"
+    helm dep up "$d"
     helm package "$d"
     # shellcheck disable=SC2035
     mv *.tgz temp/
