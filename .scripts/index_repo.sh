@@ -15,4 +15,4 @@ if [ -f index.yaml ]; then
 else
   helm repo index --url "${REPO_URL}" ./temp
 fi
-cat index.yaml
+cat ./temp/index.yaml
