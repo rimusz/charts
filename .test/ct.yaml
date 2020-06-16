@@ -1,4 +1,6 @@
 target-branch: master
 chart-dirs:
   - stable
+excluded-charts: 
+  - security-sample-chart
 helm-extra-args: --timeout 800
