@@ -24,7 +24,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: run-testing
+          name: chart-testing
           command: test/e2e-ci.sh
           no_output_timeout: 9000
           
