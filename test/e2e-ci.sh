@@ -70,7 +70,7 @@ create_kind_cluster() {
     kind get kubeconfig > /tmp/kubeconfig
     ls -alh /tmp
     cat /tmp/kubeconfig
-    hostname --ip-address
+    ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p'
     docker_exec mkdir -p /root/.kube
     docker cp /tmp/kubeconfig ct:/root/.kube/config
     docker_exec kubectl cluster-info
