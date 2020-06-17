@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-sample-chart
 description: A security sample Helm chart
 type: application
-version: 0.1.2
+version: 0.1.3
 appVersion: 0.1.0
 home: https://github.com/rimusz/security-sample-app
 keywords:
