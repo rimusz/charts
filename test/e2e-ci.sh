@@ -70,17 +70,13 @@ create_kind_cluster() {
 }
 
 install_charts() {
-    docker_exec ct install --config /workdir/test/ct.yaml
-    echo
-}
-
-install_charts() {
     echo "Starting charts install testing..."
     run_ct_container
     trap cleanup EXIT
 
     create_kind_cluster
-    install_charts
+    docker_exec ct install --config /workdir/test/ct.yaml
+    echo
 }
 
 main() {
