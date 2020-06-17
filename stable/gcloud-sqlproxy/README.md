@@ -142,4 +142,3 @@ Please note, as of `0.11.0` recommended labels are used. Please take into anythi
 ## Support
 
 Kubernetes versions older than 1.9 are not supported by this chart.
-
