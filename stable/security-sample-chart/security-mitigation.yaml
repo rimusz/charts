@@ -1,2 +1,8 @@
 schemaVersion: v1
-summary: CVE apply to all versions
+summary: Security mitigation information for this application is tracked by the security-mitigation.yaml file that's part of this helm chart.
+mitigations:
+  - cves:
+      - CVE-2019-11888
+    affectedPackageUri: docker://rimusz/security-sample-app
+    affectedVersions: "0.1.0"
+    description: This CVE is applicable for applications running on Windows. This application currently doesn't support Windows OS, hence this CVE does not impact our users.
