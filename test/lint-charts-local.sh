@@ -16,7 +16,7 @@ main() {
 
     mkdir -p tmp
     # shellcheck disable=SC2086
-    docker run --rm -v "$(pwd):/workdir" --workdir /workdir "$IMAGE_REPOSITORY:$IMAGE_TAG" ct lint ${CHART_TESTING_ARGS} --config /workdir/.test/ct.yaml
+    docker run --rm -v "$(pwd):/workdir" --workdir /workdir "$IMAGE_REPOSITORY:$IMAGE_TAG" ct lint ${CHART_TESTING_ARGS} --config /workdir/test/ct.yaml
 
     echo "Done Charts Linting!"
 }
