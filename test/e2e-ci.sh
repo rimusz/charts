@@ -51,6 +51,10 @@ docker_exec() {
 }
 
 create_kind_cluster() {
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/${K8S_VERSION}/bin/linux/amd64/kubectl
+    chmod +x ./kubectl
+    sudo mv ./kubectl /usr/local/bin/kubectl
+
     echo 'Installing kind...'
 
     curl -sSLo kind "https://github.com/kubernetes-sigs/kind/releases/download/$KIND_VERSION/kind-linux-amd64"
@@ -59,11 +63,13 @@ create_kind_cluster() {
 
     kind create cluster --name "$CLUSTER_NAME" --image "kindest/node:$K8S_VERSION" --wait 60s
     ### kind create cluster --name "$CLUSTER_NAME" --config test/kind-config.yaml --image "kindest/node:$K8S_VERSION" --wait 60s
+    
+    kubectl cluster-info
 
     echo 'Copying kubeconfig to ct container...'
     kind get kubeconfig > /tmp/kubeconfig
     docker cp /tmp/kubeconfig ct:/root/.kube/config
-    docker_exec ls -al /root/.kube
+    docker_exec ls -alh /root/.kube
     docker_exec cat /root/.kube/config
     docker_exec kubectl cluster-info
     echo
