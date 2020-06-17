@@ -65,10 +65,9 @@ create_kind_cluster() {
     kind create cluster --name "$CLUSTER_NAME" --config test/kind-config.yaml --image "kindest/node:$K8S_VERSION" --wait 60s
 
     kubectl cluster-info
-    KIND_IP=$(docker container inspect chart-testing-control-plane -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}')
 
     echo 'Copying kubeconfig to container...'
-    kind get kubeconfig --name  "$CLUSTER_NAME" > /tmp/kubeconfig
+    kind get kubeconfig --name "$CLUSTER_NAME" > /tmp/kubeconfig
     docker_exec mkdir -p /root/.kube
     docker cp /tmp/kubeconfig ct:/root/.kube/config
     docker_exec kubectl cluster-info
