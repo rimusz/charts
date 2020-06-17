@@ -63,6 +63,7 @@ create_kind_cluster() {
     echo 'Copying kubeconfig to ct container...'
     kind get kubeconfig > /tmp/kubeconfig
     docker cp /tmp/kubeconfig ct:/root/.kube/config
+    docker_exec cat /root/.kube/config
     docker_exec kubectl cluster-info
     echo
 
@@ -88,7 +89,7 @@ install_charts() {
 }
 
 main() {
-    lint_charts
+    install_charts
 }
 
 main
