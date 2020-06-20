@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-sample-chart
 description: A security sample Helm chart
 type: application
-version: 0.1.3
+version: 0.1.4
 appVersion: 0.1.0
 home: https://github.com/rimusz/security-sample-app
 keywords:
@@ -18,3 +18,4 @@ dependencies:
   version: 8.10.5
   repository: https://charts.bitnami.com/bitnami
   condition: postgresql.enabled
+icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/security-sample-chart/logo/chart-logo.png
