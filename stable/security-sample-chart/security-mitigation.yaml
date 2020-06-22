@@ -2,10 +2,10 @@ schemaVersion: v1
 summary: Security mitigation information for this application is tracked by the security-mitigation.yaml file that's part of this helm chart.
 mitigations:
   - cves:
-      - CVE-0001
+      - CVE-2019-1010022
     affectedPackageUri: helm://rimusz/security-sample-chart
     affectedVersions: <= 0.1.5
-    description: This security mitigation information for CVE-0001 applies to the specified affectedVersions of charts.
+    description: This security mitigation information for CVE-2019-10100 applies to the specified affectedVersions of charts.
   - cves:
       - CVE-2019-11888
     affectedPackageUri: docker://docker.io/rimusz/security-sample-app
