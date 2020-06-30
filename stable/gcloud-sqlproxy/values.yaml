@@ -13,6 +13,9 @@ imagePullPolicy: IfNotPresent
 ## Replicas Set count
 replicasCount: 1
 
+## Specify the deployment strategy for pods
+deploymentStrategy: {}
+
 ## Set the GCP service account key JSON file.
 ## Service account has access be set to Cloud SQL instances
 ## the key must be encoded with base64
