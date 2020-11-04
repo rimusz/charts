@@ -17,7 +17,7 @@ jobs:
     machine: true
     environment:
       CHART_TESTING_IMAGE: quay.io/helmpack/chart-testing
-      CHART_TESTING_TAG: v3.0.0
+      CHART_TESTING_TAG: v3.3.0
       CHARTS_REPO: https://github.com/rimusz/charts
       K8S_VERSION: v1.18.2
       KIND_VERSION: v0.8.1
