@@ -3,7 +3,7 @@
 MAC_ARGS ?=
 CHARTS_REPO ?= https://github.com/rimusz/charts
 CHART_TESTING_IMAGE ?= quay.io/helmpack/chart-testing
-CHART_TESTING_TAG ?= v3.0.0
+CHART_TESTING_TAG ?= v3.3.0
 GKE_TESTING_IMAGE ?= docker.pkg.github.com/rimusz/charts-ci/image
 GKE_TESTING_TAG ?= 0.0.16
 
