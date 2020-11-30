@@ -41,7 +41,6 @@ usingGCPController: ""
 
 ## SQL connection settings
 ##
-#
 cloudsql:
   ## PostgreSQL/MySQL instances:
   ## update with your GCP project, the region of your Cloud SQL instance
