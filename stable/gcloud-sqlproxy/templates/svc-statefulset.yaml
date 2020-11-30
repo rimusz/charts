@@ -1,0 +1,20 @@
+{{- if .Values.useStatefulset }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gcloud-sqlproxy.fullname" . }}-headless
+  labels:
+    {{- include "gcloud-sqlproxy.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+  {{- range .Values.cloudsql.instances }}
+  - name: {{ .instanceShortName | default (.instance | trunc 15) }}
+    protocol: TCP
+    port: {{ .port }}
+    targetPort: {{ .instanceShortName | default (.instance | trunc 15) }}
+  {{- end }}
+  selector:
+    {{- include "gcloud-sqlproxy.selectorLabels" . | nindent 4 }}
+{{- end }}

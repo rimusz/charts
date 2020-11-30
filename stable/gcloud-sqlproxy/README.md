@@ -106,6 +106,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `readinessProbe.timeoutSeconds`   | When the probe times out                      | 5                                                                                     |
 | `readinessProbe.failureThreshold` | Minimum consecutive failures for the probe to be considered failed after having succeeded.  | 6                                       |
 | `readinessProbe.successThreshold` | Minimum consecutive successes for the probe to be considered successful after having failed | 1                                       |
+| `useStatefulset`                  | Deploy as a statefulset rather than a deployment                                            | false                                       |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 
@@ -121,6 +122,10 @@ $ helm install --name my-release -f values.yaml rimusz/gcloud-sqlproxy
 
 ### Auto generating the gcp service account
 By enabling the flag `usingGCPController` and having a GCP Service Account Controller deployed in your cluster, it is possible to autogenerate and inject the service account used for connecting to the database. For more information see https://github.com/kiwigrid/helm-charts/tree/master/charts/gcp-serviceaccount-controller
+
+### Handling A Large Number of Instances
+
+GCP does not support more than 5 endpoints on an Internal Load Balancer. To work around this, you can deploy this as a Statefulset to get all the hostname-guarantees associated with statefulsets. You can then access the headless service, e.g.: `cloudsql-proxy-headless.cloudsql-proxy.svc.cluster.local`
 
 ## Documentation
 
