@@ -30,7 +30,7 @@ To install the `gcloud-sqlproxy` chart with the release name `gcloud-sqlproxy`:
 helm upgrade --install gcloud-sqlproxy rimusz/gcloud-sqlproxy
 ```
 
-Or from the [Chartcenter](https://chartcenter.io):
+Or from the [Chartcenter](https://chartcenter.io/rimusz/gcloud-sqlproxy):
 
 ```console
 helm upgrade --install gcloud-sqlproxy center/rimusz/gcloud-sqlproxy
