@@ -13,6 +13,10 @@ imagePullPolicy: IfNotPresent
 ## Replicas Set count
 replicasCount: 1
 
+## Set to true to use a statefulset for the deployable.
+## You can then access the nodes using the known-hostnames of a statefulset
+useStatefulset: false
+
 ## Specify the deployment strategy for pods
 deploymentStrategy: {}
 
@@ -37,6 +41,7 @@ usingGCPController: ""
 
 ## SQL connection settings
 ##
+#
 cloudsql:
   ## PostgreSQL/MySQL instances:
   ## update with your GCP project, the region of your Cloud SQL instance
