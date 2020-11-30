@@ -8,20 +8,35 @@ Get the latest [Helm release](https://github.com/kubernetes/helm#install).
 
 ### Add Helm chart repository
 
+#### Adding rimusz chart repository
+
  ```console
  helm repo add rimusz https://charts.rimusz.net
  helm repo update
  ```
 
+#### Adding ChartCenter.io chart repository
+
+ ```console
+ helm repo add center https://repo.chartcenter.io
+ helm repo update
+ ```
+ 
 ### Install some chart
 
-To install the `contour` chart with the release name `contour`:
+To install the `gcloud-sqlproxy` chart with the release name `gcloud-sqlproxy`:
 
 ```console
-helm upgrade --install contour rimusz/contour
+helm upgrade --install gcloud-sqlproxy rimusz/gcloud-sqlproxy
 ```
 
-Check contour chart [readme](stable/contour/README.md) for more customization options.
+Or from the [Chartcenter](https://chartcenter.io):
+
+```console
+helm upgrade --install gcloud-sqlproxy center/rimusz/gcloud-sqlproxy
+```
+
+Check `gcloud-sqlproxy` chart [readme](stable/gcloud-sqlproxy/README.md) for more customization options.
 
 ## Contributing to Rimusz Charts
 
@@ -49,7 +64,7 @@ make lint
 You can force to lint one chart with `--charts` flag:
 
 ```console
-make lint -- --charts stable/contour
+make lint -- --charts stable/gcloud-sqlproxy
 ```
 
 You can force to lint a list of charts (separated by comma) with `--charts` flag:
@@ -79,7 +94,7 @@ make mac
 You can force to install one chart with `--charts` flag:
 
 ```console
-make mac -- --charts stable/contour
+make mac -- --charts stable/gcloud-sqlproxy
 ```
 
 You can force to install a list of charts (separated by comma) with `--charts` flag:
@@ -109,7 +124,7 @@ make gke
 You can force to install one chart with `--charts` flag:
 
 ```console
-make gke -- --charts stable/contour
+make gke -- --charts stable/gcloud-sqlproxy
 ```
 
 You can force to install a list of charts (separated by comma) with `--charts` flag:
