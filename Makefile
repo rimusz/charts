@@ -3,9 +3,9 @@
 MAC_ARGS ?=
 CHARTS_REPO ?= https://github.com/rimusz/charts
 CHART_TESTING_IMAGE ?= quay.io/helmpack/chart-testing
-CHART_TESTING_TAG ?= v3.3.0
+CHART_TESTING_TAG ?= v3.3.1
 GKE_TESTING_IMAGE ?= docker.pkg.github.com/rimusz/charts-ci/image
-GKE_TESTING_TAG ?= 0.0.16
+GKE_TESTING_TAG ?= 0.0.21
 
 # If the first argument is "lint" or "mac" or "gke" or "kind"
 ifneq ( $(filter wordlist 1,lint mac gke kind), $(firstword $(MAKECMDGOALS)))
