@@ -4,7 +4,7 @@
 
 ### Install Helm
 
-Get the latest [Helm release](https://github.com/kubernetes/helm#install).
+Get the latest [Helm](https://helm.sh/docs/intro/install/).
 
 ### Add Helm chart repository
 
