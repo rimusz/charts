@@ -4,7 +4,8 @@ version: 0.2.10
 name: hostpath-provisioner
 description: hostpath-provisioner is an automatic provisioner creating Persistent Volumes from the hostpath.
 home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
-source: https://github.com/rimusz/hostpath-provisioner
+sources:
+- https://github.com/rimusz/hostpath-provisioner
 keywords:
 - hostpath
 - storage
