@@ -14,13 +14,6 @@ Get the latest [Helm](https://helm.sh/docs/intro/install/).
  helm repo add rimusz https://charts.rimusz.net
  helm repo update
  ```
-
-#### Adding ChartCenter.io chart repository
-
- ```console
- helm repo add center https://repo.chartcenter.io
- helm repo update
- ```
  
 ### Install some chart
 
@@ -28,12 +21,6 @@ To install the `gcloud-sqlproxy` chart with the release name `gcloud-sqlproxy`:
 
 ```console
 helm upgrade --install gcloud-sqlproxy rimusz/gcloud-sqlproxy
-```
-
-Or from the [Chartcenter](https://chartcenter.io/rimusz/gcloud-sqlproxy):
-
-```console
-helm upgrade --install gcloud-sqlproxy center/rimusz/gcloud-sqlproxy
 ```
 
 Check `gcloud-sqlproxy` chart [readme](stable/gcloud-sqlproxy/README.md) for more customization options.
