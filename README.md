@@ -8,7 +8,7 @@ Get the latest [Helm](https://helm.sh/docs/intro/install/).
 
 ### Add Helm chart repository
 
-#### Adding rimusz chart repository
+Adding `rimusz` chart repository:
 
  ```console
  helm repo add rimusz https://charts.rimusz.net
