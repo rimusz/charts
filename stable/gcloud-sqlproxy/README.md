@@ -25,7 +25,7 @@ You need to enable Cloud SQL Administration API and create a service account for
 Install from remote URL with the release name `pg-sqlproxy` into namespace `sqlproxy`, set GCP service account and SQL instances and ports:
 
 ```console
-$ helm upgrade pg-sqlproxy rimusz/gcloud-sqlproxy --namespace sqlproxy \
+$ helm upgrade --install pg-sqlproxy rimusz/gcloud-sqlproxy --namespace sqlproxy \
     --set serviceAccountKey="$(cat service-account.json | base64 | tr -d '\n')" \
     --set cloudsql.instances[0].instance=INSTANCE \
     --set cloudsql.instances[0].project=PROJECT \
