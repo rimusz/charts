@@ -30,7 +30,7 @@ serviceAccountKey: ""
 
 ## Specify an existing secret holding the cloud-sql service account credentials
 existingSecret: ""
-## The key in the existing secret that stores the credenials
+## The key in the existing secret that stores the credentials
 existingSecretKey: ""
 
 ## serviceAccountName to specify the service account name that will be generated
