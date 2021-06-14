@@ -30,6 +30,15 @@ reclaimPolicy: Delete
 ## Set the local HostPath to be used on the node
 NodeHostPath: /mnt/hostpath
 
+## Node selector
+nodeSelector: {}
+
+## Affinity
+affinity: {}
+
+## Tolerations
+tolerations: []
+
 rbac:
   create: true
   ## Ignored if rbac.create is true
