@@ -8,7 +8,7 @@ which dynamically provisions Kubernetes HostPath Volumes, it is particularly han
 To install the chart with the release name `hostpath-provisioner`:
 
 ```console
-$ helm upgrade --install hostpath-provisioner --namespace kube-system rimusz/hostpath-provisioner
+$ helm upgrade --install hostpath-provisioner -n hostpath-provisioner rimusz/hostpath-provisioner
 ```
 
 **Note:** On [kind](https://github.com/kubernetes-sigs/kind) please delete the default storage class:
@@ -46,7 +46,7 @@ spec:
 To uninstall/delete the `hostpath-provisioner` deployment:
 
 ```console
-$ helm delete --purge hostpath-provisioner
+$ helm delete hostpath-provisioner
 ```
 
 The command removes all the Kubernetes components associated with the chart and
@@ -66,6 +66,7 @@ The following table lists the configurable parameters of the `hostpath-provision
 | `storageClass.defaultClass`    | Enable as default storage class                                                   | `true`                                |
 | `storageClass.name`            | The name to assign the created StorageClass                                       | `hostpath`                            |
 | `provisionerName`              | The name to assign the created Provisioner                                        | `hostpath`                            |
+| `nodeHostPath`                 | Set the local HostPath to be used on the node                                     | `/mnt/hostpath`                       |
 | `reclaimPolicy`                | Set the reclaimPolicy                                                             | `Delete`                              |
 | `rbac.create`                  | Enable RABC                                                                       | `true`                                |
 | `rbac.serviceAccountName`      | Service account name                                                              | `default`                             |
@@ -75,7 +76,7 @@ The following table lists the configurable parameters of the `hostpath-provision
 | `affinity`                     | Affinity for pod assignment                                                       | `{}`                                  |
 
 ```console
-$ helm install rimusz/hostpath-provisioner --name hostpath-provisioner \
+$ helm upgrade -install hostpath-provisioner -n hostpath-provisioner rimusz/hostpath-provisioner \
   --set resources.limits.cpu=200m
 ```
 
@@ -83,7 +84,7 @@ Alternatively, a YAML file that specifies the values for the above parameters
 can be provided while installing the chart. For example,
 
 ```console
-$ helm install rimusz/hostpath-provisioner --name hostpath-provisioner -f values.yaml
+$ helm upgrade -install hostpath-provisioner -n hostpath-provisioner rimusz/hostpath-provisioner -f values.yaml
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml) as an example

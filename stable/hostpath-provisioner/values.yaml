@@ -28,7 +28,7 @@ provisionerName: hostpath
 reclaimPolicy: Delete
 
 ## Set the local HostPath to be used on the node
-NodeHostPath: /mnt/hostpath
+nodeHostPath: /mnt/hostpath
 
 ## Node selector
 nodeSelector: {}

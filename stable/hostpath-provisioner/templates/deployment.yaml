@@ -32,7 +32,7 @@ spec:
                 fieldRef:
                   fieldPath: spec.nodeName
             - name: NODE_HOST_PATH
-              value: "{{ .Values.NodeHostPath }}"
+              value: "{{ .Values.nodeHostPath }}"
             - name: HOSTPATH_PROVISIONER_NAME
               value: "{{.Values.provisionerName }}"
           volumeMounts:
@@ -43,7 +43,7 @@ spec:
       volumes:
         - name: pv-volume
           hostPath:
-            path: {{ .Values.NodeHostPath }}
+            path: {{ .Values.nodeHostPath }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
