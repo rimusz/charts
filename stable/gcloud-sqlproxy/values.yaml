@@ -147,6 +147,11 @@ terminationGracePeriodSeconds: 30
 ## Pod annotations
 podAnnotations: {}
 
+## Configure Security Context
+securityContext: {}
+#   runAsUser: 1000
+#   fsGroup: 1000
+
 ## Configure Pod Priority
 priorityClassName: ""
 

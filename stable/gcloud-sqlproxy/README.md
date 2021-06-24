@@ -93,6 +93,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `networkPolicy.enabled`           | Enable NetworkPolicy                    | `false`                                                                                     |
 | `networkPolicy.ingress.from`      | List of sources which should be able to access the pods selected for this rule. If empty, allows all sources. | `[]`                  |
 | `extraArgs`                       | Additional container arguments          | `{}`                                                                                        |
+| `securityContext`                 | Configure Security Context              | `{}` |
 | `livenessProbe.enabled`           | Would you like a livenessProbe to be enabled  | `false`                                                                               |
 | `livenessProbe.port`              | The port which will be checked by the probe   | 5432                                                                                  |
 | `livenessProbe.initialDelaySeconds` | Delay before liveness probe is initiated    | 30                                                                                    |
