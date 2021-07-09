@@ -61,7 +61,8 @@ spec:
         {{- end }}
         ports:
         {{- range .Values.cloudsql.instances }}
-        - name: {{ .instanceShortName | default (.instance | trunc 15) }}
+        {{- $instanceShortName := include "gcloud-sqlproxy.instanceShortName" . }}
+        - name: {{ $instanceShortName }}
           containerPort: {{ .port }}
         {{- end }}
         {{- if .Values.livenessProbe.enabled }}

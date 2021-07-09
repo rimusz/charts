@@ -89,3 +89,10 @@ Create the name of the service account to use
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Create the short instance name
+*/}}
+{{- define "gcloud-sqlproxy.instanceShortName" -}}
+{{ .instanceShortName | default (.instance | trunc 15 | trimSuffix "-") }}
+{{- end -}}

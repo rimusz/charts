@@ -18,10 +18,11 @@ spec:
   {{- end }}
   ports:
   {{- range .Values.cloudsql.instances }}
-  - name: {{ .instanceShortName | default (.instance | trunc 15) }}
+  {{- $instanceShortName := include "gcloud-sqlproxy.instanceShortName" . }}
+  - name: {{ $instanceShortName }}
     protocol: TCP
     port: {{ .port }}
-    targetPort: {{ .instanceShortName | default (.instance | trunc 15) }}
+    targetPort: {{ $instanceShortName }}
   {{- end }}
   selector:
     {{- include "gcloud-sqlproxy.selectorLabels" . | nindent 4 }}
