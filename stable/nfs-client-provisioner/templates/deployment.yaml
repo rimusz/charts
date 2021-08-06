@@ -1,6 +1,6 @@
 {{- if .Values.nfs.server }}
 kind: Deployment
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 metadata:
   name: {{ template "nfs-client-provisioner.fullname" . }}
   labels:
