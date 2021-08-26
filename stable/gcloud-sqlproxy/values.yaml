@@ -2,7 +2,8 @@
 ## ref: https://cloud.google.com/sql/docs/mysql/sql-proxy
 ## ref: https://cloud.google.com/sql/docs/postgres/sql-proxy
 image: gcr.io/cloudsql-docker/gce-proxy
-imageTag: "1.24.0"
+  # Note that by default we use appVersion to get image tag
+  # tag:
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
