@@ -112,7 +112,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 
-The `extraArgs` can be provided via dot notation, e.g. `--set extraArgs.log_debug_stdout=true` passes `--log_debug_stdout=false` to the SQL Proxy command.
+The `extraArgs` can be provided via dot notation, e.g. `--set extraArgs.log_debug_stdout=true` passes `--log_debug_stdout=true` to the SQL Proxy command.
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
