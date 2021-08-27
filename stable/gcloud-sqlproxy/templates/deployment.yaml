@@ -39,8 +39,8 @@ spec:
       {{- end }}
       containers:
       - name: sqlproxy
-        image: "{{ .Values.image }}:{{ default .Chart.AppVersion .Values.image.tag }}"
-        imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        image: "{{ .Values.image.repository }}:{{ default .Chart.AppVersion .Values.image.tag }}"
+        imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         command:

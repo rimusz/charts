@@ -1,15 +1,14 @@
 ## Google Cloud SQL Proxy image
 ## ref: https://cloud.google.com/sql/docs/mysql/sql-proxy
 ## ref: https://cloud.google.com/sql/docs/postgres/sql-proxy
-image: gcr.io/cloudsql-docker/gce-proxy
+image:
+  repository: gcr.io/cloudsql-docker/gce-proxy
   # Note that by default we use appVersion to get image tag
   # tag:
-
-## Specify a imagePullPolicy
-## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
-## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
-##
-imagePullPolicy: IfNotPresent
+  ## Specify a imagePullPolicy
+  ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
+  ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+  pullPolicy: IfNotPresent
 
 ## Replicas Set count
 replicasCount: 1
