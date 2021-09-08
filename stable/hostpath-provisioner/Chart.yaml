@@ -1,6 +1,6 @@
 apiVersion: v2
-appVersion: "v0.2.4"
-version: 0.2.12
+appVersion: "v0.2.5"
+version: 0.2.13
 type: application
 name: hostpath-provisioner
 description: hostpath-provisioner is an automatic provisioner creating Persistent Volumes from the hostpath.
