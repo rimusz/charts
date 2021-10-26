@@ -138,7 +138,7 @@ GCP does not support more than 5 endpoints on an Internal Load Balancer. To work
 
 ## Upgrading
 
-**From < 0.22.0 to >= 0.22.1**
+**From < 0.22.0 to >= 0.22.2**
 
 Please note, as of `0.22.1` image `repository`, `tag` and `pullPolicy` values use new variables, if not using the defaults, you will need to rename them.
 
