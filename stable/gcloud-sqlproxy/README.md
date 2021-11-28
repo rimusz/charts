@@ -64,6 +64,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `imagePullPolicy`                 | Image pull policy                       | `IfNotPresent`                                                                              |
 | `replicasCount`                   | Replicas count                          | `1`                                                                                         |
 | `deploymentStrategy`              | Deployment strategy for pods            | `{}`                                                                                        |
+| `commonLabels`                    | Common labels for all K8S objects       |                                                                                             |
 | `serviceAccountKey`               | Service account key JSON file           | Must be provided and base64 encoded when no existing secret is used, in this case a new secret will be created holding this service account |
 | `existingSecret`                  | Name of an existing secret to be used for the cloud-sql credentials | `""`                                                            |
 | `existingSecretKey`               | The key to use in the provided existing secret   | `""`                                                                               |
@@ -79,6 +80,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `autoscaling.targetMemoryUtilizationPercentage` | Scaling target for Memory Utilization Percentage | `50`                                                                 |
 | `terminationGracePeriodSeconds`   | # of seconds to wait before pod killed  | `30` (Kubernetes default)                                                                   |
 | `podAnnotations`                  | Pod Annotations                         |                                                                                             |
+| `podLabels`                       | Pod Labels                              |                                                                                             |
 | `priorityClassName`                  | Priority Class Name                  | `""`                                                                                         |
 | `nodeSelector`                    | Node Selector                           |                                                                                             |
 | `podDisruptionBudget`             | Pod disruption budget                   | `maxUnavailable: 1` if `replicasCount` > 1, does not create the PDB otherwise               |

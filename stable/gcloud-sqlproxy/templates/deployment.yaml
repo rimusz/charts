@@ -10,6 +10,9 @@ metadata:
   name: {{ include "gcloud-sqlproxy.fullname" . }}
   labels:
     {{- include "gcloud-sqlproxy.labels" . | nindent 4 }}
+    {{- if .Values.commonLabels }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 4 }}
+    {{- end }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicasCount }}
@@ -28,6 +31,9 @@ spec:
     metadata:
       labels:
         {{- include "gcloud-sqlproxy.selectorLabels" . | nindent 8 }}
+        {{- if .Values.podLabels }}
+        {{- include "common.tplvalues.render" (dict "value" .Values.podLabels "context" $) | nindent 8 }}
+        {{- end }}
       annotations:
 {{ toYaml .Values.podAnnotations | indent 8 }}
     spec:

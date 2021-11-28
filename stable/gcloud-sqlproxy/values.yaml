@@ -13,6 +13,9 @@ image:
 ## Replicas Set count
 replicasCount: 1
 
+## Common labels for all K8S objects
+commonLabels: {}
+
 ## Set to true to use a statefulset for the deployable.
 ## You can then access the nodes using the known-hostnames of a statefulset
 useStatefulset: false
@@ -146,6 +149,9 @@ terminationGracePeriodSeconds: 30
 
 ## Pod annotations
 podAnnotations: {}
+
+## Pod labels
+podLabels: {}
 
 ## Configure Security Context
 securityContext: {}
