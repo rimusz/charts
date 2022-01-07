@@ -4,7 +4,7 @@ MAC_ARGS ?=
 CHARTS_REPO ?= https://github.com/rimusz/charts
 CHART_TESTING_IMAGE ?= quay.io/helmpack/chart-testing
 CHART_TESTING_TAG ?= v3.5.0
-GKE_TESTING_IMAGE ?= docker.pkg.github.com/rimusz/charts-ci/image
+GKE_TESTING_IMAGE ?= ghcr.io/rimusz/charts-ci/image
 GKE_TESTING_TAG ?= 0.0.28
 
 # If the first argument is "lint" or "mac" or "gke" or "kind"
