@@ -111,6 +111,16 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `readinessProbe.failureThreshold` | Minimum consecutive failures for the probe to be considered failed after having succeeded.  | 6                                       |
 | `readinessProbe.successThreshold` | Minimum consecutive successes for the probe to be considered successful after having failed | 1                                       |
 | `useStatefulset`                  | Deploy as a statefulset rather than a deployment                                            | false                                       |
+| `httpReadinessProbe.enabled`      | Enables http readiness probe                  | `false`                                       |
+| `httpReadinessProbe.port`         | Overrides the default http port               | 8090                                        |
+| `httpLivenessProbe.enabled`       | Enables http liveness  probe                  | `false`                                       |
+| `httpLivenessProbe.port`          | Overrides the default http port               | 8090                                        |
+| `topologyConstraints.enabled`          | Flag to toggle pod topology constraints.      | `false`                                        |
+| `topologyConstraints.maxSkew`          | Uneven pod distribution                       | 1                                        |
+| `topologyConstraints.topologyKey`      | Node label Key                                | `""`                                        |
+| `topologyConstraints.whenNotSatisfied` | Pod handling for unsatisfactory spread constraint | 8090                                        |
+| `topologyConstraints.labels`           | Pod Label Selector                                | `{}`                                        |
+
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 

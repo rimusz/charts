@@ -37,6 +37,15 @@ spec:
       annotations:
 {{ toYaml .Values.podAnnotations | indent 8 }}
     spec:
+      {{- if .Values.topologyConstraints.enabled }}
+      topologySpreadConstraints:
+      - maxSkew: {{ .Values.topologyConstraints.maxSkew }}
+        topologyKey: {{ .Values.topologyConstraints.topologyKey }}
+        whenUnsatisfiable: {{ .Values.topologyConstraints.whenNotSatisfied }}
+        labelSelector:
+          matchLabels:
+            {{- include "common.tplvalues.render" (dict "value" .Values.topologyConstraints.labels "context" $) | nindent 12 }}
+      {{- end }}
       serviceAccountName: {{ template "gcloud-sqlproxy.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.securityContext | nindent 8 }}
@@ -51,6 +60,12 @@ spec:
 {{ toYaml .Values.resources | indent 10 }}
         command:
         - /cloud_sql_proxy
+        {{- if .Values.httpLivenessProbe.enabled }}
+        - -use_http_health_check
+        {{- if ne (int .Values.httpLivenessProbe.port) 8090 }}
+        - -health_check_port={{ .Values.httpLivenessProbe.port }}
+        {{- end }}
+        {{- end }}
         - --dir=/cloudsql
         - -instances={{- range .Values.cloudsql.instances -}}
                         {{ .project }}:{{ .region }}:{{ .instance }}=tcp:0.0.0.0:{{ .port }},
@@ -73,8 +88,14 @@ spec:
         {{- end }}
         {{- if .Values.livenessProbe.enabled }}
         livenessProbe:
+        {{- if .Values.httpLivenessProbe.enabled }}
+          httpGet:
+            path: /liveness/
+            port: {{ .Values.httpLivenessProbe.port }}
+        {{- else }}
           tcpSocket:
             port: {{ .Values.livenessProbe.port }}
+        {{- end }}
           initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
           timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
@@ -83,8 +104,14 @@ spec:
         {{- end }}
         {{- if .Values.readinessProbe.enabled }}
         readinessProbe:
+        {{- if .Values.httpReadinessProbe.enabled }}
+          httpGet:
+            path: /readiness/
+            port: {{ .Values.httpReadinessProbe.port }}
+        {{- else }}
           tcpSocket:
             port: {{ .Values.readinessProbe.port }}
+        {{- end }}
           initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
           periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
           timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
