@@ -90,7 +90,7 @@ spec:
         livenessProbe:
         {{- if .Values.httpLivenessProbe.enabled }}
           httpGet:
-            path: /liveness/
+            path: /liveness
             port: {{ .Values.httpLivenessProbe.port }}
         {{- else }}
           tcpSocket:
@@ -106,7 +106,7 @@ spec:
         readinessProbe:
         {{- if .Values.httpReadinessProbe.enabled }}
           httpGet:
-            path: /readiness/
+            path: /readiness
             port: {{ .Values.httpReadinessProbe.port }}
         {{- else }}
           tcpSocket:
