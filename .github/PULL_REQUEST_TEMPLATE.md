@@ -34,4 +34,6 @@ even continue reviewing your changes.
 #### Checklist
 [Place an '[x]' (no spaces) in all applicable fields. Please remove unrelated fields.]
 - [ ] Chart Version bumped
-- [ ] Changes are documented in the README.md
+- [ ] Variables and other changes are documented in the README.md
+- [ ] Title of the PR starts with chart name (e.g. `[artifactory]`)
+
