@@ -37,14 +37,8 @@ spec:
       annotations:
 {{ toYaml .Values.podAnnotations | indent 8 }}
     spec:
-      {{- if .Values.topologyConstraints.enabled }}
-      topologySpreadConstraints:
-      - maxSkew: {{ .Values.topologyConstraints.maxSkew }}
-        topologyKey: {{ .Values.topologyConstraints.topologyKey }}
-        whenUnsatisfiable: {{ .Values.topologyConstraints.whenNotSatisfied }}
-        labelSelector:
-          matchLabels:
-            {{- include "common.tplvalues.render" (dict "value" .Values.topologyConstraints.labels "context" $) | nindent 12 }}
+      {{- if .Values.topologySpreadConstraints }}
+      topologySpreadConstraints: {{ toYaml .Values.topologySpreadConstraints | nindent 8 }}
       {{- end }}
       serviceAccountName: {{ template "gcloud-sqlproxy.serviceAccountName" . }}
       securityContext:

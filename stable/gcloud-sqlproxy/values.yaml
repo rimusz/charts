@@ -78,6 +78,7 @@ serviceAccount:
 ## Specifies service type and option to enable internal LoadBalancer
 ## If service.internalLB is true, service.type should be: LoadBalancer
 service:
+  enabled: true
   type: ClusterIP
   internalLB: false
   # Configures custom LoadBalancer IP. Compatibility depends on the cloud provider.
@@ -198,9 +199,10 @@ podDisruptionBudget: |
 extraArgs: {}
 #  term_timeout: 30s
 
-topologyConstraints:
-  enabled: false
-  maxSkew: 1
-  topologyKey: ""
-  whenNotSatisfied: "DoNotSchedule"
-  labels: {}
+topologySpreadConstraints: []
+  ## e.g.
+  # - maxSkew: 1
+  #   topologyKey: zone
+  #   whenUnsatisfiable: DoNotSchedule
+  #   labelSelector:
+  #       key: value

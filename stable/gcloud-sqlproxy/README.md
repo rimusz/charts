@@ -84,6 +84,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `priorityClassName`                  | Priority Class Name                  | `""`                                                                                         |
 | `nodeSelector`                    | Node Selector                           |                                                                                             |
 | `podDisruptionBudget`             | Pod disruption budget                   | `maxUnavailable: 1` if `replicasCount` > 1, does not create the PDB otherwise               |
+| `service.enabled`                 | Toggle Service Creation                 | `true`
 | `service.type`                    | Kubernetes LoadBalancer type            | `ClusterIP`                                                                                 |
 | `service.internalLB`              | Create service with `cloud.google.com/load-balancer-type: "Internal"` | Default `false`, when set to `true` you have to set also `service.type=LoadBalancer` |
 | `service.loadBalancerIP`          | Set custom Load Balancer IP             | `""`                                                                                                    |
@@ -115,11 +116,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `httpReadinessProbe.port`         | Overrides the default http port               | 8090                                        |
 | `httpLivenessProbe.enabled`       | Enables http liveness  probe                  | `false`                                       |
 | `httpLivenessProbe.port`          | Overrides the default http port               | 8090                                        |
-| `topologyConstraints.enabled`          | Flag to toggle pod topology constraints.      | `false`                                        |
-| `topologyConstraints.maxSkew`          | Uneven pod distribution                       | 1                                        |
-| `topologyConstraints.topologyKey`      | Node label Key                                | `""`                                        |
-| `topologyConstraints.whenNotSatisfied` | Pod handling for unsatisfactory spread constraint | 8090                                        |
-| `topologyConstraints.labels`           | Pod Label Selector                                | `{}`                                        |
+| `topologySpreadConstraints        | List of TopologySpreadConstraints             | `[]`                                        |
 
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
