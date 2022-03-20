@@ -22,6 +22,9 @@ nfs:
 storageClass:
   create: true
 
+  ## Set annotation for default storage class
+  default: false
+
   ## Set a StorageClass name
   name: nfs
 

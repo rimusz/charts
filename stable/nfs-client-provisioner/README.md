@@ -92,6 +92,7 @@ their default values.
 | `nfs.server`                   | NFS server IP                                                                     | ``                                                    |
 | `nfs.path`                     | NFS server share path                                                             | `/vol1`                                               |
 | `storageClass.create`          | Enable creation of a StorageClass to consume this nfs-client-provisioner instance | `true`                                                |
+| `storageClass.default`         | Set this StorageClass as the default                                              | `false`                                                |
 | `storageClass.name`            | The name to assign the created StorageClass                                       | `nfs`                                                 |
 | `storageClass.reclaimPolicy`   | Set the reclaimPolicy for PV within StorageClass                                  | `Delete`                                              |
 | `rbac.create`                  | Enable RBAC                                                                       | `false`                                               |

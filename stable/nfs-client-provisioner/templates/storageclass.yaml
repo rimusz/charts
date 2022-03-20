@@ -3,6 +3,10 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: {{ .Values.storageClass.name }}
+  {{- if .Values.storageClass.default }}
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+  {{- end }}
   labels:
     app: {{ template "nfs-client-provisioner.name" . }}
     chart: {{ template "nfs-client-provisioner.chart" . }}
