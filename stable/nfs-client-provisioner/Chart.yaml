@@ -1,6 +1,6 @@
 apiVersion: v2
 appVersion: "v3.1.0-k8s1.11"
-version: 0.1.5
+version: 0.1.6
 type: application
 name: nfs-client-provisioner
 description: nfs-client-provisioner is an automatic provisioner creating Persistent Volumes from the NFS
