@@ -30,4 +30,7 @@ spec:
   {{- end }}
   selector:
     {{- include "gcloud-sqlproxy.selectorLabels" . | nindent 4 }}
+  {{- if eq .Values.service.type "LoadBalancer" }}
+  loadBalancerSourceRanges: {{- toYaml .Values.service.loadBalancerSourceRanges | nindent 4 }}
+  {{- end }}
 {{- end }}

@@ -86,6 +86,7 @@ service:
   # If left blank or if not supported by your cloud provider, it will be ignored.
   loadBalancerIP: ""
   annotations: {}
+  loadBalancerSourceRanges: []
 
 networkPolicy:
   ## Specifies whether a NetworkPolicy should be created
