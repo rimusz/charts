@@ -116,7 +116,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `httpReadinessProbe.port`         | Overrides the default http port               | 8090                                        |
 | `httpLivenessProbe.enabled`       | Enables http liveness  probe                  | `false`                                       |
 | `httpLivenessProbe.port`          | Overrides the default http port               | 8090                                        |
-| `topologySpreadConstraints        | List of TopologySpreadConstraints             | `[]`                                        |
+| `topologySpreadConstraints`        | List of TopologySpreadConstraints             | `[]`                                        |
 
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
