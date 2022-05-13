@@ -60,7 +60,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | Parameter                         | Description                             | Default                                                                                     |
 | --------------------------------- | --------------------------------------  | ---------------------------------------------------------                                   |
 | `image`                           | SQLProxy image                          | `gcr.io/cloudsql-docker/gce-proxy`                                                        |
-| `image.tag`                        | SQLProxy image tag                      | AppVersion: `1.26.0`                                                                                      |
+| `image.tag`                        | SQLProxy image tag                      | AppVersion: `1.30.1`                                                                                      |
 | `imagePullPolicy`                 | Image pull policy                       | `IfNotPresent`                                                                              |
 | `replicasCount`                   | Replicas count                          | `1`                                                                                         |
 | `deploymentStrategy`              | Deployment strategy for pods            | `{}`                                                                                        |
