@@ -60,7 +60,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | Parameter                         | Description                             | Default                                                                                     |
 | --------------------------------- | --------------------------------------  | ---------------------------------------------------------                                   |
 | `image`                           | SQLProxy image                          | `gcr.io/cloudsql-docker/gce-proxy`                                                        |
-| `imageTag`                        | SQLProxy image tag                      | `1.16`                                                                                      |
+| `image.tag`                        | SQLProxy image tag                      | AppVersion: `1.30.1`                                                                                      |
 | `imagePullPolicy`                 | Image pull policy                       | `IfNotPresent`                                                                              |
 | `replicasCount`                   | Replicas count                          | `1`                                                                                         |
 | `deploymentStrategy`              | Deployment strategy for pods            | `{}`                                                                                        |
@@ -116,7 +116,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `httpReadinessProbe.port`         | Overrides the default http port               | 8090                                        |
 | `httpLivenessProbe.enabled`       | Enables http liveness  probe                  | `false`                                       |
 | `httpLivenessProbe.port`          | Overrides the default http port               | 8090                                        |
-| `topologySpreadConstraints        | List of TopologySpreadConstraints             | `[]`                                        |
+| `topologySpreadConstraints`        | List of TopologySpreadConstraints             | `[]`                                        |
 
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
