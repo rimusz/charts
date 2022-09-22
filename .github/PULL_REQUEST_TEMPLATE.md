@@ -33,7 +33,7 @@ even continue reviewing your changes.
 
 #### Checklist
 [Place an '[x]' (no spaces) in all applicable fields. Please remove unrelated fields.]
-- [ ] Chart Version bumped
+- [ ] Chart Version bumped, is mandatory for any chart chnages
 - [ ] Variables and other changes are documented in the README.md
-- [ ] Title of the PR starts with chart name (e.g. `[artifactory]`)
+- [ ] Title of the PR starts with chart name (e.g. `[gcloud-sqlproxy]`)
 
