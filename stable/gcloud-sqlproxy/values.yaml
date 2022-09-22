@@ -183,6 +183,12 @@ tolerations: []
 ## Affinity
 affinity: {}
 
+## Extra environment variables. Might be used to fetch instance data from
+## Config maps or Secrets and used via interpolation '$()' syntax in
+## cloudsql.instances[].* helm variables. See:
+## https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#use-configmap-defined-environment-variables-in-pod-commands
+env: {}
+
 ## Lifecycle hooks
 ## These can be helpful for custom graceful termination logic
 ## NOTE: Your Docker image must have a shell for the preStop command to work, the default Docker image does not have one

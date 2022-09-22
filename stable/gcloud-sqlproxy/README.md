@@ -43,6 +43,10 @@ Replace Postgres/MySQL host with: if access is from the same namespace with `pg-
 
 > **Tip**: Because of limitations on the length of port names, the `instance` value for each of the instances must be unique for the first 15 characters.
 
+> **Tip**: If you wish to source some `cloussql.instances[]` parameter values from ConfigMaps or Secrets, you may fetch them via `env` parameter and refer
+  to them via `$()` [interpolation syntax](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#use-configmap-defined-environment-variables-in-pod-commands),
+  e.g.: `cloudsql.instances[0].region=$(REGION)`
+
 ## Uninstalling the Chart
 
 To uninstall/delete the `my-release-name` deployment:
@@ -72,6 +76,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `serviceAccountName`              | specify a service account name to use with GCP Controller | `""`                                                                                        |
 | `cloudsql.instances`              | List of PostgreSQL/MySQL instances      | [{instance: `instance`, project: `project`, region: `region`, port: 5432}] must be provided |
 | `resources`                       | CPU/Memory resource requests/limits     | Memory: `100/150Mi`, CPU: `100/150m`                                                        |
+| `env`                             | Extra [environment variables](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) for container | `{}` |
 | `lifecycleHooks`                  | Container lifecycle hooks               | `{}`                                                                                        |
 | `autoscaling.enabled`             | Enable CPU/Memory horizontal pod autoscaler | `false`                                                                                 |
 | `autoscaling.minReplicas`         | Autoscaler minimum pod replica count    | `1`                                                                                         |
