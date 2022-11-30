@@ -101,7 +101,8 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `networkPolicy.enabled`           | Enable NetworkPolicy                    | `false`                                                                                     |
 | `networkPolicy.ingress.from`      | List of sources which should be able to access the pods selected for this rule. If empty, allows all sources. | `[]`                  |
 | `extraArgs`                       | Additional container arguments          | `{}`                                                                                        |
-| `securityContext`                 | Configure Security Context              | `{}` |
+| `podSecurityContext`              | Configure Pod Security Context          | `{}` |
+| `containerSecurityContext`        | Configure Container Security Context    | `{}` |
 | `livenessProbe.enabled`           | Would you like a livenessProbe to be enabled  | `false`                                                                               |
 | `livenessProbe.port`              | The port which will be checked by the probe   | 5432                                                                                  |
 | `livenessProbe.initialDelaySeconds` | Delay before liveness probe is initiated    | 30                                                                                    |
@@ -151,6 +152,10 @@ GCP does not support more than 5 endpoints on an Internal Load Balancer. To work
 
 
 ## Upgrading
+
+**From <= 0.22.2 to >= 0.23.0**
+
+Please note, the `securityContext` has been renamed into `podSecurityContext`.
 
 **From < 0.22.0 to >= 0.22.2**
 

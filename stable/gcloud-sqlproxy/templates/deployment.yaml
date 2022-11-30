@@ -41,8 +41,10 @@ spec:
       topologySpreadConstraints: {{ toYaml .Values.topologySpreadConstraints | nindent 8 }}
       {{- end }}
       serviceAccountName: {{ template "gcloud-sqlproxy.serviceAccountName" . }}
+      {{- with .Values.podSecurityContext }}
       securityContext:
-        {{- toYaml .Values.securityContext | nindent 8 }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- if .Values.priorityClassName }}
       priorityClassName: "{{ .Values.priorityClassName }}"
       {{- end }}
@@ -50,6 +52,10 @@ spec:
       - name: sqlproxy
         image: "{{ .Values.image.repository }}:{{ default .Chart.AppVersion .Values.image.tag }}"
         imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
+        {{- with .Values.containerSecurityContext }}
+        securityContext:
+          {{- toYaml . | nindent 10 }}
+        {{- end }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         command:
