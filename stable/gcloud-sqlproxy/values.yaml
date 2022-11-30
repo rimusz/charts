@@ -166,10 +166,15 @@ podAnnotations: {}
 ## Pod labels
 podLabels: {}
 
-## Configure Security Context
-securityContext: {}
+## Configure Pod Security Context
+podSecurityContext: {}
 #   runAsUser: 1000
 #   fsGroup: 1000
+
+## Configure Container Security Context
+containerSecurityContext: {}
+#   allowPrivilegeEscalation: false
+
 
 ## Configure Pod Priority
 priorityClassName: ""
