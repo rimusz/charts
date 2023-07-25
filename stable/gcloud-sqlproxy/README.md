@@ -101,6 +101,7 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `networkPolicy.enabled`           | Enable NetworkPolicy                    | `false`                                                                                     |
 | `networkPolicy.ingress.from`      | List of sources which should be able to access the pods selected for this rule. If empty, allows all sources. | `[]`                  |
 | `extraArgs`                       | Additional container arguments          | `{}`                                                                                        |
+| `extraFlags`                      | Additional container flags              | `[]`                                                                                        |
 | `podSecurityContext`              | Configure Pod Security Context          | `{}` |
 | `containerSecurityContext`        | Configure Container Security Context    | `{}` |
 | `livenessProbe.enabled`           | Would you like a livenessProbe to be enabled  | `false`                                                                               |

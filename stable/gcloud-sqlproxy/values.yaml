@@ -211,6 +211,11 @@ podDisruptionBudget: |
 extraArgs: {}
 #  term_timeout: 30s
 
+## Additional container flags (single-hypen '-' arguments)
+## Uncomment the log_debug_stdout line if you don't want connection-related messages to log as errors
+extraFlags: []
+# - log_debug_stdout
+
 topologySpreadConstraints: []
   ## e.g.
   # - maxSkew: 1

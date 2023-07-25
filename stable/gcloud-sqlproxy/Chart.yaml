@@ -19,4 +19,4 @@ name: gcloud-sqlproxy
 sources:
 - https://github.com/rimusz/charts
 type: application
-version: 0.24.1
+version: 0.24.2

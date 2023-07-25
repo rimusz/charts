@@ -76,6 +76,9 @@ spec:
         {{- range $key, $value := .Values.extraArgs }}
         - --{{ $key }}={{ $value }}
         {{- end }}
+        {{- range .Values.extraFlags }}
+        - -{{ . }}
+        {{- end }}
         {{- if .Values.env }}
         env:
 {{ toYaml .Values.env | indent 10 }}
