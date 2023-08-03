@@ -104,31 +104,38 @@ The following table lists the configurable parameters of the `gcloud-sqlproxy` c
 | `extraFlags`                      | Additional container flags              | `[]`                                                                                        |
 | `podSecurityContext`              | Configure Pod Security Context          | `{}` |
 | `containerSecurityContext`        | Configure Container Security Context    | `{}` |
+| `httpPortProbe`                   | The port to check liveness, readiness & startup probe | 9090                                                                          |
 | `livenessProbe.enabled`           | Would you like a livenessProbe to be enabled  | `false`                                                                               |
-| `livenessProbe.port`              | The port which will be checked by the probe   | 5432                                                                                  |
+| `livenessProbe.port`              | The port which will be checked by the probe | 9090                                                                                   |
 | `livenessProbe.initialDelaySeconds` | Delay before liveness probe is initiated    | 30                                                                                    |
 | `livenessProbe.periodSeconds`     | How often to perform the probe                | 10                                                                                    |
 | `livenessProbe.timeoutSeconds`    | When the probe times out                      | 5                                                                                     |
 | `livenessProbe.failureThreshold`  | Minimum consecutive failures for the probe to be considered failed after having succeeded.  | 18                                       |
 | `livenessProbe.successThreshold`  | Minimum consecutive successes for the probe to be considered successful after having failed | 1                                       |
 | `readinessProbe.enabled`          | would you like a readinessProbe to be enabled | `false`                                                                               |
-| `readinessProbe.port`              | The port which will be checked by the probe  | 5432                                                                                  |
+| `readinessProbe.port`             | The port which will be checked by the probe | 9090                                                                                   |
 | `readinessProbe.initialDelaySeconds` | Delay before readiness probe is initiated  | 5                                                                                     |
 | `readinessProbe.periodSeconds`    | How often to perform the probe                | 10                                                                                    |
 | `readinessProbe.timeoutSeconds`   | When the probe times out                      | 5                                                                                     |
 | `readinessProbe.failureThreshold` | Minimum consecutive failures for the probe to be considered failed after having succeeded.  | 6                                       |
 | `readinessProbe.successThreshold` | Minimum consecutive successes for the probe to be considered successful after having failed | 1                                       |
+| `startupProbe.enabled`          | would you like a startupProbe to be enabled | `false`                                                                               |
+| `startupProbe.port`                | The port which will be checked by the probe | 9090                                                                                   |
+| `startupProbe.initialDelaySeconds` | Delay before startup probe is initiated  |  5                                                                                     |
+| `startupProbe.periodSeconds`    | How often to perform the probe                | 10                                                                                    |
+| `startupProbe.timeoutSeconds`   | When the probe times out                      | 5                                                                                     |
+| `startupProbe.failureThreshold` | Minimum consecutive failures for the probe to be considered failed after having succeeded.  | 1                                       |
+| `startupProbe.successThreshold` | Minimum consecutive successes for the probe to be considered successful after having failed | 1                                       |
 | `useStatefulset`                  | Deploy as a statefulset rather than a deployment                                            | false                                       |
 | `httpReadinessProbe.enabled`      | Enables http readiness probe                  | `false`                                       |
-| `httpReadinessProbe.port`         | Overrides the default http port               | 8090                                        |
 | `httpLivenessProbe.enabled`       | Enables http liveness  probe                  | `false`                                       |
-| `httpLivenessProbe.port`          | Overrides the default http port               | 8090                                        |
+| `httpStartupProbe.enabled`        | Enables http startup probe                  | `false`                                       |
 | `topologySpreadConstraints`        | List of TopologySpreadConstraints             | `[]`                                        |
 
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 
-The `extraArgs` can be provided via dot notation, e.g. `--set extraArgs.log_debug_stdout=true` passes `--log_debug_stdout=true` to the SQL Proxy command.
+The `extraArgs` can be provided via dot notation, e.g. `--set extraArgs.admin-port=8091` passes `--admin-port=8091` to the SQL Proxy command.
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
@@ -153,6 +160,10 @@ GCP does not support more than 5 endpoints on an Internal Load Balancer. To work
 
 
 ## Upgrading
+
+**From <= 0.24.2 to >= 0.25.0**
+
+Please note, as of `0.25.0` use [cloud-sql-proxy v2](https://github.com/GoogleCloudPlatform/cloud-sql-proxy/blob/main/migration-guide.md). The `httpPortProbe` replaced `httpLivenessProbe.port` & `httpReadinessProbe.port`.
 
 **From <= 0.22.2 to >= 0.23.0**
 

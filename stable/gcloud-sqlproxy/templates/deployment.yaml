@@ -58,26 +58,26 @@ spec:
         {{- end }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
-        command:
-        - /cloud_sql_proxy
-        {{- if .Values.httpLivenessProbe.enabled }}
-        - -use_http_health_check
-        {{- if ne (int .Values.httpLivenessProbe.port) 8090 }}
-        - -health_check_port={{ .Values.httpLivenessProbe.port }}
+        args:
+        - {{- range .Values.cloudsql.instances }}
+            {{ .project }}:{{ .region }}:{{ .instance }}?port={{ .port }}&address=0.0.0.0
+        {{- end }}
+        - --http-address=0.0.0.0
+        {{- if or .Values.httpLivenessProbe.enabled .Values.httpReadinessProbe.enabled .Values.httpStartupProbe.enabled  }}
+        - --health-check
+        {{- if ne (int .Values.httpPortProbe) 9090 }}
+        - --http-port={{ .Values.httpPortProbe }}
         {{- end }}
         {{- end }}
-        - --dir=/cloudsql
-        - -instances={{- range .Values.cloudsql.instances -}}
-                        {{ .project }}:{{ .region }}:{{ .instance }}=tcp:0.0.0.0:{{ .port }},
-                     {{- end }}
+        - --unix-socket=/cloudsql
         {{ if $hasCredentials -}}
-        - -credential_file=/secrets/cloudsql/{{ include "gcloud-sqlproxy.secretKey" . }}
+        - --credentials-file=/secrets/cloudsql/{{ include "gcloud-sqlproxy.secretKey" . }}
         {{ end -}}
         {{- range $key, $value := .Values.extraArgs }}
         - --{{ $key }}={{ $value }}
         {{- end }}
         {{- range .Values.extraFlags }}
-        - -{{ . }}
+        - --{{ . }}
         {{- end }}
         {{- if .Values.env }}
         env:
@@ -98,7 +98,7 @@ spec:
         {{- if .Values.httpLivenessProbe.enabled }}
           httpGet:
             path: /liveness
-            port: {{ .Values.httpLivenessProbe.port }}
+            port: {{ .Values.httpPortProbe }}
         {{- else }}
           tcpSocket:
             port: {{ .Values.livenessProbe.port }}
@@ -114,7 +114,7 @@ spec:
         {{- if .Values.httpReadinessProbe.enabled }}
           httpGet:
             path: /readiness
-            port: {{ .Values.httpReadinessProbe.port }}
+            port: {{ .Values.httpPortProbe }}
         {{- else }}
           tcpSocket:
             port: {{ .Values.readinessProbe.port }}
@@ -124,6 +124,22 @@ spec:
           timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
           successThreshold: {{ .Values.readinessProbe.successThreshold }}
           failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
+        {{- end }}
+        {{- if .Values.startupProbe.enabled }}
+        startupProbe:
+        {{- if .Values.httpStartupProbe.enabled }}
+          httpGet:
+            path: /startup
+            port: {{ .Values.httpPortProbe }}
+        {{- else }}
+          tcpSocket:
+            port: {{ .Values.startupProbe.port }}
+        {{- end }}
+          initialDelaySeconds: {{ .Values.startupProbe.initialDelaySeconds }}
+          periodSeconds: {{ .Values.startupProbe.periodSeconds }}
+          timeoutSeconds: {{ .Values.startupProbe.timeoutSeconds }}
+          successThreshold: {{ .Values.startupProbe.successThreshold }}
+          failureThreshold: {{ .Values.startupProbe.failureThreshold }}
         {{- end }}
         volumeMounts:
         {{ if $hasCredentials -}}
