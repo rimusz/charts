@@ -2,7 +2,7 @@
 ## ref: https://cloud.google.com/sql/docs/mysql/sql-proxy
 ## ref: https://cloud.google.com/sql/docs/postgres/sql-proxy
 image:
-  repository: gcr.io/cloudsql-docker/gce-proxy
+  repository: gcr.io/cloud-sql-connectors/cloud-sql-proxy
   # Note that by default we use appVersion to get image tag
   # tag:
   ## Specify a imagePullPolicy
@@ -116,34 +116,47 @@ resources: {}
 #    memory: 256Mi
 #    cpu: 256m
 
+# Port to check liveness, readiness & startup
+httpPortProbe: 9090
+
 livenessProbe:
   enabled: false
-  port: 5432
+  port: 9090
   initialDelaySeconds: 30
   periodSeconds: 10
   timeoutSeconds: 5
   failureThreshold: 18
   successThreshold: 1
 
-
 # Http Liveness Probe if enabled will override default tcp port check
 httpLivenessProbe:
   enabled: false
-  port: 8090
 
 # Http Readiness Probe if enabled will override default tcp port check
 httpReadinessProbe:
   enabled: false
-  port: 8090
 
 readinessProbe:
   enabled: false
-  port: 5432
+  port: 9090
   initialDelaySeconds: 5
   periodSeconds: 10
   timeoutSeconds: 5
   failureThreshold: 6
   successThreshold: 1
+
+# Http Startup Probe if enabled will override default tcp port check
+httpStartupProbe:
+  enabled: false
+
+startupProbe:
+  enabled: false
+  port: 9090
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 5
+  successThreshold: 1
+  failureThreshold: 1
 
 ## Configure a HorizontalPodAutoscaler for pod autoscaling.
 ## Requires that resources requests are set above.
@@ -209,12 +222,13 @@ podDisruptionBudget: |
 ## Additional container arguments
 ## Uncomment the term_timeout line for the proxy to wait your chosen time before terminating connections
 extraArgs: {}
-#  term_timeout: 30s
+#  admin-port: 8091
 
 ## Additional container flags (single-hypen '-' arguments)
 ## Uncomment the log_debug_stdout line if you don't want connection-related messages to log as errors
 extraFlags: []
-# - log_debug_stdout
+#  - private-ip
+#  - run-connection-test
 
 topologySpreadConstraints: []
   ## e.g.
