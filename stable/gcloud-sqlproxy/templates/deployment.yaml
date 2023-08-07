@@ -59,8 +59,8 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         args:
-        - {{- range .Values.cloudsql.instances }}
-            {{ .project }}:{{ .region }}:{{ .instance }}?port={{ .port }}&address=0.0.0.0
+        {{- range .Values.cloudsql.instances }}
+        - {{ .project }}:{{ .region }}:{{ .instance }}?port={{ .port }}&address=0.0.0.0
         {{- end }}
         - --http-address=0.0.0.0
         {{- if or .Values.httpLivenessProbe.enabled .Values.httpReadinessProbe.enabled .Values.httpStartupProbe.enabled  }}
