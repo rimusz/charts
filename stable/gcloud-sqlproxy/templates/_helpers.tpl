@@ -94,7 +94,7 @@ Create the name of the service account to use
 Create the short instance name
 */}}
 {{- define "gcloud-sqlproxy.instanceShortName" -}}
-{{- $randomString := randAlphaNum 10 -}}
+{{- $randomString := randAlphaNum 10 | lower -}}
 {{ .instanceShortName | default (printf "%s-%s" (.instance | trunc 5 | trimSuffix "-") $randomString) }}
 {{- end -}}
 
