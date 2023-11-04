@@ -11,7 +11,11 @@ metadata:
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
+  {{- if .Values.useStatefulset }}
+    kind: Statefulset
+  {{- else }}
     kind: Deployment
+  {{- end }}
     name: {{ include "gcloud-sqlproxy.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
