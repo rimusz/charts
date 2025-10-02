@@ -1,0 +1,2130 @@
+apiVersion: v1
+entries:
+  contour:
+  - apiVersion: v1
+    appVersion: v0.12.0
+    created: "2023-11-28T15:26:47.195308184Z"
+    description: A Helm chart for Heptio Contour
+    digest: ac42de0c890fe9d0d702344d0bf6755d82035deabf827405a463b736c213ac17
+    home: https://github.com/heptio/contour
+    icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/contour/icon/logo-contour.png
+    keywords:
+    - ingress
+    - proxy
+    - envoy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: contour
+    urls:
+    - https://charts.rimusz.net/contour-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v1
+    appVersion: v0.12.0
+    created: "2023-11-28T15:26:47.194589432Z"
+    description: A Helm chart for Heptio Contour
+    digest: ff358139982cf1e4854cfd96fc93cb29e7f5101a56e8f739091884ea2b57223f
+    home: https://github.com/heptio/contour
+    icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/contour/icon/logo-contour.png
+    keywords:
+    - ingress
+    - proxy
+    - envoy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: contour
+    urls:
+    - https://charts.rimusz.net/contour-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v1
+    appVersion: v0.12.0
+    created: "2023-11-28T15:26:47.193803783Z"
+    description: A Helm chart for Heptio Contour
+    digest: c5f484893e9e5286b4b78386ac1f7463553853ce0436fea851aa3e90e5106063
+    home: https://github.com/heptio/contour
+    icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/contour/icon/logo-contour.png
+    keywords:
+    - ingress
+    - proxy
+    - envoy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: contour
+    urls:
+    - https://charts.rimusz.net/contour-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: v0.10.0
+    created: "2023-11-28T15:26:47.193099748Z"
+    description: A Helm chart for Heptio Contour
+    digest: 1886887c37dfb9dd1447420006054163c2092c13ddb7ce36ba38a3d39f3fe897
+    home: https://github.com/heptio/contour
+    icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/contour/icon/logo-contour.png
+    keywords:
+    - ingress
+    - proxy
+    - envoy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: contour
+    urls:
+    - https://charts.rimusz.net/contour-0.2.8.tgz
+    version: 0.2.8
+  - apiVersion: v1
+    appVersion: v0.8.1
+    created: "2023-11-28T15:26:47.192341495Z"
+    description: A Helm chart for Heptio Contour
+    digest: 5f413402e95c5dce9b314f485a25133f8244dc1bae08ced2b566cc69adfbdd25
+    home: https://github.com/heptio/contour
+    icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/contour/icon/logo-contour.png
+    keywords:
+    - ingress
+    - proxy
+    - envoy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: contour
+    urls:
+    - https://charts.rimusz.net/contour-0.2.7.tgz
+    version: 0.2.7
+  - apiVersion: v1
+    appVersion: v0.8.1
+    created: "2023-11-28T15:26:47.191630372Z"
+    description: A Helm chart for Heptio Contour
+    digest: 3c217b57ba65923cbc1e4f43ba2b16e9187f0ae6d24e2bd68f2325e58837d86c
+    home: https://github.com/heptio/contour
+    icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/contour/icon/heptio-logo.png
+    keywords:
+    - ingress
+    - proxy
+    - envoy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: contour
+    urls:
+    - https://charts.rimusz.net/contour-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v1
+    appVersion: v0.8.1
+    created: "2023-11-28T15:26:47.190123644Z"
+    description: A Helm chart for Heptio Contour
+    digest: ef12842a791f44dbcf321d2d1158c964248614a0c23d9d0de88cff93cd237de1
+    home: https://github.com/heptio/contour
+    keywords:
+    - ingress
+    - proxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: contour
+    urls:
+    - https://charts.rimusz.net/contour-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v1
+    appVersion: v0.8.0
+    created: "2023-11-28T15:26:47.188841724Z"
+    description: A Helm chart for Heptio Contour
+    digest: fd247679d17732f4105b64c458b3f70f619282a17191634ec129ac899d6c6c8d
+    home: https://github.com/heptio/contour
+    keywords:
+    - ingress
+    - proxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: contour
+    urls:
+    - https://charts.rimusz.net/contour-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v1
+    appVersion: v0.7.0
+    created: "2023-11-28T15:26:47.186549253Z"
+    description: A Helm chart for Contour
+    digest: fffefdfef47e1c4f106b79cb43cb07a74337eeb42f8ff47f41e3e77ec255abcb
+    home: https://github.com/heptio/contour
+    keywords:
+    - ingress
+    - proxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: contour
+    sources:
+    - https://github.com/heptio/contour/tree/master/deployment
+    urls:
+    - https://charts.rimusz.net/contour-0.2.1.tgz
+    version: 0.2.1
+  gcloud-sqlproxy:
+  - apiVersion: v2
+    appVersion: 2.6.0
+    created: "2023-11-28T15:26:47.254990255Z"
+    description: Google Cloud SQL Proxy
+    digest: 68aac36f4de302bf9dea3ad184f50edffb01fb537cf4e865ad62d6bcc88b150a
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.25.6.tgz
+    version: 0.25.6
+  - apiVersion: v2
+    appVersion: 2.6.0
+    created: "2023-11-28T15:26:47.252435036Z"
+    description: Google Cloud SQL Proxy
+    digest: c86c563270964b64768335ff9b12c8d526f183d1fe6b903ca2e3b34999d2aaa4
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.25.5.tgz
+    version: 0.25.5
+  - apiVersion: v2
+    appVersion: 2.6.0
+    created: "2023-11-28T15:26:47.250909996Z"
+    description: Google Cloud SQL Proxy
+    digest: efa668b027091fd8d6b2127d74a841a2504251772be47d09ce5030362725f40b
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.25.4.tgz
+    version: 0.25.4
+  - apiVersion: v2
+    appVersion: 2.6.0
+    created: "2023-11-28T15:26:47.249767905Z"
+    description: Google Cloud SQL Proxy
+    digest: 4043e1f8b8e35df5c66014eed855eacb3c2e6bbcbcb3b7b2c19871f4c53fab97
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.25.3.tgz
+    version: 0.25.3
+  - apiVersion: v2
+    appVersion: 2.6.0
+    created: "2023-11-28T15:26:47.24859997Z"
+    description: Google Cloud SQL Proxy
+    digest: f5be5e8516dca2a7c1699d7127ef558115649b9a753ea3c31d10ca0ae635dcbc
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.25.2.tgz
+    version: 0.25.2
+  - apiVersion: v2
+    appVersion: 2.6.0
+    created: "2023-11-28T15:26:47.247442116Z"
+    description: Google Cloud SQL Proxy
+    digest: 04065ba211fbdb3dcb93d3a0fd208f64c01cbca6c00a9116ad923d17f25298aa
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.25.1.tgz
+    version: 0.25.1
+  - apiVersion: v2
+    appVersion: 2.6.0
+    created: "2023-11-28T15:26:47.246357584Z"
+    description: Google Cloud SQL Proxy
+    digest: 53a73f5a778b4ec06fcf8a88c55ea960ce447388e3b4dadfaa05eca2a9a47f91
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.25.0.tgz
+    version: 0.25.0
+  - apiVersion: v2
+    appVersion: 1.33.4
+    created: "2023-11-28T15:26:47.245203151Z"
+    description: Google Cloud SQL Proxy
+    digest: 0dab9ccaeba2bb56d4ba9bd5305af0a76630915eb689146fb461da717e8e277d
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.24.2.tgz
+    version: 0.24.2
+  - apiVersion: v2
+    appVersion: 1.33.4
+    created: "2023-11-28T15:26:47.244132335Z"
+    description: Google Cloud SQL Proxy
+    digest: 475382e6cfb195dcc3009734298bb4ebf77f32782746669524decccbbbf29214
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.24.1.tgz
+    version: 0.24.1
+  - apiVersion: v2
+    appVersion: 1.33.4
+    created: "2023-11-28T15:26:47.243045704Z"
+    description: Google Cloud SQL Proxy
+    digest: 21b3e57320b442d030464d87fa6849b00c7aca9856b7122c3fa09bfd4a5730ab
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.24.0.tgz
+    version: 0.24.0
+  - apiVersion: v2
+    appVersion: 1.31.1
+    created: "2023-11-28T15:26:47.24191775Z"
+    description: Google Cloud SQL Proxy
+    digest: 50d9c50eef563beb0bce2fbad515da098378afe9163d6128968eb4e20955af57
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.23.0.tgz
+    version: 0.23.0
+  - apiVersion: v2
+    appVersion: 1.31.1
+    created: "2023-11-28T15:26:47.231438447Z"
+    description: Google Cloud SQL Proxy
+    digest: 2c4f2ff320c21f4a7060fb5eed2a156ab98d915aefb424f5cd0f119d15f9e3ef
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.22.10.tgz
+    version: 0.22.10
+  - apiVersion: v2
+    appVersion: 1.31.1
+    created: "2023-11-28T15:26:47.240856692Z"
+    description: Google Cloud SQL Proxy
+    digest: 73d018c7b1472a654ed7e878989417aea654bfda85acf85c863f0569202a6d7e
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.22.9.tgz
+    version: 0.22.9
+  - apiVersion: v2
+    appVersion: 1.30.1
+    created: "2023-11-28T15:26:47.239250126Z"
+    description: Google Cloud SQL Proxy
+    digest: e99fa769c9a36ac0dc65a490db6b98690d4883b885a6a4ed2719fbe7d023e182
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.22.8.tgz
+    version: 0.22.8
+  - apiVersion: v2
+    appVersion: 1.24.0
+    created: "2023-11-28T15:26:47.236938773Z"
+    description: Google Cloud SQL Proxy
+    digest: f32f665330b299753e45d77808be04e58cb3fcb2f72f71d7a76dc58355b9658e
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.22.6.tgz
+    version: 0.22.6
+  - apiVersion: v2
+    appVersion: 1.24.0
+    created: "2023-11-28T15:26:47.235565415Z"
+    description: Google Cloud SQL Proxy
+    digest: f1e1a25b7336fbba16aad32cbaea534d9bb22bbb471775c5410b3f5f77bcb1f9
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.22.5.tgz
+    version: 0.22.5
+  - apiVersion: v2
+    appVersion: 1.24.0
+    created: "2023-11-28T15:26:47.234449772Z"
+    description: Google Cloud SQL Proxy
+    digest: 1e515b6201feae93bb8aa62ff8a855d0c0b1fbdd3d043030bbcc6d95da6d8a20
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.22.4.tgz
+    version: 0.22.4
+  - apiVersion: v2
+    appVersion: 1.24.0
+    created: "2023-11-28T15:26:47.233462722Z"
+    description: Google Cloud SQL Proxy
+    digest: 62874c524ded16bc19d1dc136005ce45ab52c11c04e3e0d9bea83e2c42099592
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.22.3.tgz
+    version: 0.22.3
+  - apiVersion: v2
+    appVersion: 1.24.0
+    created: "2023-11-28T15:26:47.232463014Z"
+    description: Google Cloud SQL Proxy
+    digest: 6ce7c06dcebf2785384befe94811adc684bcd53644419442a40fe87d28053698
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.22.2.tgz
+    version: 0.22.2
+  - apiVersion: v2
+    appVersion: 1.24.0
+    created: "2023-11-28T15:26:47.230345699Z"
+    description: Google Cloud SQL Proxy
+    digest: e9bb3e97eb310401995d8ba14b4707535739fdd92639c14a3f88fd21366cd5ea
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.22.1.tgz
+    version: 0.22.1
+  - apiVersion: v2
+    appVersion: 1.24.0
+    created: "2023-11-28T15:26:47.228900972Z"
+    description: Google Cloud SQL Proxy
+    digest: 5e3ccd098ae7db95a8ea4e5a2f68a141f67f6ccd9b456f1905f7d06e9d646ddf
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.22.0.tgz
+    version: 0.22.0
+  - apiVersion: v1
+    appVersion: 1.24.0
+    created: "2023-11-28T15:26:47.227991439Z"
+    description: Google Cloud SQL Proxy
+    digest: baad90fc45bc4f693ba1472159a4457f8d31a8bbe5657dc62777a5ec22939e4d
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.21.0.tgz
+    version: 0.21.0
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.226947979Z"
+    description: Google Cloud SQL Proxy
+    digest: e096328457f483f1a92fa8762c5e1ac8b7d0ce717ac8a58efa79954a1234352c
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.20.6.tgz
+    version: 0.20.6
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.225933954Z"
+    description: Google Cloud SQL Proxy
+    digest: 97eceaed7968cff85d2bc9099cab7d3c87f423911c91ad3f5ab20b17c192707b
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.20.5.tgz
+    version: 0.20.5
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.224034945Z"
+    description: Google Cloud SQL Proxy
+    digest: eb85df059659484bf85cbec2f6774fb197acaff9843111160dc7d8ed57cbdea1
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.20.4.tgz
+    version: 0.20.4
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.221649395Z"
+    description: Google Cloud SQL Proxy
+    digest: d0c3ccd87cc51f9afd52fe3f8fb6399b906eedf241325e0508aef35a8ceeb844
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.20.3.tgz
+    version: 0.20.3
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.220608913Z"
+    description: Google Cloud SQL Proxy
+    digest: 980b6f2c8e1803ffc6aea4da68991c74e05f03d0a76ec3abb582370c233d51ab
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.20.2.tgz
+    version: 0.20.2
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.212970649Z"
+    description: Google Cloud SQL Proxy
+    digest: 0026fd5ac2226fee0a2ddd17a5fb10c6949e48c43c883a2db53c8f3574a9d337
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.13.tgz
+    version: 0.19.13
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.212027381Z"
+    description: Google Cloud SQL Proxy
+    digest: 7faccb6b726831b357957b04ef3f68be67880f8dc60bdd29759892835396d389
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.12.tgz
+    version: 0.19.12
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.2110394Z"
+    description: Google Cloud SQL Proxy
+    digest: 67e8012ba68dff5e13299cf02c38d36d23b3b7bfb1f2e65977fccc092158d5f8
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.11.tgz
+    version: 0.19.11
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.210097086Z"
+    description: Google Cloud SQL Proxy
+    digest: 9127b1b77396ca74a832f64103859220366c73441146e13d6bd4e7f38f877f2b
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.10.tgz
+    version: 0.19.10
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.219717853Z"
+    description: Google Cloud SQL Proxy
+    digest: 1ac438befabe8ca0af7cbd999b77f511e37df8dfa6e5fe42f6e27a743b70db7c
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.9.tgz
+    version: 0.19.9
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.218727519Z"
+    description: Google Cloud SQL Proxy
+    digest: 5d4eeacef28222b106a595b6c96842b9b7a255397b919b977b6e0733fa9226c2
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.8.tgz
+    version: 0.19.8
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.217816084Z"
+    description: Google Cloud SQL Proxy
+    digest: c629d9099e9a20ce8e9b431c1b540a9b63424550349ceb29fb175895819ec1dc
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.7.tgz
+    version: 0.19.7
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.216942546Z"
+    description: Google Cloud SQL Proxy
+    digest: cd85c1038b3f6919e573e0d2eaf465d6365cc0389fbc7dcd634a93f89b4e58f9
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.6.tgz
+    version: 0.19.6
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.216077918Z"
+    description: Google Cloud SQL Proxy
+    digest: 2ead681ed44831385f7b1f26394a202925ce2228bf3f113911f7233a1665cf63
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.5.tgz
+    version: 0.19.5
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.215259237Z"
+    description: Google Cloud SQL Proxy
+    digest: bb5cc6ec71a58aa4162a87b9b247bb9419f65d703f758d96737651882992a178
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.4.tgz
+    version: 0.19.4
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.214520995Z"
+    description: Google Cloud SQL Proxy
+    digest: 41ce81f49b7986c3490efb7672f22a9d57fc33b096aa63c609edfeb715834ae2
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    - email: naseemkullah@gmail.com
+      name: naseemkullah
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.3.tgz
+    version: 0.19.3
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.213698572Z"
+    description: Google Cloud SQL Proxy
+    digest: 25093592e3356feaf83e9068a7c5fb7afbbc62f3f9f280abe09bd7e1cdc3cf37
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.2.tgz
+    version: 0.19.2
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.208754198Z"
+    description: Google Cloud SQL Proxy
+    digest: 286e50f70f1470cefff215f8fd263778a007ec65afbaa81ac67db61e37761f63
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.1.tgz
+    version: 0.19.1
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.207644757Z"
+    description: Google Cloud SQL Proxy
+    digest: 8b542ab51064a3609550c1e4ed68ff0033bc4f43120828c8fbd020c2281a0b8d
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.19.0.tgz
+    version: 0.19.0
+  - apiVersion: v1
+    appVersion: "1.16"
+    created: "2023-11-28T15:26:47.206515675Z"
+    description: Google Cloud SQL Proxy
+    digest: 0086b6cf3899d6ba8fdc8652c0cf34fa5e4d860c5af9e1e667c00ecf0a6449f1
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.18.0.tgz
+    version: 0.18.0
+  - apiVersion: v1
+    appVersion: "1.15"
+    created: "2023-11-28T15:26:47.205321422Z"
+    description: Google Cloud SQL Proxy
+    digest: a25990ccf31c00b5b1bd235ecc11e8571555fe56517b908e19c22c8e4efc3763
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.15.0.tgz
+    version: 0.15.0
+  - apiVersion: v1
+    appVersion: "1.14"
+    created: "2023-11-28T15:26:47.201262158Z"
+    description: Google Cloud SQL Proxy
+    digest: c0eb6402f6c8e8af7b497169694c8b559972df7d64567d376d141f4b17504631
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.14.1.tgz
+    version: 0.14.1
+  - apiVersion: v1
+    appVersion: "1.14"
+    created: "2023-11-28T15:26:47.200550446Z"
+    description: Google Cloud SQL Proxy
+    digest: 577351ecd4ef34889fc2fd05daed4513dee4950151087bb5a8c9d4516e441a23
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.14.0.tgz
+    version: 0.14.0
+  - apiVersion: v1
+    appVersion: "1.14"
+    created: "2023-11-28T15:26:47.199787611Z"
+    description: Google Cloud SQL Proxy
+    digest: 86bce0bbcf540d5d39fd49f5a6d949e1b030346a800cda5995b8aa8298722e85
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.13.1.tgz
+    version: 0.13.1
+  - apiVersion: v1
+    appVersion: "1.14"
+    created: "2023-11-28T15:26:47.198719699Z"
+    description: Google Cloud SQL Proxy
+    digest: 6ae8789745f960e44d94772d07acc1b6497d13226c3ac46fdcdaf8bbd8f343d7
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.13.0.tgz
+    version: 0.13.0
+  - apiVersion: v1
+    appVersion: "1.13"
+    created: "2023-11-28T15:26:47.198015579Z"
+    description: Google Cloud SQL Proxy
+    digest: 160e09ce5b05a024efc6fe4745ffe0532bfb3509f308425abf961ecdf95dec45
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.12.0.tgz
+    version: 0.12.0
+  - apiVersion: v1
+    appVersion: "1.13"
+    created: "2023-11-28T15:26:47.197370847Z"
+    description: Google Cloud SQL Proxy
+    digest: bd0fe2a163e13fba7c5e89a2c8b9060d2ae106c4eeb4e225895d419af33cb197
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.11.0.tgz
+    version: 0.11.0
+  - apiVersion: v1
+    appVersion: "1.13"
+    created: "2023-11-28T15:26:47.196662356Z"
+    description: Google Cloud SQL Proxy
+    digest: c9c744801f812847b1e82090e842bd672b7bc550cfcf215a5f06823cea955216
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.10.1.tgz
+    version: 0.10.1
+  - apiVersion: v1
+    appVersion: "1.13"
+    created: "2023-11-28T15:26:47.196037169Z"
+    description: Google Cloud SQL Proxy
+    digest: bda3b918c74fac60f7e28e9f4b5dbe9aac7e94d2be16c59d55ddb9e70dcd35b8
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.10.0.tgz
+    version: 0.10.0
+  - apiVersion: v1
+    appVersion: "1.13"
+    created: "2023-11-28T15:26:47.259845871Z"
+    description: Google Cloud SQL Proxy
+    digest: 95f6199e44fbed9a9ec7f865bd4173c36311af89a55886e46dabd4ca0c9c5e80
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.9.0.tgz
+    version: 0.9.0
+  - apiVersion: v1
+    appVersion: "1.13"
+    created: "2023-11-28T15:26:47.259165533Z"
+    description: Google Cloud SQL Proxy
+    digest: 37bd32ea5398456c692778a48288a13fad636eda24f7ab54e6bdbc6d461a7918
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.8.1.tgz
+    version: 0.8.1
+  - apiVersion: v1
+    appVersion: "1.13"
+    created: "2023-11-28T15:26:47.258533876Z"
+    description: Google Cloud SQL Proxy
+    digest: fc20d71b6b7726406a544bcf8af7eb3866e11dd2623c6a53a45b0d09d6c36083
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.7.0.tgz
+    version: 0.7.0
+  - apiVersion: v1
+    appVersion: "1.13"
+    created: "2023-11-28T15:26:47.257994158Z"
+    description: Google Cloud SQL Proxy
+    digest: 92a861bff4e4699e0b7d38982903196644f0f43a1b82c468005fa5f2bc3e065f
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.6.4.tgz
+    version: 0.6.4
+  - apiVersion: v1
+    appVersion: "1.13"
+    created: "2023-11-28T15:26:47.257438799Z"
+    description: Google Cloud SQL Proxy
+    digest: b016126dc94f36d7d48399313ec06fee39ac47b525d43bd65b5bcba4fd990e60
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.6.3.tgz
+    version: 0.6.3
+  - apiVersion: v1
+    appVersion: "1.11"
+    created: "2023-11-28T15:26:47.2568221Z"
+    description: Google Cloud SQL Proxy
+    digest: b3f5e5db6e1c3f270dd8672a006e2b49e68ca2fbd6aeb39d811b8e6b9a174dc4
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.6.2.tgz
+    version: 0.6.2
+  - apiVersion: v1
+    appVersion: "1.11"
+    created: "2023-11-28T15:26:47.256211123Z"
+    description: Google Cloud SQL Proxy
+    digest: fe28d171c37ae5a84d96b3a2653d7c07b78c3d1b7b249971d94353a9c298ff0f
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://charts.rimusz.net/gcloud-sqlproxy-0.6.1.tgz
+    version: 0.6.1
+  gke-node-pool-shifter:
+  - apiVersion: v1
+    appVersion: 1.0.21
+    created: "2023-11-28T15:26:47.260581878Z"
+    description: A Helm chart for gke-node-pool-shifter
+    digest: 315feacebc84997215b8fb5dfa5f38288ed795f6608019ae1da96dd5e2457eab
+    home: https://github.com/estafette/estafette-gke-node-pool-shifter
+    keywords:
+    - gke
+    - preemptible
+    - shifter
+    - node-pool
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gke-node-pool-shifter
+    urls:
+    - https://charts.rimusz.net/gke-node-pool-shifter-0.1.0.tgz
+    version: 0.1.0
+  gke-pvm-killer:
+  - apiVersion: v1
+    appVersion: 1.0.49
+    created: "2023-11-28T15:26:47.263080992Z"
+    description: A Helm chart for gke-pvm-killer
+    digest: b136eccc21143178a0d3a2bcc18afcce5ea7683415d8223df6256ad6b39b0c29
+    home: https://github.com/estafette/estafette-gke-preemptible-killer
+    keywords:
+    - gke
+    - preemptible
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gke-pvm-killer
+    urls:
+    - https://charts.rimusz.net/gke-pvm-killer-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
+    appVersion: 1.0.46
+    created: "2023-11-28T15:26:47.262435586Z"
+    description: A Helm chart for gke-pvm-killer
+    digest: 4083a0b644482cdbc34b9770d7ca7551131a3db56fbcc9ae58e3593a6726b65d
+    home: https://github.com/estafette/estafette-gke-preemptible-killer
+    keywords:
+    - gke
+    - preemptible
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gke-pvm-killer
+    urls:
+    - https://charts.rimusz.net/gke-pvm-killer-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: 1.0.46
+    created: "2023-11-28T15:26:47.261836452Z"
+    description: A Helm chart for gke-pvm-killer
+    digest: 33cbd11797861fe910ab0276825de0fe425d1f6b2ad45fef43fddbcdbc982d20
+    home: https://github.com/estafette/estafette-gke-preemptible-killer
+    keywords:
+    - gke
+    - preemptible
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gke-pvm-killer
+    urls:
+    - https://charts.rimusz.net/gke-pvm-killer-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    appVersion: 1.0.46
+    created: "2023-11-28T15:26:47.261174148Z"
+    description: A Helm chart for gke-pvm-killer
+    digest: b94e7d937f02c4d220c65a74ae157d4bc38e3829b00e708f3485645488f5798e
+    home: https://github.com/estafette/estafette-gke-preemptible-killer
+    keywords:
+    - gke
+    - preemptible
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: gke-pvm-killer
+    urls:
+    - https://charts.rimusz.net/gke-pvm-killer-0.1.0.tgz
+    version: 0.1.0
+  hostpath-provisioner:
+  - apiVersion: v2
+    appVersion: v0.2.5
+    created: "2023-11-28T15:26:47.265580524Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: fc63c56623aad0400797cbe446ab94583a108d43bdbacd495c5aa717a479ebdb
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    sources:
+    - https://github.com/rimusz/hostpath-provisioner
+    type: application
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.13.tgz
+    version: 0.2.13
+  - apiVersion: v2
+    appVersion: v0.2.4
+    created: "2023-11-28T15:26:47.265044241Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: 3f4ac497f4a7b0f92a82196d39d0466fdf882ac19faf9a5b3d0577361833737f
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    sources:
+    - https://github.com/rimusz/hostpath-provisioner
+    type: application
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.12.tgz
+    version: 0.2.12
+  - apiVersion: v1
+    appVersion: v0.2.3
+    created: "2023-11-28T15:26:47.264549816Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: 89a4c520370d75463b85349387f880026f1087770b0bccf92ca2122aed0be095
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    sources:
+    - https://github.com/rimusz/hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.11.tgz
+    version: 0.2.11
+  - apiVersion: v1
+    appVersion: v0.2.3
+    created: "2023-11-28T15:26:47.264001647Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: 8720983bdae15282685c6646422f970c1fc51b8120a0f83af2955039a66e8372
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    sources:
+    - https://github.com/rimusz/hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.10.tgz
+    version: 0.2.10
+  - apiVersion: v1
+    appVersion: v0.2.3
+    created: "2023-11-28T15:26:47.271779851Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: a0f2900fffbd43ee32c8b636752ac79736c80b7a514c12a585a01b44709c7555
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.9.tgz
+    version: 0.2.9
+  - apiVersion: v1
+    appVersion: v0.2.3
+    created: "2023-11-28T15:26:47.27124066Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: 325a495df0a063e74a0318be84946c4ca8baee69d3f69e834b54e04522002fc9
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.8.tgz
+    version: 0.2.8
+  - apiVersion: v1
+    appVersion: v0.2.3
+    created: "2023-11-28T15:26:47.2708064Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: 8aa781ffcb530b8596d97c1f13ab3b9336c3eac7bbcd903b112f66d4577d3f27
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.7.tgz
+    version: 0.2.7
+  - apiVersion: v1
+    appVersion: v0.2.2
+    created: "2023-11-28T15:26:47.270365395Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: c6e51074821744e9e4de59b33ddd99b825b9a2a2dfb4f18138696be16ab700d7
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v1
+    appVersion: v0.2.2
+    created: "2023-11-28T15:26:47.26930554Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: ffb1777a8a7952857cb1d28d3a69bbccc3d2fb50a3babcf21f5e96a4026438cd
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v1
+    appVersion: v0.2.2
+    created: "2023-11-28T15:26:47.268241747Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: 1caee81aca2270d6983def3cf5d20a00527152530d178a575b6f64777687f952
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v1
+    appVersion: v0.2.1
+    created: "2023-11-28T15:26:47.267267716Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: 9f189bdff3e17000eab189a058332102b69c29ca2cd1e78b1c92cb458437d78f
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v1
+    appVersion: v0.2.1
+    created: "2023-11-28T15:26:47.266389584Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: 9c2a6b181eb68c9bc5c14adb779311eb138f5ab25a6f4f55d2e68f36689c839a
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v1
+    appVersion: v0.1.0
+    created: "2023-11-28T15:26:47.263511004Z"
+    description: hostpath-provisioner is an automatic provisioner creating Persistent
+      Volumes from the hostpath.
+    digest: 4a4911c539c74c12a5d933dc87be7999a0fa12ef9b8ab950b651f5b1f709b782
+    home: https://github.com/rimusz/charts/tree/master/stable/hostpath-provisioner
+    keywords:
+    - hostpath
+    - storage
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: hostpath-provisioner
+    urls:
+    - https://charts.rimusz.net/hostpath-provisioner-0.2.0.tgz
+    version: 0.2.0
+  nfs-client-provisioner:
+  - apiVersion: v2
+    appVersion: v3.1.0-k8s1.11
+    created: "2023-11-28T15:26:47.273774153Z"
+    description: nfs-client-provisioner is an automatic provisioner creating Persistent
+      Volumes from the NFS
+    digest: 487cfb4a346b34d6a9373bdbbcc3ae56f11bad2563006e1fcab4b5c7964ba2e0
+    home: https://github.com/rimusz/charts/tree/master/stable/nfs-client-provisioner
+    keywords:
+    - nfs
+    - storage
+    - nfs-client
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: nfs-client-provisioner
+    sources:
+    - https://github.com/rimusz/hostpath-provisioner
+    type: application
+    urls:
+    - https://charts.rimusz.net/nfs-client-provisioner-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: v3.1.0-k8s1.11
+    created: "2023-11-28T15:26:47.273270879Z"
+    description: nfs-client-provisioner is an automatic provisioner creating Persistent
+      Volumes from the NFS
+    digest: 799ba3608176226cd04fc570bbf5e11a274617f95dd3c48649b44143e4e340e9
+    home: https://github.com/rimusz/charts/tree/master/stable/nfs-client-provisioner
+    keywords:
+    - nfs
+    - storage
+    - nfs-client
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: nfs-client-provisioner
+    sources:
+    - https://github.com/rimusz/hostpath-provisioner
+    type: application
+    urls:
+    - https://charts.rimusz.net/nfs-client-provisioner-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v1
+    appVersion: v3.1.0-k8s1.11
+    created: "2023-11-28T15:26:47.272749949Z"
+    description: nfs-client-provisioner is an automatic provisioner creating Persistent
+      Volumes from the NFS
+    digest: 7505c725041cc2c2388cbc3ea0d2d2c51c65f2ae4e883519dcc0ed8515edfdd8
+    home: https://github.com/rimusz/charts/tree/master/stable/nfs-client-provisioner
+    keywords:
+    - nfs
+    - storage
+    - nfs-client
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: nfs-client-provisioner
+    urls:
+    - https://charts.rimusz.net/nfs-client-provisioner-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v1
+    appVersion: 2.1.1-k8s1.10
+    created: "2023-11-28T15:26:47.272273745Z"
+    description: nfs-client-provisioner is an automatic provisioner that uses your
+      already configured NFS server, automatically creating Persistent Volumes.
+    digest: 241a0ad6383387c329f4fdc84ca6891055e100129a4532316a979a1dde4db666
+    home: https://github.com/rimusz/charts/tree/master/stable/nfs-client-provisioner
+    keywords:
+    - nfs
+    - storage
+    - nfs-client
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: nfs-client-provisioner
+    sources:
+    - https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client
+    urls:
+    - https://charts.rimusz.net/nfs-client-provisioner-0.1.3.tgz
+    version: 0.1.3
+  security-sample-chart:
+  - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2023-11-28T15:26:47.306023909Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.10.6
+    description: A security sample Helm chart
+    digest: 9ae9c4ee22f559de4cdbbd95b24dd45a1d0d2c32c9f3fab08b9ade487a43f4e6
+    home: https://github.com/rimusz/security-sample-app
+    icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/security-sample-chart/logo/chart-logo.png
+    keywords:
+    - security
+    - mitigation
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: security-sample-chart
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/security-sample-chart-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2023-11-28T15:26:47.30225491Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.10.6
+    description: A security sample Helm chart
+    digest: e1411cde414061fb1c8bd908a6bcfd0b7e75d9f7e8bd7fdf2217b196da3b27d2
+    home: https://github.com/rimusz/security-sample-app
+    icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/security-sample-chart/logo/chart-logo.png
+    keywords:
+    - security
+    - mitigation
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: security-sample-chart
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/security-sample-chart-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2023-11-28T15:26:47.298507284Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.10.5
+    description: A security sample Helm chart
+    digest: 39a45129fdf3a8252a49d85548a6ae79d2e43d2808ed055a61d3e98f047c4dd4
+    home: https://github.com/rimusz/security-sample-app
+    icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/security-sample-chart/logo/chart-logo.png
+    keywords:
+    - security
+    - mitigation
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: security-sample-chart
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/security-sample-chart-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-11-28T15:26:47.292252096Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.10.5
+    description: A security sample Helm chart
+    digest: d970ea9f1f19c100180930f9b1584bbed564d72528f153a4b8bcf7756319d531
+    home: https://github.com/rimusz/security-sample-app
+    icon: https://raw.githubusercontent.com/rimusz/charts/master/stable/security-sample-chart/logo/chart-logo.png
+    keywords:
+    - security
+    - mitigation
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: security-sample-chart
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/security-sample-chart-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-11-28T15:26:47.288501961Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.10.5
+    description: A security sample Helm chart
+    digest: 223fa212383ce1567b746287fe8330cf11bbda9b295e99d040143d22e29b05e5
+    home: https://github.com/rimusz/security-sample-app
+    keywords:
+    - security
+    - mitigation
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: security-sample-chart
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/security-sample-chart-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-11-28T15:26:47.285430866Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.10.5
+    description: A security sample Helm chart
+    digest: 76416ac8c1e995d894955c5831325a4c79be7b097b1a920c59f7874524fd05ae
+    home: https://github.com/rimusz/security-sample-app
+    keywords:
+    - security
+    - mitigation
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: security-sample-chart
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/security-sample-chart-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-11-28T15:26:47.281051103Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.10.5
+    description: A security sample Helm chart
+    digest: 9f9b342aafe4a6e8d625977ce0385b715936d6808f67e3bd75db56baadc08c22
+    home: https://github.com/rimusz/security-sample-app
+    keywords:
+    - security
+    - mitigation
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: security-sample-chart
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/security-sample-chart-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-11-28T15:26:47.276997227Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.10.5
+    description: A security sample Helm chart
+    digest: 6ccf5787332bc24efa359d0abff61e2acc4224590ad378b5d208b934f9585f7c
+    home: https://github.com/rimusz/security-sample-app
+    keywords:
+    - security
+    - mitigation
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: security-sample-chart
+    sources:
+    - https://github.com/rimusz/charts
+    type: application
+    urls:
+    - https://charts.rimusz.net/security-sample-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-11-28T15:26:47.185182866Z"
