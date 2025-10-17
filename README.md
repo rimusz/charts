@@ -38,10 +38,16 @@ Upon successful review, someone will give the PR a __LGTM__ in the review thread
 **Note:** Docker must be running on your Mac/Linux machine. 
 The command will only lint changed charts.
 
-To lint all charts:
+To lint changed charts:
 
 ```console
 make lint
+```
+
+To validate all charts in the repository:
+
+```console
+make validate
 ```
 
 ### Forcing to lint unchanged charts
@@ -60,7 +66,7 @@ You can force to lint a list of charts (separated by comma) with `--charts` flag
 make lint -- --charts stable/contour,stable/gcloud-sqlproxy
 ```
 
-You can force to lint all charts with `--all` flag:
+You can force to lint all charts with `--all` flag (equivalent to running `make validate`):
 
 ```console
 make lint -- --all

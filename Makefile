@@ -7,12 +7,14 @@ CHART_TESTING_TAG ?= v3.7.1
 GKE_TESTING_IMAGE ?= ghcr.io/rimusz/charts-ci/image
 GKE_TESTING_TAG ?= 0.5.1
 
-# If the first argument is "lint" or "mac" or "gke" or "kind"
-ifneq ( $(filter wordlist 1,lint mac gke kind), $(firstword $(MAKECMDGOALS)))
-  # use the rest as arguments for "lint" "mac" or "gke" or "kind"
+# If the first argument is "lint", "validate", "mac", "gke" or "kind"
+ifneq (,$(filter lint validate mac gke kind,$(firstword $(MAKECMDGOALS))))
+  # use the rest as arguments for "lint", "validate", "mac", "gke" or "kind"
   MAC_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   # ...and turn them into do-nothing targets
-  $(eval $(MAC_ARGS):;@:)
+  ifneq ($(MAC_ARGS),)
+    $(eval $(MAC_ARGS):;@:)
+  endif
 endif
 
 .PHONY: lint
@@ -21,6 +23,14 @@ lint:
 	$(eval export CHART_TESTING_TAG)
 	$(eval export CHARTS_REPO)
 	$(eval export CHART_TESTING_ARGS=${MAC_ARGS})
+	@test/lint-charts-local.sh
+
+.PHONY: validate
+validate:
+	$(eval export CHART_TESTING_IMAGE)
+	$(eval export CHART_TESTING_TAG)
+	$(eval export CHARTS_REPO)
+	$(eval export CHART_TESTING_ARGS=--all)
 	@test/lint-charts-local.sh
 
 .PHONY: mac
